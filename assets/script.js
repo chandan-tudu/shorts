@@ -53,15 +53,15 @@ if (Array.isArray(theTheme) && theTheme.length === 3) {
         bodyEl.insertAdjacentElement('beforeend', prismScript);
     }
 
-    // const gTag = createEl('script', {
-    //     async: true,
-    //     src: 'https://www.googletagmanager.com/gtag/js?id=G-1EGRP1HSLV',
-    // });
-    // const gTagCode = createEl('script', {
-    //     src: 'https://cdn.jsdelivr.net/gh/chandan-tudu/docs@master/assets/analytics.js',
-    // });
-    // bodyEl.insertAdjacentElement('beforeend', gTag);
-    // bodyEl.insertAdjacentElement('beforeend', gTagCode);
+    const gTag = createEl('script', {
+        async: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-1EGRP1HSLV',
+    });
+    const gTagCode = createEl('script', {
+        src: 'https://cdn.jsdelivr.net/gh/chandan-tudu/docs@master/assets/analytics.js',
+    });
+    bodyEl.insertAdjacentElement('beforeend', gTag);
+    bodyEl.insertAdjacentElement('beforeend', gTagCode);
 })();
 
 if (document.cookie.indexOf('DevBDocsCookie=1')) {
