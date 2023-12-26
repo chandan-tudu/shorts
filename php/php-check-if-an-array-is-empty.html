@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>PHP Check If An Array Is Empty</title>
+<meta name="description" content="In PHP, you can check if an array is empty using the empty() function or by comparing the array to an empty array ([]).">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-check-if-an-array-is-empty.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,56 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PHP</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>PHP Check If An Array Is Empty</h1><p>In PHP, you can <strong>check if an array is empty using the <code>empty()</code> function or by comparing the array to an empty array (<code>[]</code>)</strong>. Here are examples of both methods:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
+<h3 id="using-empty-function">1. Using <code>empty()</code> function:</h3>
+
+<pre class="language-php"><code>&lt;?php
+// Non-empty array
+$nonEmptyArray = array("apple", "banana", "orange");
+
+// Check if the array is empty
+if (empty($nonEmptyArray)) {
+    echo "The array is empty.";
+} else {
+    echo "The array is not empty.";
 }
+?&gt;
+</code></pre>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
+<p>In this example, <code>empty($nonEmptyArray)</code> returns <code>false</code> because the array is not empty, so the "The array is not empty." message is displayed.</p>
+
+<h3 id="comparing-to-an-empty-array">2. Comparing to an empty array:</h3>
+
+<pre class="language-php"><code>&lt;?php
+// Non-empty array
+$nonEmptyArray = array("apple", "banana", "orange");
+
+// Check if the array is empty
+if ($nonEmptyArray == []) {
+    echo "The array is empty.";
+} else {
+    echo "The array is not empty.";
 }
+?&gt;
+</code></pre>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+<p>This example uses the equality operator (<code>==</code>) to compare the array to an empty array. If the array is not empty, the "The array is not empty." message is displayed.</p>
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+<p>It's important to note that using <code>==</code> for array comparison checks only the values and not the types. If you want to check for both the values and the types, you can use the identity operator (<code>===</code>):</p>
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
+<pre class="language-php"><code>if ($nonEmptyArray === []) {
+    // Array is empty
+} else {
+    // Array is not empty
 }
 </code></pre>
 
-<p>In the above examples:</p>
-
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
-
-<p>You can apply these styles to HTML elements like this:</p>
-
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
-
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>Choose the method that best fits your requirements and coding style. Both approaches are commonly used to check whether an array is empty or not.</p>
 </article>
 </div>
 <footer>

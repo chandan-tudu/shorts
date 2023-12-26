@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Closures With Examples</title>
+<meta name="description" content="In Python, a closure allows a function to remember the environment in which it was created, and it can access variables from that environment even after the environment has finished executing.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-closures-with-examples.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python Closures With Examples</h1><p>A closure in Python is <strong>a function object that has access to variables in its lexical scope, even when the function is called outside that scope</strong>.</p>
+
+<p>In simpler terms, a closure allows a function to <strong>remember the environment in which it was created</strong>, and it <strong>can access variables from that environment even after the environment has finished executing</strong>.</p>
+
+<p>Here's a simple example to illustrate closures:</p>
+
+<pre class="language-python"><code>def outer_function(x):
+    def inner_function(y):
+        return x + y
+    return inner_function
+
+# Example usage
+closure_instance = outer_function(10)
+result = closure_instance(5)
+
+print(result)  # Output: 15
+</code></pre>
+
+<p>In this example:</p>
+
+<ul>
+<li><p><code>outer_function</code> takes a parameter <code>x</code> and defines an inner function <code>inner_function</code> that takes another parameter <code>y</code>.</p></li>
+<li><p>The inner function <code>inner_function</code> has access to the <code>x</code> parameter from its outer (enclosing) scope.</p></li>
+<li><p>When <code>outer_function(10)</code> is called, it returns an instance of <code>inner_function</code> where <code>x</code> is set to 10. This instance is stored in the variable <code>closure_instance</code>.</p></li>
+<li><p>Later, when <code>closure_instance(5)</code> is called, it uses the value of <code>x</code> from the closure, resulting in the sum of 10 (from the closure) and 5, which is 15.</p></li>
+</ul>
+
+<h3 id="use-cases-of-closures-">Use Cases of Closures:</h3>
+
+<ol>
+<li><strong>Data Encapsulation:</strong>
+Closures can be used to encapsulate data within a function and provide a way to access that data without exposing it to the outside world.</li>
+</ol>
+
+<pre class="language-python"><code>def counter():
+    count = 0
+    def increment():
+        nonlocal count
+        count += 1
+        return count
+    return increment
+
+# Example usage
+counter_instance = counter()
+print(counter_instance())  # Output: 1
+print(counter_instance())  # Output: 2
+</code></pre>
+
+<ol start="2">
+<li><strong>Function Factories:</strong>
+Closures are often used to create function factories that generate functions with specific behavior based on some parameters.</li>
+</ol>
+
+<pre class="language-python"><code>def power_of(exponent):
+    def power(base):
+        return base ** exponent
+    return power
+
+# Example usage
+square = power_of(2)
+cube = power_of(3)
+
+print(square(4))  # Output: 16
+print(cube(3))    # Output: 27
+</code></pre>
+
+<ol start="3">
+<li><strong>Decorator Patterns:</strong>
+Decorators in Python often use closures to wrap functions and add additional behavior.</li>
+</ol>
+
+<pre class="language-python"><code>def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+# Example usage
+say_hello()
+</code></pre>
+
+<p>In this example, <code>my_decorator</code> is a closure that wraps the <code>say_hello</code> function with additional behavior.</p>
+
+<p>Closures are a powerful and flexible feature in Python, and they are often used in more advanced programming patterns. They allow for functional programming techniques and provide a way to create dynamic and reusable code structures.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Iterator With Examples</title>
+<meta name="description" content="In Python, an iterator is an object that implements the iterator protocol, which consists of the __iter__ method and the __next__ method.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-iterator-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,79 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Iterator With Examples</h1><p>In Python, <strong>an iterator is an object that implements the iterator protocol, which consists of the <code>__iter__</code> method and the <code>__next__</code> method</strong>. Iterators are used to represent a stream of data and enable iteration over that data. Common examples of iterators in Python include lists, tuples, and dictionaries.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>Here's a simple example of creating a custom iterator class:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<pre class="language-python"><code>class MyIterator:
+    def __init__(self, data):
+        self.data = data
+        self.index = 0
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+    def __iter__(self):
+        return self
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+    def __next__(self):
+        if self.index &lt; len(self.data):
+            result = self.data[self.index]
+            self.index += 1
+            return result
+        else:
+            raise StopIteration
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
+# Example usage
+my_list = [1, 2, 3, 4, 5]
+my_iterator = MyIterator(my_list)
 
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+for item in my_iterator:
+    print(item)
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example:</p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li><p>The <code>MyIterator</code> class has the <code>__init__</code> method to initialize the iterator with some data and the <code>__next__</code> method to provide the next element in the iteration.</p></li>
+<li><p>The <code>__iter__</code> method is implemented to return the iterator object itself.</p></li>
+<li><p>When the iterator reaches the end of the data, it raises the <code>StopIteration</code> exception to signal the end of the iteration.</p></li>
+<li><p>The <code>for</code> loop is used to iterate over the elements of the iterator.</p></li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<p>Python also provides a convenient way to create iterators using generator functions and the <code>iter</code> function. Here's an example using a generator:</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre class="language-python"><code>def my_generator(data):
+    for item in data:
+        yield item
+
+# Example usage
+my_list = [1, 2, 3, 4, 5]
+my_iterator = iter(my_generator(my_list))
+
+for item in my_iterator:
+    print(item)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>In this example, the <code>my_generator</code> function is a generator function that yields items from the input data. The <code>iter</code> function is then used to obtain an iterator from the generator.</p>
+
+<p>Additionally, Python provides built-in functions like <code>iter</code> and <code>next</code> that work with any iterable object, making it easy to work with iterators in a general way:</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3, 4, 5]
+my_iterator = iter(my_list)
+
+while True:
+    try:
+        item = next(my_iterator)
+        print(item)
+    except StopIteration:
+        break
+</code></pre>
+
+<p>This demonstrates the use of the <code>iter</code> function to obtain an iterator from a list and the <code>next</code> function to retrieve the next item in the iteration until a <code>StopIteration</code> exception is raised.</p>
+
+<p>Iterators are an essential part of Python's iterable protocol, providing a uniform way to iterate over different types of data structures.</p>
 </article>
 </div>
 <footer>

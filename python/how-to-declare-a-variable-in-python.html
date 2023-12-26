@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>How To Declare A Variable In Python</title>
+<meta name="description" content="In Python, you can declare a variable by simply assigning a value to it. Python is dynamically typed, meaning you don't need to explicitly declare the type of a variable;">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/how-to-declare-a-variable-in-python.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,33 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>How To Declare A Variable In Python</h1><p>In Python, you can <strong>declare a variable by simply assigning a value to it</strong>. Python is <strong>dynamically typed</strong>, meaning you <strong>don't need to explicitly declare the type of a variable;</strong> the interpreter infers the type based on the value assigned. Here's an example:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<pre class="language-python"><code># Variable declaration and assignment
+my_variable = 42
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+# Print the value of the variable
+print(my_variable)
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example, <code>my_variable</code> is declared and assigned the value <code>42</code>. Python recognizes that <code>my_variable</code> is an integer because of the value assigned to it.</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<p>You can also declare multiple variables in a single line:</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code># Multiple variable declaration and assignment
+x, y, z = 10, 20, 30
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+# Print the values of the variables
+print(x, y, z)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>In this case, <code>x</code>, <code>y</code>, and <code>z</code> are declared and assigned the values <code>10</code>, <code>20</code>, and <code>30</code> respectively.</p>
+
+<p>It's important to note that in Python, variables are more like labels or references to objects, rather than containers that hold values. This has implications when dealing with mutable objects like lists. If you modify a mutable object through one variable, the change will be reflected in other variables that reference the same object.</p>
 </article>
 </div>
 <footer>

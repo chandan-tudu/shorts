@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Abstraction With Example</title>
+<meta name="description" content="In Python, abstraction is achieved through the use of abstract classes and abstract methods. Abstract classes cannot be instantiated and are meant to be subclassed by other classes.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-abstraction-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,73 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Abstraction With Example</h1><p>Abstraction is a key concept in object-oriented programming (OOP) that involves <strong>simplifying complex systems by modeling classes based on the essential properties and behaviors they share</strong>. It allows developers to <strong>focus on the relevant details of an object while hiding unnecessary complexities</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>Abstraction helps in managing the complexity of software systems by <strong>breaking them down into more manageable and understandable components</strong>.</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<p>In Python, <strong>abstraction is achieved through the use of abstract classes and abstract methods</strong>. <strong>Abstract classes cannot be instantiated and are meant to be subclassed by other classes</strong>.</p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+<p>Abstract methods are declared in abstract classes but <strong>do not provide an implementation</strong>. <strong>Subclasses are required to provide concrete implementations</strong> for abstract methods.</p>
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+<p>Here's an example demonstrating abstraction in Python using the <code>abc</code> (Abstract Base Classes) module:</p>
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
+<pre class="language-python"><code>from abc import ABC, abstractmethod
 
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+# Abstract class with abstract method
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+# Concrete class implementing the abstract class
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+    def perimeter(self):
+        return 2 * 3.14 * self.radius
+
+# Concrete class implementing the abstract class
+class Square(Shape):
+    def __init__(self, side_length):
+        self.side_length = side_length
+
+    def area(self):
+        return self.side_length * self.side_length
+
+    def perimeter(self):
+        return 4 * self.side_length
+
+# Example usage
+circle = Circle(5)
+square = Square(4)
+
+print(f"Circle Area: {circle.area()}")
+print(f"Circle Perimeter: {circle.perimeter()}")
+
+print(f"Square Area: {square.area()}")
+print(f"Square Perimeter: {square.perimeter()}")
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example:</p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li><p>The <code>Shape</code> class is an abstract class with two abstract methods: <code>area</code> and <code>perimeter</code>.</p></li>
+<li><p>The <code>Circle</code> and <code>Square</code> classes are concrete classes that inherit from the <code>Shape</code> class. They provide concrete implementations for the abstract methods.</p></li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
-
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
-
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>By using abstraction, the code focuses on the essential properties and behaviors of shapes without specifying the details of each shape's implementation. Abstraction allows for a higher level of modularity, maintainability, and flexibility in software design.</p>
 </article>
 </div>
 <footer>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Exceptions</title>
+<meta name="description" content="In Python, exceptions are events that occur during the execution of a program that disrupt the normal flow of the program's instructions.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-exceptions.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,84 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Exceptions</h1><p>In Python, <strong>exceptions are events</strong> that <strong>occur during the execution of a program</strong> that <strong>disrupt the normal flow of the program's instructions</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p><strong>When an exceptional situation arises, an exception object is raised</strong>, and <strong>the normal flow of the program is interrupted</strong>. To handle exceptions, you use a mechanism called "exception handling."</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<p>Here's a basic overview of how exception handling works in Python:</p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+<h3 id="the-try-except-block-">The <code>try</code>, <code>except</code> Block:</h3>
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+<p>You use <strong>the <code>try</code> and <code>except</code> blocks to handle exceptions</strong>. Code that might raise an exception is placed inside the <code>try</code> block, and the handling of the exception is specified in the <code>except</code> block.</p>
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+<pre class="language-python"><code>try:
+    # Code that might raise an exception
+    result = 10 / 0  # This will raise a ZeroDivisionError
+except ZeroDivisionError:
+    # Code to handle the exception
+    print("Error: Division by zero")
 </code></pre>
 
-<p>In the above examples:</p>
+<h3 id="handling-multiple-exceptions-">Handling Multiple Exceptions:</h3>
+
+<p>You can handle multiple exceptions by providing multiple <code>except</code> blocks.</p>
+
+<pre class="language-python"><code>try:
+    value = int(input("Enter a number: "))
+    result = 10 / value
+except ZeroDivisionError:
+    print("Error: Division by zero")
+except ValueError:
+    print("Error: Invalid input. Please enter a number.")
+</code></pre>
+
+<h3 id="the-else-and-finally-blocks-">The <code>else</code> and <code>finally</code> Blocks:</h3>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>The <code>else</code> block is executed if no exceptions are raised in the <code>try</code> block.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
-
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre class="language-python"><code>try:
+    result = 10 / 2
+except ZeroDivisionError:
+    print("Error: Division by zero")
+else:
+    print("Result:", result)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<ul>
+<li>The <code>finally</code> block is executed no matter what, whether an exception occurred or not. It is often used for cleanup operations.</li>
+</ul>
+
+<pre class="language-python"><code>try:
+    value = int(input("Enter a number: "))
+    result = 10 / value
+except ZeroDivisionError:
+    print("Error: Division by zero")
+finally:
+    print("This will be executed no matter what.")
+</code></pre>
+
+<h3 id="raising-exceptions-">Raising Exceptions:</h3>
+
+<p>You can also explicitly raise exceptions using the <code>raise</code> statement.</p>
+
+<pre class="language-python"><code>def example_function(value):
+    if value &lt; 0:
+        raise ValueError("Value must be non-negative")
+    return value * 2
+
+try:
+    result = example_function(-5)
+except ValueError as e:
+    print(f"Caught an exception: {e}")
+</code></pre>
+
+<p>Understanding and handling exceptions is crucial for writing robust and reliable Python programs. It allows you to gracefully handle errors and prevent unexpected crashes.</p>
 </article>
 </div>
 <footer>

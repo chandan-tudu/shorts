@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Numbers (Data Type)</title>
+<meta name="description" content="In Python, numbers are a built-in data type used to represent numeric values. There are different types of numbers in Python, including integers, floating-point numbers, and complex numbers.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-numbers-data-type.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,73 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Numbers (Data Type)</h1><p>In Python, <strong>numbers are a built-in data type used to represent numeric values</strong>. There are <strong>different types of numbers in Python</strong>, including <strong>integers</strong>, <strong>floating-point</strong> numbers, and <strong>complex numbers</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
-
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong>Integers (<code>int</code>):</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Integers represent whole numbers without any decimal point. They can be positive or negative.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>x = 5
+y = -10
+z = 0
+</code></pre></li>
+<li><p><strong>Floating-Point Numbers (<code>float</code>):</strong></p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<ul>
+<li>Floating-point numbers represent numbers with decimal points or numbers expressed in scientific notation.</li>
+</ul>
+
+<pre class="language-python"><code>a = 3.14
+b = -2.5
+c = 2e3  # 2 times 10 to the power of 3 (2000.0)
+</code></pre></li>
+<li><p><strong>Complex Numbers (<code>complex</code>):</strong></p>
+
+<ul>
+<li>Complex numbers are represented as <code>real + imagj</code>, where <code>real</code> is the real part and <code>imag</code> is the imaginary part.</li>
+</ul>
+
+<pre class="language-python"><code>complex_num = 2 + 3j
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>The <code>j</code> or <code>J</code> suffix denotes the imaginary part.</p></li>
+</ol>
+
+<p>Numeric operations can be performed on these types, and Python provides various built-in functions and modules for working with numbers. Here are some examples of numeric operations:</p>
+
+<pre class="language-python"><code># Basic arithmetic operations
+a = 5
+b = 2
+
+addition = a + b
+subtraction = a - b
+multiplication = a * b
+division = a / b  # Result will be a floating-point number
+
+# Exponentiation
+exponential = a ** b  # a raised to the power of b
+
+# Floor division (returns the largest integer less than or equal to the result)
+floor_division = a // b
+
+# Modulus (returns the remainder of the division)
+remainder = a % b
+
+# Absolute value
+absolute_value = abs(-7)
+
+# Round a floating-point number
+rounded_number = round(3.14159, 2)  # Round to 2 decimal places
+</code></pre>
+
+<p>These examples demonstrate some of the basic numeric operations available in Python. Python's standard library also includes the <code>math</code> module, which provides additional mathematical functions and constants.</p>
 </article>
 </div>
 <footer>

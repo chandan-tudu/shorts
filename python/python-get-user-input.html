@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Get User Input</title>
+<meta name="description" content="In Python, you can get user input using the input() function. This function takes a string as an argument, which is typically a prompt or message displayed to the user">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-get-user-input.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,31 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Get User Input</h1><p>In Python, you can <strong>get user input using the <code>input()</code> function</strong>. The <code>input()</code> function <strong>takes a string as an argument</strong>, which is typically a prompt or message displayed to the user. Here's a simple example:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<pre class="language-python"><code># Get user input
+user_name = input("Enter your name: ")
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+# Display the user input
+print("Hello, " + user_name + "!")
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example, the <code>input()</code> function prompts the user to enter their name. The entered text is then assigned to the variable <code>user_name</code>, and it is displayed in a greeting message.</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<p>It's important to note that the <code>input()</code> function always returns a string. If you need to convert the input to a different type (e.g., integer or float), you can use the appropriate conversion function like <code>int()</code> or <code>float()</code>:</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code># Get user input as an integer
+user_age = int(input("Enter your age: "))
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+# Display the user input
+print("You are " + str(user_age) + " years old.")
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>In this case, <code>int(input(...))</code> is used to convert the user input to an integer. If the user enters something that cannot be converted to an integer, a <code>ValueError</code> will occur, so it's a good practice to handle such cases if necessary.</p>
 </article>
 </div>
 <footer>

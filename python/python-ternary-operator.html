@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Ternary Operator</title>
+<!-- <meta name="description" content=""> -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-ternary-operator.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,47 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Ternary Operator</h1><p>In Python, <strong>the ternary operator</strong>, also known as the conditional expression, <strong>provides a concise way to write an if-else statement in a single line</strong>. The syntax of the ternary operator is as follows:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
-
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+<pre class="language-python"><code>x = true_value if condition else false_value
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this syntax:</p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li><code>condition</code> is the expression to be evaluated, which should return either <code>True</code> or <code>False</code>.</li>
+<li><code>true_value</code> is the value assigned to <code>x</code> if the condition is <code>True</code>.</li>
+<li><code>false_value</code> is the value assigned to <code>x</code> if the condition is <code>False</code>.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<p>Here's an example:</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre class="language-python"><code># Example 1
+age = 25
+result = "Adult" if age &gt;= 18 else "Minor"
+print(result)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>In this example, if <code>age</code> is greater than or equal to 18, the variable <code>result</code> will be assigned the string "Adult"; otherwise, it will be assigned the string "Minor".</p>
+
+<p>You can also use the ternary operator for simple expressions:</p>
+
+<pre class="language-python"><code># Example 2
+x = 10
+y = 20
+max_value = x if x &gt; y else y
+print(max_value)
+</code></pre>
+
+<p>In this example, <code>max_value</code> will be assigned the value of <code>x</code> if <code>x</code> is greater than <code>y</code>, and it will be assigned the value of <code>y</code> otherwise.</p>
+
+<p>The ternary operator is a concise way to express simple conditional assignments, but it's important to use it judiciously to maintain code readability.</p>
+
+<p>Complex conditions or multiple statements are often better suited for a traditional if-else block.</p>
 </article>
 </div>
 <footer>

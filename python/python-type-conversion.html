@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Type Conversion</title>
+<meta name="description" content="In Python, type conversion (or type casting) refers to the process of converting a variable from one data type to another. Here are some common type conversion functions:">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-type-conversion.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python Type Conversion</h1><p>In Python, <strong>type conversion (or type casting) refers to the process of converting a variable from one data type to another</strong>.</p>
+
+<p><strong>Python provides built-in functions for performing type conversion</strong>. Here are some common type conversion functions:</p>
+
+<ol>
+<li><p><strong><code>int(x [,base])</code>:</strong></p>
+
+<ul>
+<li>Converts <code>x</code> to an integer. The optional <code>base</code> parameter specifies the base (default is 10).</li>
+</ul>
+
+<pre class="language-python"><code>float_number = 3.14
+integer_number = int(float_number)
+</code></pre></li>
+<li><p><strong><code>float(x)</code>:</strong></p>
+
+<ul>
+<li>Converts <code>x</code> to a floating-point number.</li>
+</ul>
+
+<pre class="language-python"><code>integer_number = 42
+float_number = float(integer_number)
+</code></pre></li>
+<li><p><strong><code>str(x)</code>:</strong></p>
+
+<ul>
+<li>Converts <code>x</code> to a string.</li>
+</ul>
+
+<pre class="language-python"><code>number = 42
+string_number = str(number)
+</code></pre></li>
+<li><p><strong><code>bool(x)</code>:</strong></p>
+
+<ul>
+<li>Converts <code>x</code> to a Boolean value.</li>
+</ul>
+
+<pre class="language-python"><code>number = 42
+boolean_value = bool(number)
+</code></pre></li>
+<li><p><strong><code>list(x)</code>:</strong></p>
+
+<ul>
+<li>Converts <code>x</code> to a list.</li>
+</ul>
+
+<pre class="language-python"><code>string = "hello"
+list_of_characters = list(string)
+</code></pre></li>
+<li><p><strong><code>tuple(x)</code>:</strong></p>
+
+<ul>
+<li>Converts <code>x</code> to a tuple.</li>
+</ul>
+
+<pre class="language-python"><code>list_of_numbers = [1, 2, 3]
+tuple_of_numbers = tuple(list_of_numbers)
+</code></pre></li>
+<li><p><strong><code>set(x)</code>:</strong></p>
+
+<ul>
+<li>Converts <code>x</code> to a set.</li>
+</ul>
+
+<pre class="language-python"><code>list_of_numbers = [1, 2, 3, 3]
+set_of_numbers = set(list_of_numbers)
+</code></pre></li>
+<li><p><strong><code>dict(x)</code>:</strong></p>
+
+<ul>
+<li>Converts <code>x</code> to a dictionary. For every pair of items in <code>x</code>, the first item becomes the key and the second item becomes the value.</li>
+</ul>
+
+<pre class="language-python"><code>list_of_pairs = [('a', 1), ('b', 2), ('c', 3)]
+dictionary = dict(list_of_pairs)
+</code></pre></li>
+<li><p><strong><code>chr(x)</code>:</strong></p>
+
+<ul>
+<li>Converts an integer <code>x</code> to a character.</li>
+</ul>
+
+<pre class="language-python"><code>ascii_value = 65
+character = chr(ascii_value)
+</code></pre></li>
+<li><p><strong><code>ord(x)</code>:</strong></p>
+
+<ul>
+<li>Converts a character <code>x</code> to its ASCII integer value.</li>
+</ul>
+
+<pre class="language-python"><code>character = 'A'
+ascii_value = ord(character)
+</code></pre></li>
+<li><p><strong><code>hex(x)</code>:</strong></p>
+
+<ul>
+<li>Converts an integer <code>x</code> to a lowercase hexadecimal string.</li>
+</ul>
+
+<pre class="language-python"><code>decimal_number = 255
+hex_string = hex(decimal_number)
+</code></pre></li>
+<li><p><strong><code>bin(x)</code>:</strong></p>
+
+<ul>
+<li>Converts an integer <code>x</code> to a binary string.</li>
+</ul>
+
+<pre class="language-python"><code>decimal_number = 7
+binary_string = bin(decimal_number)
+</code></pre></li>
+<li><p><strong><code>oct(x)</code>:</strong></p>
+
+<ul>
+<li>Converts an integer <code>x</code> to an octal string.</li>
+</ul>
+
+<pre class="language-python"><code>decimal_number = 63
+octal_string = oct(decimal_number)
+</code></pre></li>
+</ol>
+
+<p>These functions enable you to convert values between different data types, which can be useful in various scenarios, such as user input handling, data manipulation, and more.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

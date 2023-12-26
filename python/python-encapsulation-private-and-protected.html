@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Encapsulation (Private And Protected)</title>
+<meta name="description" content="In Python, encapsulation is achieved through the use of private and protected access modifiers and property decorators. Here's an overview:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-encapsulation-private-and-protected.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,82 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Encapsulation (Private And Protected)</h1><p>Encapsulation is one of the fundamental principles of object-oriented programming (OOP). It refers to the bundling of data (attributes) and the methods (functions) that operate on the data within a single unit, known as a class. The purpose of encapsulation is to restrict access to some of an object's components and to prevent the accidental modification of data.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>In Python, <strong>encapsulation is achieved through the use of private and protected access modifiers and property decorators</strong>. Here's an overview:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<h3 id="private-and-protected-attributes-">Private and Protected Attributes:</h3>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong>Private Attributes:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Private attributes are indicated by using a double underscore (<code>__</code>) before the attribute name. These attributes are not directly accessible from outside the class.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>class Car:
+   def __init__(self, make, model):
+       self.__make = make   # Private attribute
+       self.__model = model
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+   def display_info(self):
+       print(f"{self.__make} {self.__model}")
+
+my_car = Car("Toyota", "Camry")
+my_car.display_info()
+# Accessing private attributes directly will result in an AttributeError
+# print(my_car.__make)  # This line will raise an error
+</code></pre></li>
+<li><p><strong>Protected Attributes:</strong></p>
+
+<ul>
+<li>Protected attributes are indicated by using a single underscore (<code>_</code>) before the attribute name. While they can be accessed from outside the class, it is considered a convention to treat them as non-public.</li>
+</ul>
+
+<pre class="language-python"><code>class Person:
+   def __init__(self, name, _age):
+       self.name = name
+       self._age = _age   # Protected attribute
+
+person = Person("Alice", 25)
+print(person.name)     # Accessible
+print(person._age)      # Accessible, but consider it non-public
+</code></pre></li>
+</ol>
+
+<h3 id="property-decorators-">Property Decorators:</h3>
+
+<p>In Python, you can use property decorators to create getter and setter methods for attributes, providing controlled access to them.</p>
+
+<pre class="language-python"><code>class Circle:
+    def __init__(self, radius):
+        self.__radius = radius   # Private attribute
+
+    @property
+    def radius(self):
+        return self.__radius
+
+    @radius.setter
+    def radius(self, value):
+        if value &gt; 0:
+            self.__radius = value
+        else:
+            print("Radius must be greater than 0.")
+
+# Example usage
+circle = Circle(5)
+print(circle.radius)  # Accessing the attribute using the getter method
+circle.radius = 8     # Setting the attribute using the setter method
+print(circle.radius)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>In this example, the <code>radius</code> property has a getter (<code>@property</code>) and a setter (<code>@radius.setter</code>). This allows controlled access to the private attribute <code>__radius</code>.</p>
+
+<p>Encapsulation helps in preventing accidental modifications to an object's internal state and allows the class to change its internal implementation without affecting the code that uses the class. It promotes information hiding and improves the maintainability of code.</p>
 </article>
 </div>
 <footer>

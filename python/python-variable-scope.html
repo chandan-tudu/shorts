@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Variable Scope</title>
+<meta name="description" content="In Python, variable scope refers to the region of the code where a variable can be accessed or modified. There are two main types of variable scope: global scope and local scope.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-variable-scope.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,76 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Variable Scope</h1><p>In Python, <strong>variable scope refers to the region of the code where a variable can be accessed or modified</strong>. Understanding variable scope is important for writing clear and error-free code. In Python, there are <strong>two main types of variable scope</strong>: <strong>global scope</strong> and <strong>local scope</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
-
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong>Global Scope:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Variables defined outside of any function or block have a global scope. They can be accessed from any part of the code, including within functions.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>global_variable = 10
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+def print_global():
+   print(global_variable)
+
+print_global()  # Output: 10
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>In this example, <code>global_variable</code> has global scope and can be accessed both inside and outside the <code>print_global</code> function.</p></li>
+<li><p><strong>Local Scope:</strong></p>
+
+<ul>
+<li>Variables defined inside a function have a local scope. They are only accessible within that function.</li>
+</ul>
+
+<pre class="language-python"><code>def print_local():
+   local_variable = 5
+   print(local_variable)
+
+print_local()  # Output: 5
+
+# Attempting to access local_variable outside the function would result in an error
+</code></pre>
+
+<p>In this example, <code>local_variable</code> is defined within the <code>print_local</code> function and can only be accessed within that function.</p>
+
+<pre class="language-python"><code>def modify_global():
+   global global_variable
+   global_variable = 20
+
+modify_global()
+print(global_variable)  # Output: 20
+</code></pre>
+
+<p>Note: If you want to modify a global variable within a function, you can use the <code>global</code> keyword to indicate that you are working with the global variable.</p></li>
+<li><p><strong>Enclosing Scope (Nonlocal):</strong></p>
+
+<ul>
+<li>In nested functions, a variable defined in the outer (enclosing) function can be accessed in the inner function if the <code>nonlocal</code> keyword is used.</li>
+</ul>
+
+<pre class="language-python"><code>def outer_function():
+   outer_variable = 15
+
+   def inner_function():
+       nonlocal outer_variable
+       print(outer_variable)
+
+   inner_function()
+
+outer_function()  # Output: 15
+</code></pre>
+
+<p>In this example, <code>outer_variable</code> is defined in the outer function and accessed within the inner function using the <code>nonlocal</code> keyword.</p></li>
+</ol>
+
+<p>Understanding variable scope is essential for avoiding naming conflicts and ensuring that variables are used in the appropriate context. It helps in writing modular and maintainable code.</p>
 </article>
 </div>
 <footer>

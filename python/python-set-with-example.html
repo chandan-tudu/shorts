@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Set With Example</title>
+<meta name="description" content="In Python, a set is an unordered collection of unique elements. Sets are defined by enclosing a comma-separated sequence of values in curly braces {}. Here are some examples:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-set-with-example.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,75 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Set With Example</h1><p>In Python, <strong>a set is an unordered collection of unique elements</strong>. Sets are defined by <strong>enclosing a comma-separated sequence of values in curly braces <code>{}</code></strong>. Here are some examples:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<pre class="language-python"><code># Creating a set
+my_set = {1, 2, 3, 4, 5}
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+# Sets can also be created using the set() constructor
+another_set = set([3, 4, 5, 6, 7])
 </code></pre>
 
-<p>In the above examples:</p>
+<p>Key characteristics of sets in Python:</p>
+
+<ol>
+<li><p><strong>Unordered:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Sets do not maintain the order of elements as they are inserted.</li>
+</ul></li>
+<li><p><strong>Unique Elements:</strong></p>
+
+<ul>
+<li>Sets do not allow duplicate elements. If you try to add a duplicate element, it won't be added.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>my_set = {1, 2, 3, 2, 4, 5}
+print(my_set)  # Output: {1, 2, 3, 4, 5}
+</code></pre></li>
+<li><p><strong>Mutable:</strong></p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
+<ul>
+<li>Sets are mutable, meaning you can add and remove elements after the set is created.</li>
+</ul>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<pre class="language-python"><code>my_set.add(6)    # Add an element
+my_set.remove(3) # Remove an element
+</code></pre></li>
+<li><p><strong>Common Set Operations:</strong></p>
+
+<ul>
+<li>Sets support various operations such as union (<code>|</code>), intersection (<code>&amp;</code>), difference (<code>-</code>), and symmetric difference (<code>^</code>).</li>
+</ul>
+
+<pre class="language-python"><code>set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+union_set = set1 | set2            # Union
+intersection_set = set1 &amp; set2     # Intersection
+difference_set = set1 - set2       # Difference
+symmetric_difference_set = set1 ^ set2  # Symmetric Difference
+</code></pre></li>
+<li><p><strong>Set Methods:</strong></p>
+
+<ul>
+<li>Sets have several <a href="./python-set-methods-with-examples.html">built-in methods</a> for common set operations, including <code>add()</code>, <code>remove()</code>, <code>discard()</code>, <code>clear()</code>, <code>copy()</code>, and more.</li>
+</ul>
+
+<pre class="language-python"><code>my_set = {1, 2, 3, 4, 5}
+
+my_set.add(6)          # Add an element
+my_set.remove(3)       # Remove an element
+my_set.discard(2)      # Discard an element (if it exists)
+my_set.clear()         # Remove all elements
+</code></pre></li>
+</ol>
+
+<p>Sets are often used in scenarios where you need to perform mathematical set operations or ensure the uniqueness of elements in a collection. They provide a convenient and efficient way to work with unordered collections of unique elements.</p>
 </article>
 </div>
 <footer>

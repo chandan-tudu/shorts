@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python List Methods</title>
+<meta name="description" content="Python lists come with a variety of built-in methods that you can use to manipulate and work with lists. Here are some common list methods:">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-list-methods.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python List Methods</h1><p>Python <strong>lists come with a variety of built-in methods that you can use to manipulate and work with lists</strong>. Here are some common list methods:</p>
+
+<h3 id="list-methods-for-adding-elements-">List Methods for Adding Elements:</h3>
+
+<ol>
+<li><p><strong><code>append(x)</code></strong>: Adds an element <code>x</code> to the end of the list.</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list)
+</code></pre></li>
+<li><p><strong><code>extend(iterable)</code></strong>: Extends the list by appending elements from the iterable.</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3]
+my_list.extend([4, 5, 6])
+print(my_list)
+</code></pre></li>
+<li><p><strong><code>insert(i, x)</code></strong>: Inserts element <code>x</code> at index <code>i</code> in the list.</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3]
+my_list.insert(1, 4)
+print(my_list)
+</code></pre></li>
+</ol>
+
+<h3 id="list-methods-for-removing-elements-">List Methods for Removing Elements:</h3>
+
+<ol start="4">
+<li><p><strong><code>remove(x)</code></strong>: Removes the first occurrence of element <code>x</code> from the list.</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3, 2, 4]
+my_list.remove(2)
+print(my_list)
+</code></pre></li>
+<li><p><strong><code>pop([i])</code></strong>: Removes and returns the element at index <code>i</code>. If <code>i</code> is not provided, it removes and returns the last element.</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3]
+popped_element = my_list.pop(1)
+print("Popped element:", popped_element)
+print("List after popping index 1:", my_list)
+</code></pre></li>
+</ol>
+
+<h3 id="list-methods-for-searching-and-counting-">List Methods for Searching and Counting:</h3>
+
+<ol start="6">
+<li><p><strong><code>index(x[, start[, end]])</code></strong>: Returns the index of the first occurrence of element <code>x</code> in the list. Raises a <code>ValueError</code> if <code>x</code> is not found.</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3, 2, 4]
+index_of_3 = my_list.index(3)
+print("Index of 3:", index_of_3)
+</code></pre></li>
+<li><p><strong><code>count(x)</code></strong>: Returns the number of occurrences of element <code>x</code> in the list.</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3, 2, 4]
+count_of_2 = my_list.count(2)
+print("Count of 2:", count_of_2)
+</code></pre></li>
+</ol>
+
+<h3 id="list-methods-for-sorting-and-reversing-">List Methods for Sorting and Reversing:</h3>
+
+<ol start="8">
+<li><p><strong><code>sort(key=None, reverse=False)</code></strong>: Sorts the elements of the list in ascending order. The <code>key</code> and <code>reverse</code> parameters allow customization.</p>
+
+<pre class="language-python"><code>my_list = [4, 2, 1, 3]
+my_list.sort()
+print("Sorted list:", my_list)
+</code></pre></li>
+<li><p><strong><code>reverse()</code></strong>: Reverses the elements of the list in-place.</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3, 4]
+my_list.reverse()
+print("Reversed list:", my_list)
+</code></pre></li>
+</ol>
+
+<p>These are just some of the commonly used methods for lists in Python. The official Python documentation provides a comprehensive list of list methods along with detailed explanations: <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">Python List Methods</a>.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

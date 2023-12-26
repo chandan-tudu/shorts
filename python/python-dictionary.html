@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Dictionary</title>
+<meta name="description" content="In Python, a dictionary is a mutable, unordered collection of key-value pairs, where each key must be unique.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-dictionary.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,59 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Dictionary</h1><p>In Python, <strong>a dictionary is a mutable, unordered collection of key-value pairs, where each key must be unique</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>Dictionaries are <strong>defined using curly braces <code>{}</code> and consist of key-value pairs separated by colons</strong>. Here's a basic example:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<pre class="language-python"><code># Creating a dictionary
+my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+# Accessing values using keys
+print("Name:", my_dict['name'])
+print("Age:", my_dict['age'])
+print("City:", my_dict['city'])
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example, <code>my_dict</code> is a dictionary with keys <code>'name'</code>, <code>'age'</code>, and <code>'city'</code>, each associated with a corresponding value.</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<p>You can add, modify, or remove key-value pairs in a dictionary:</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code># Adding a new key-value pair
+my_dict['occupation'] = 'Engineer'
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+# Modifying the value of an existing key
+my_dict['age'] = 31
+
+# Removing a key-value pair
+del my_dict['city']
+
+# Displaying the updated dictionary
+print("Updated Dictionary:", my_dict)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>Dictionaries support <a href="./python-dictionary-methods.html">various operations and methods</a>. Some common operations include checking if a key exists, getting a list of keys or values, and checking the length of the dictionary:</p>
+
+<pre class="language-python"><code># Checking if a key exists
+if 'age' in my_dict:
+    print("Age is present in the dictionary")
+
+# Getting a list of keys and values
+keys = list(my_dict.keys())
+values = list(my_dict.values())
+
+print("Keys:", keys)
+print("Values:", values)
+
+# Checking the length of the dictionary
+length = len(my_dict)
+print("Length of the dictionary:", length)
+</code></pre>
+
+<p>Dictionaries are versatile and widely used in Python for tasks such as storing and retrieving configuration settings, representing JSON-like data structures, and more. They provide a convenient way to associate data with descriptive labels (keys).</p>
 </article>
 </div>
 <footer>

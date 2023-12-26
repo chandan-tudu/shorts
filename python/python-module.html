@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Module</title>
+<meta name="description" content="In Python, a module is a file containing Python code that defines functions, classes, and variables. Here's a basic example of creating and using a simple module:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-module.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,74 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Module</h1><p>In Python, <strong>a module is a file containing Python code that defines functions, classes, and variables</strong>. Modules allow you to <strong>organize your code into separate files, making it easier to manage and reuse</strong>.</p>
+<p>A module <strong>can be as simple as a single Python file or a collection of related files</strong> organized into a package.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>Here's a basic example of creating and using a simple module:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong>Creating a Module:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Create a Python file, for example, <code>my_module.py</code>, and define some functions and variables in it.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code># my_module.py
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+def greet(name):
+   return f"Hello, {name}!"
+
+pi = 3.14159
+</code></pre></li>
+<li><p><strong>Using a Module:</strong></p>
+
+<ul>
+<li>In another Python script or interactive session, you can import and use the functions and variables defined in the module.</li>
+</ul>
+
+<pre class="language-python"><code># main_script.py
+
+import my_module
+
+result = my_module.greet("Alice")
+print(result)  # Output: Hello, Alice!
+
+print(my_module.pi)  # Output: 3.14159
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>Alternatively, you can import specific functions or variables from a module:</p>
+
+<pre class="language-python"><code># main_script.py
+
+from my_module import greet, pi
+
+result = greet("Bob")
+print(result)  # Output: Hello, Bob!
+
+print(pi)  # Output: 3.14159
+</code></pre></li>
+</ol>
+
+<p>Modules can also include classes, which can be imported and used similarly. Additionally, modules can be organized into packages, which are directories containing multiple module files and a special <code>__init__.py</code> file.</p>
+
+<p>For example:</p>
+
+<pre><code>my_package/
+|-- __init__.py
+|-- module1.py
+|-- module2.py
+</code></pre>
+
+<p>To import a module from a package, you can use:</p>
+
+<pre class="language-python"><code>from my_package import module1
+</code></pre>
+
+<p>Python has a rich standard library with many built-in modules that provide a wide range of functionality, such as <code>math</code>, <code>os</code>, <code>datetime</code>, and more. Additionally, you can create your own modules to encapsulate and share your code across multiple projects.</p>
 </article>
 </div>
 <footer>

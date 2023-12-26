@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python break And continue Statements</title>
+<meta name="description" content="In Python, the break and continue statements are used to control the flow of loops.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-break-and-continue-statements.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,71 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python break And continue Statements</h1><p>In Python, <strong>the <code>break</code> and <code>continue</code> statements are used to control the flow of loops</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
-
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong><code>break</code> Statement:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>The <code>break</code> statement is used to exit a loop prematurely. It is typically used within a loop's body to terminate the loop based on a certain condition.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code># Example using break in a while loop
+count = 1
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+while True:
+   print(count)
+   count += 1
+   if count &gt; 5:
+       break
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>In this example, the <code>break</code> statement is used to exit the <code>while</code> loop when the <code>count</code> exceeds 5.</p></li>
+<li><p><strong><code>continue</code> Statement:</strong></p>
+
+<ul>
+<li>The <code>continue</code> statement is used to skip the rest of the code inside a loop for the current iteration and move to the next iteration.</li>
+</ul>
+
+<pre class="language-python"><code># Example using continue in a for loop
+for i in range(1, 6):
+   if i == 3:
+       continue
+   print(i)
+</code></pre>
+
+<p>In this example, the <code>continue</code> statement skips the print statement when <code>i</code> is equal to 3, and the loop proceeds to the next iteration.</p></li>
+</ol>
+
+<p>Here's a combined example using both <code>break</code> and <code>continue</code>:</p>
+
+<pre class="language-python"><code># Example using break and continue in a while loop
+count = 1
+
+while count &lt;= 5:
+    if count == 3:
+        count += 1
+        continue
+    print(count)
+    count += 1
+    if count &gt; 4:
+        break
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>1
+2
+4
+</code></pre>
+
+<p>In this example, the <code>continue</code> statement skips the print statement when <code>count</code> is equal to 3, and the <code>break</code> statement exits the loop when <code>count</code> exceeds 4.</p>
+
+<p>These statements provide flexibility in controlling the flow of execution within loops based on certain conditions.</p>
 </article>
 </div>
 <footer>

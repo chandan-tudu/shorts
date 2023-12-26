@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Common Built-in Exceptions</title>
+<meta name="description" content="In Python, exceptions are raised when an error or unexpected situation occurs during the execution of a program. Here are some common built-in exceptions in Python:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-common-built-in-exceptions.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,101 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Common Built-in Exceptions</h1><p>In Python, exceptions are raised when an error or unexpected situation occurs during the execution of a program. <strong>Each type of exception is represented by a specific class, and these classes are organized in a hierarchy</strong>. Here are <strong>some common built-in exceptions in Python</strong>:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
-
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong><code>SyntaxError</code>:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Raised when there is a syntax error in the code.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>print("Hello, World"  # Missing closing parenthesis
+</code></pre></li>
+<li><p><strong><code>IndentationError</code>:</strong></p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
+<ul>
+<li>Raised when there is an indentation error in the code.</li>
+</ul>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<pre class="language-python"><code>def example():
+print("Indented incorrectly")
+</code></pre></li>
+<li><p><strong><code>NameError</code>:</strong></p>
+
+<ul>
+<li>Raised when a local or global name is not found.</li>
+</ul>
+
+<pre class="language-python"><code>print(undefined_variable)
+</code></pre></li>
+<li><p><strong><code>TypeError</code>:</strong></p>
+
+<ul>
+<li>Raised when an operation or function is applied to an object of an inappropriate type.</li>
+</ul>
+
+<pre class="language-python"><code>result = "10" + 5
+</code></pre></li>
+<li><p><strong><code>ZeroDivisionError</code>:</strong></p>
+
+<ul>
+<li>Raised when division or modulo by zero occurs.</li>
+</ul>
+
+<pre class="language-python"><code>result = 10 / 0
+</code></pre></li>
+<li><p><strong><code>ValueError</code>:</strong></p>
+
+<ul>
+<li>Raised when a built-in operation or function receives an argument of the correct type but an inappropriate value.</li>
+</ul>
+
+<pre class="language-python"><code>number = int("abc")
+</code></pre></li>
+<li><p><strong><code>IndexError</code>:</strong></p>
+
+<ul>
+<li>Raised when a sequence subscript is out of range.</li>
+</ul>
+
+<pre class="language-python"><code>my_list = [1, 2, 3]
+element = my_list[5]
+</code></pre></li>
+<li><p><strong><code>FileNotFoundError</code>:</strong></p>
+
+<ul>
+<li>Raised when an attempt is made to open a file or directory that cannot be found.</li>
+</ul>
+
+<pre class="language-python"><code>with open("nonexistent_file.txt", "r") as file:
+   content = file.read()
+</code></pre></li>
+<li><p><strong><code>KeyError</code>:</strong></p>
+
+<ul>
+<li>Raised when a dictionary key is not found.</li>
+</ul>
+
+<pre class="language-python"><code>my_dict = {"name": "John"}
+value = my_dict["age"]
+</code></pre></li>
+<li><p><strong><code>AttributeError</code>:</strong></p>
+
+<ul>
+<li>Raised when an attribute reference or assignment fails.</li>
+</ul>
+
+<pre class="language-python"><code>value = "Hello, World"
+length = value.length  # AttributeError: 'str' object has no attribute 'length'
+</code></pre></li>
+</ol>
+
+<p>These are just a few examples of built-in exceptions in Python. Understanding the types of exceptions and their meanings helps in debugging and handling errors more effectively in your Python programs. You can catch and handle exceptions using <code>try</code>, <code>except</code>, <code>else</code>, and <code>finally</code> blocks.</p>
 </article>
 </div>
 <footer>

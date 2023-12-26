@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Strings Methods With Examples</title>
+<meta name="description" content="In Python, strings are objects, and there are numerous built-in methods that you can use to perform various operations on strings. Here are some common string methods:">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-strings-methods.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python Strings Methods</h1><p>In Python, strings are objects, and <strong>there are numerous built-in methods that you can use to perform various operations on strings</strong>. Here are some common string methods:</p>
+
+<ol>
+<li><p><strong><code>len()</code> method:</strong></p>
+
+<ul>
+<li>Returns the length of the string (number of characters).</li>
+</ul>
+
+<pre class="language-python"><code>my_string = "Hello, World!"
+length = len(my_string)
+print(length)  # Output: 13
+</code></pre></li>
+<li><p><strong><code>lower()</code> and <code>upper()</code> methods:</strong></p>
+
+<ul>
+<li>Converts all characters in a string to lowercase or uppercase, respectively.</li>
+</ul>
+
+<pre class="language-python"><code>my_string = "Python Programming"
+lower_case = my_string.lower()
+upper_case = my_string.upper()
+print(lower_case)  # Output: "python programming"
+print(upper_case)  # Output: "PYTHON PROGRAMMING"
+</code></pre></li>
+<li><p><strong><code>strip()</code>, <code>lstrip()</code>, and <code>rstrip()</code> methods:</strong></p>
+
+<ul>
+<li><code>strip()</code> Removes leading and trailing whitespaces from a string. <code>lstrip()</code> removes leading (left) whitespaces, and <code>rstrip()</code> removes trailing (right) whitespaces.</li>
+</ul>
+
+<pre class="language-python"><code>my_string = "   Python Programming   "
+stripped_string = my_string.strip()
+print(stripped_string)  # Output: "Python Programming"
+</code></pre></li>
+<li><p><strong><code>replace(old, new)</code> method:</strong></p>
+
+<ul>
+<li>Replaces occurrences of the specified old substring with the new substring.</li>
+</ul>
+
+<pre class="language-python"><code>my_string = "Hello, World!"
+new_string = my_string.replace("Hello", "Hi")
+print(new_string)  # Output: "Hi, World!"
+</code></pre></li>
+<li><p><strong><code>find(substring)</code> and <code>index(substring)</code> methods:</strong></p>
+
+<ul>
+<li>Both methods return the index of the first occurrence of the specified substring. The main difference is that <code>find()</code> returns -1 if the substring is not found, while <code>index()</code> raises a <code>ValueError</code>.</li>
+</ul>
+
+<pre class="language-python"><code>my_string = "Python Programming"
+index1 = my_string.find("Pro")
+index2 = my_string.index("Pro")
+print(index1)  # Output: 7
+print(index2)  # Output: 7
+</code></pre></li>
+<li><p><strong><code>count(substring)</code> method:</strong></p>
+
+<ul>
+<li>Returns the number of occurrences of the specified substring in the string.</li>
+</ul>
+
+<pre class="language-python"><code>my_string = "programming is fun, and programming is creative."
+count = my_string.count("programming")
+print(count)  # Output: 2
+</code></pre></li>
+<li><p><strong><code>startswith(prefix)</code> and <code>endswith(suffix)</code> methods:</strong></p>
+
+<ul>
+<li>Checks if the string starts or ends with the specified prefix or suffix, respectively.</li>
+</ul>
+
+<pre class="language-python"><code>my_string = "Python Programming"
+starts_with_python = my_string.startswith("Python")
+ends_with_ing = my_string.endswith("ing")
+print(starts_with_python)  # Output: True
+print(ends_with_ing)        # Output: True
+</code></pre></li>
+</ol>
+
+<p>These are just a few examples of the many string methods available in Python. Understanding and utilizing these methods will make it easier to manipulate and process strings in your Python programs.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>PHP Cheat Sheet</title>
+<meta name="description" content="Here's a concise PHP cheat sheet covering some of the commonly used syntax and functions:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-cheat-sheet.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,156 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PHP</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>PHP Cheat Sheet</h1><p>Here's a concise <strong>PHP cheat sheet covering some of the commonly used syntax and functions</strong>:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
+<h3 id="basic-syntax-">Basic Syntax:</h3>
+
+<pre class="language-php"><code>&lt;?php
+// Comments
+// Single-line comment
+/*
+   Multi-line comment
+*/
+
+// Variables
+$variable = "value";
+
+// Data Types
+$string = "Hello";
+$integer = 123;
+$float = 3.14;
+$boolean = true;
+$array = array(1, 2, 3);
+$associativeArray = array("key" =&gt; "value");
+
+// Constants
+define("PI", 3.14);
+
+// Operators
+$result = $a + $b;
+$result = $a - $b;
+$result = $a * $b;
+$result = $a / $b;
+$result = $a % $b;
+$result = $a == $b;
+$result = $a === $b;
+$result = $a != $b;
+$result = $a !== $b;
+
+// Control Structures
+if (condition) {
+    // code to execute if the condition is true
+} elseif (anotherCondition) {
+    // code to execute if anotherCondition is true
+} else {
+    // code to execute if none of the conditions are true
 }
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
+switch ($variable) {
+    case 'value1':
+        // code for value1
+        break;
+    case 'value2':
+        // code for value2
+        break;
+    default:
+        // code for default case
+        break;
 }
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
+// Loops
+for ($i = 0; $i &lt; 5; $i++) {
+    // code to repeat
 }
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
+while (condition) {
+    // code to repeat while the condition is true
 }
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
+do {
+    // code to repeat at least once, then check the condition
+} while (condition);
+
+foreach ($array as $value) {
+    // code to execute for each element in the array
 }
 
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
+// Functions
+function functionName($parameter1, $parameter2) {
+    // code to execute
+    return $result;
 }
+
+// Include and Require
+include "filename.php";
+require "filename.php";
+?&gt;
 </code></pre>
 
-<p>In the above examples:</p>
+<h3 id="strings-">Strings:</h3>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<pre class="language-php"><code>// Concatenation
+$fullName = $firstName . " " . $lastName;
 
-<p>You can apply these styles to HTML elements like this:</p>
+// String Length
+$length = strlen($str);
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+// Substring
+$substring = substr($str, $start, $length);
+
+// String Replace
+$newStr = str_replace("old", "new", $str);
+
+// String to Lower/Upper Case
+$lowercase = strtolower($str);
+$uppercase = strtoupper($str);
+
+// Trim Whitespace
+$trimmedStr = trim($str);
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<h3 id="arrays-">Arrays:</h3>
+
+<pre class="language-php"><code>// Indexed Array
+$colors = array("red", "green", "blue");
+
+// Associative Array
+$person = array("name" =&gt; "John", "age" =&gt; 30);
+
+// Multidimensional Array
+$matrix = array(
+    array(1, 2, 3),
+    array(4, 5, 6)
+);
+
+// Accessing Array Elements
+$firstColor = $colors[0];
+$personName = $person["name"];
+$value = $matrix[1][2];
+
+// Array Functions
+$length = count($array);
+$sortedArray = sort($array);
+$reversedArray = array_reverse($array);
+</code></pre>
+
+<h3 id="dates-and-times-">Dates and Times:</h3>
+
+<pre class="language-php"><code>// Current Date and Time
+$currentDateTime = date("Y-m-d H:i:s");
+
+// Custom Date and Time Formatting
+$formattedDate = date("F j, Y", strtotime("2023-12-25"));
+
+// Timezone Setting
+date_default_timezone_set("UTC");
+</code></pre>
+
+<p>This cheat sheet covers a range of basic PHP concepts. Remember that PHP is a powerful and versatile language with many features, and this cheat sheet is just a starting point. For more in-depth information, refer to the official PHP documentation at <a href="https://www.php.net/docs.php">php.net</a>.</p>
 </article>
 </div>
 <footer>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>PHP Get Only Numbers From String</title>
+<meta name="description" content="In PHP, you can extract only the numbers from a string using regular expressions and the preg_replace() function.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-get-only-numbers-from-string.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,61 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PHP</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>PHP Get Only Numbers From String</h1><p>In PHP, you can <strong>extract only the numbers from a string using regular expressions and the <code>preg_replace()</code> function</strong>. Here's an example:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<pre class="language-php"><code>&lt;?php
+$string = "The price is $25.99 for 3 items.";
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+// Use regular expression to extract only numbers
+$numbersOnly = preg_replace('/[^0-9]/', '', $string);
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+// Display the result
+echo "Numbers only: $numbersOnly";
+?&gt;
 </code></pre>
 
-<p>In the above examples:</p>
+<p>Output:</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
-
-<p>You can apply these styles to HTML elements like this:</p>
-
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre><code>Numbers only: 25993
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>In this example, the <strong>regular expression <code>/[^0-9]/</code></strong> is used with <code>preg_replace()</code> to remove any characters that are not numbers (0-9) from the original string. The resulting string contains only the numbers.</p>
+
+<p>If you also want to extract decimal numbers, you can modify the regular expression to <code>/[^0-9.]/</code>:</p>
+
+<pre class="language-php"><code>$numbersOnly = preg_replace('/[^0-9.]/', '', $string);
+</code></pre>
+
+<p>This will allow the inclusion of the decimal point (<code>.</code>) in the extracted numbers.</p>
+
+<p>Note that if the string contains multiple numbers, the extracted result will be a concatenated string of all the numbers.</p>
+
+<p>If you need to work with individual numbers, you may consider using the <code>preg_match_all()</code> function to capture all occurrences into an array:</p>
+
+<pre class="language-php"><code>$string = "The price is $25.99 for 3 items. Total: $50.50";
+
+// Use regular expression to extract all numbers
+preg_match_all('/[0-9]+(?:\.[0-9]+)?/', $string, $matches);
+
+// Display the result
+print_r($matches[0]);
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>Array
+(
+    [0] =&gt; 25.99
+    [1] =&gt; 3
+    [2] =&gt; 50.50
+)
+</code></pre>
+
+<p>In this example, <code>$matches[0]</code> is an array containing all the extracted numbers.</p>
 </article>
 </div>
 <footer>

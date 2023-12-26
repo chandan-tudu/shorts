@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Class Inheritance (OOP)</title>
+<meta name="description" content="Inheritance promotes code reuse and the creation of a hierarchy of classes. Here's an overview of how inheritance works in Python:">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-class-inheritance-oop.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python Class Inheritance (OOP)</h1><p>Inheritance is a fundamental concept in object-oriented programming (OOP) that <strong>allows a new class to inherit attributes and methods from an existing class</strong>. The <strong>existing class is called the base class or parent class</strong>, and the <strong>new class is called the derived class or child class</strong>. Inheritance promotes code reuse and the creation of a hierarchy of classes. Here's an overview of how inheritance works in Python:</p>
+
+<h3 id="syntax-of-inheritance">Syntax of Inheritance:</h3>
+
+<pre class="language-python"><code>class BaseClass:
+    # Attributes and methods of the base class
+
+class DerivedClass(BaseClass):
+    # Additional attributes and methods specific to the derived class
+</code></pre>
+
+<h3 id="example-of-inheritance">Example of Inheritance:</h3>
+
+<pre class="language-python"><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def make_sound(self):
+        return "Meow!"
+
+# Example usage
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+print(dog.name)         # Output: Buddy
+print(dog.make_sound())  # Output: Woof!
+
+print(cat.name)         # Output: Whiskers
+print(cat.make_sound())  # Output: Meow!
+</code></pre>
+
+<p>In this example:</p>
+
+<ul>
+<li><p><code>Animal</code> is the base class with a common attribute (<code>name</code>) and a method (<code>make_sound</code>) that is meant to be overridden by the derived classes.</p></li>
+<li><p><code>Dog</code> and <code>Cat</code> are derived classes that inherit from the <code>Animal</code> class. They provide their own implementation of the <code>make_sound</code> method.</p></li>
+</ul>
+
+<h3 id="method-overriding">Method Overriding:</h3>
+
+<ul>
+<li><a href="./python-method-overriding-oop.html">Method overriding</a> allows a derived class to provide a specific implementation for a method that is already defined in the base class. In the example above, both <code>Dog</code> and <code>Cat</code> override the <code>make_sound</code> method.</li>
+</ul>
+
+<h3 id="access-to-base-class-methods">Access to Base Class Methods:</h3>
+
+<ul>
+<li>The derived class can access the methods and attributes of the base class using the <code>super()</code> function.</li>
+</ul>
+
+<pre class="language-python"><code>class Shape:
+    def __init__(self, color):
+        self.color = color
+
+    def display_color(self):
+        print(f"Color: {self.color}")
+
+class Square(Shape):
+    def __init__(self, color, side_length):
+        super().__init__(color)
+        self.side_length = side_length
+
+    def display_info(self):
+        self.display_color()
+        print(f"Side Length: {self.side_length}")
+
+# Example usage
+square = Square("Red", 5)
+square.display_info()
+</code></pre>
+
+<p>In this example, the <code>Square</code> class calls the <code>__init__</code> method of the base class <code>Shape</code> using <code>super().__init__(color)</code> to initialize the <code>color</code> attribute.</p>
+
+<h3 id="multiple-inheritance">Multiple Inheritance:</h3>
+
+<ul>
+<li>Python supports multiple inheritance, allowing a class to inherit from multiple base classes.</li>
+</ul>
+
+<pre class="language-python"><code>class A:
+    def method_a(self):
+        print("Method A")
+
+class B:
+    def method_b(self):
+        print("Method B")
+
+class C(A, B):
+    def method_c(self):
+        print("Method C")
+
+# Example usage
+obj_c = C()
+obj_c.method_a()  # Output: Method A
+obj_c.method_b()  # Output: Method B
+obj_c.method_c()  # Output: Method C
+</code></pre>
+
+<p>In this example, class <code>C</code> inherits from both classes <code>A</code> and <code>B</code>.</p>
+
+<p>In summary, inheritance is a powerful concept in Python's object-oriented programming that allows for the creation of a hierarchy of classes, code reuse, and the organization of code in a modular and maintainable way.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

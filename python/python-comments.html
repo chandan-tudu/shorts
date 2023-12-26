@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Comments</title>
+<meta name="description" content="In Python, comments are used to add explanations or notes within the code that are not executed by the Python interpreter.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-comments.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,68 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Comments</h1><p>In Python, <strong>comments are used to add explanations or notes within the code</strong> that are <strong>not executed by the Python interpreter</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>Comments are <strong>essential for documenting code and making it more understandable to others</strong> (or to yourself in the future). There are two types of comments in Python:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<h3 id="single-line-comments-">Single-Line Comments:</h3>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+<p>Single-line comments begin with the <code>#</code> symbol and extend to the end of the line. They are typically used for short comments on a single line.</p>
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+<pre class="language-python"><code># This is a single-line comment
+print("Hello, World!")  # This is another comment on the same line
 </code></pre>
 
-<p>In the above examples:</p>
+<h3 id="multi-line-block-comments-">Multi-Line (Block) Comments:</h3>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<p>Multi-line comments are created using triple-quoted strings (<code>'''</code> or <code>"""</code>). Although not technically comments, they are often used for long explanations or comments that span multiple lines.</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>'''
+This is a multi-line comment.
+It spans multiple lines.
+'''
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+"""
+This is another way to create a multi-line comment.
+"""
+
+print("Hello, World!")
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>It's worth noting that Python does not have a specific syntax for traditional block comments (/_ ... _/ as in some other languages). Instead, developers commonly use multi-line strings for this purpose.</p>
+
+<h3 id="commenting-best-practices-">Commenting Best Practices:</h3>
+
+<ol>
+<li><p><strong>Be Clear and Concise:</strong> Write comments that add value by explaining why something is done, not just what is done.</p></li>
+<li><p><strong>Avoid Overcommenting:</strong> Code should be self-explanatory whenever possible. Comments should complement the code, not duplicate it.</p></li>
+<li><p><strong>Keep Comments Updated:</strong> If code changes, make sure to update any relevant comments to reflect the current state of the code.</p></li>
+<li><p><strong>Follow PEP 8 Guidelines:</strong> PEP 8 is the style guide for Python code. It provides conventions for writing readable code, including guidelines for commenting.</p></li>
+</ol>
+
+<p>Here's an example that incorporates these best practices:</p>
+
+<pre class="language-python"><code># Calculate the area of a rectangle
+def calculate_rectangle_area(length, width):
+    """
+    This function calculates the area of a rectangle.
+
+    Parameters:
+    - length (float): The length of the rectangle.
+    - width (float): The width of the rectangle.
+
+    Returns:
+    float: The calculated area of the rectangle.
+    """
+    area = length * width
+    return area
+</code></pre>
+
+<p>By following these best practices, you can create code that is not only functional but also understandable and maintainable.</p>
 </article>
 </div>
 <footer>

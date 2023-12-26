@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Function</title>
+<meta name="description" content="In Python, a function is a block of reusable code that performs a specific task. Functions provide a way to structure code, promote reusability, and make the code more modular.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-function.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python Function</h1><p>In Python, <strong>a function is a block of reusable code that performs a specific task</strong>. Functions <strong>provide a way to structure code, promote reusability, and make the code more modular</strong>. Here's a basic overview of defining and using functions in Python:</p>
+
+<h3 id="1-defining-a-function">1. Defining a Function:</h3>
+
+<p>You can define a function using the <strong><code>def</code> keyword</strong>, followed by the function name, a pair of parentheses (which may include parameters), and a colon. The function body is indented.</p>
+
+<pre class="language-python"><code>def greet(name):
+    # This function greets the person passed in as a parameter.
+    print("Hello, " + name + "!")
+</code></pre>
+
+<h3 id="2-calling-a-function">2. Calling a Function:</h3>
+
+<p>To execute a function, you simply call it by using its name followed by parentheses. If the function requires input, you provide the arguments inside the parentheses.</p>
+
+<pre class="language-python"><code>greet("Alice")
+</code></pre>
+
+<h3 id="3-function-parameters">3. Function Parameters:</h3>
+
+<p>Functions can take parameters, which are variables that allow the function to receive inputs.</p>
+
+<pre class="language-python"><code>def add_numbers(a, b):
+    # This function adds two numbers.
+    result = a + b
+    return result
+</code></pre>
+
+<h3 id="4-function-return">4. Function Return:</h3>
+
+<p>Functions can return values using the <code>return</code> statement. The calling code can use the returned value.</p>
+
+<pre class="language-python"><code>sum_result = add_numbers(3, 4)
+print("Sum:", sum_result)
+</code></pre>
+
+<h3 id="6-default-parameters">6. Default Parameters:</h3>
+
+<p>You can provide default values for parameters. If a value is not passed, the default value is used.</p>
+
+<pre class="language-python"><code>def power(base, exponent=2):
+    # This function calculates the power of a number.
+    result = base ** exponent
+    return result
+</code></pre>
+
+<h3 id="7-keyword-arguments">7. Keyword Arguments:</h3>
+
+<p>You can use keyword arguments to pass values to a function based on the parameter names.</p>
+
+<pre class="language-python"><code>result = power(base=3, exponent=4)
+</code></pre>
+
+<h3 id="8-variable-length-argument-lists">8 Variable-Length Argument Lists:</h3>
+
+<p>A function can accept a variable number of arguments using <code>*args</code> and <code>**kwargs</code>.</p>
+
+<pre class="language-python"><code>def print_args(*args, **kwargs):
+    # This function prints all positional and keyword arguments.
+    print("Positional arguments:", args)
+    print("Keyword arguments:", kwargs)
+</code></pre>
+
+<h3 id="9-lambda-functions-anonymous-functions">9. Lambda Functions (Anonymous Functions):</h3>
+
+<p>Lambda functions are small, anonymous functions defined using the <code>lambda</code> keyword.</p>
+
+<pre class="language-python"><code>square = lambda x: x**2
+print(square(5))
+</code></pre>
+
+<h3 id="10-docstrings">10. Docstrings:</h3>
+
+<p>It's good practice to include <a href="./python-comments.html">docstrings (triple-quoted strings)</a> to document the purpose and usage of your functions.</p>
+
+<pre class="language-python"><code>def multiply(a, b):
+    """This function multiplies two numbers."""
+    result = a * b
+    return result
+</code></pre>
+
+<p>These are the basics of defining and using functions in Python. Functions play a crucial role in organizing and structuring code, improving code readability, and facilitating code reuse.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

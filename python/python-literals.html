@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Literals</title>
+<meta name="description" content="In Python, literals are the actual constant values that are used directly in the code. They represent fixed values that do not change.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-literals.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,93 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Literals</h1><p>In Python, <strong>literals are the actual constant values that are used directly in the code</strong>. They <strong>represent fixed values that do not change</strong>. Here are common types of literals in Python:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
-
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong>Numeric Literals:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<li><p><strong>Integer Literals:</strong> Whole numbers without a decimal point.</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>integer_literal = 42
+</code></pre></li>
+<li><p><strong>Float Literals:</strong> Numbers with a decimal point or in exponential form.</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
+<pre class="language-python"><code>float_literal = 3.14
+</code></pre></li>
+<li><p><strong>Complex Literals:</strong> Numbers with both a real and imaginary part.</p>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<pre class="language-python"><code>complex_literal = 2 + 3j
+</code></pre></li>
+</ul></li>
+<li><p><strong>String Literals:</strong></p>
+
+<ul>
+<li>Enclosed in single (<code>'</code>) or double (<code>"</code>) quotes.</li>
+<li>Multi-line strings can be enclosed in triple quotes (<code>'''</code> or <code>"""</code>).
+<pre class="language-python"><code>
+string_literal = 'Hello, Python!'
+multi_line_string = """This is
+                      a multi-line
+                      string."""</code></pre></li>
+</ul></li>
+<li><p><strong>Boolean Literals:</strong></p>
+
+<ul>
+<li>Represent the truth values <code>True</code> or <code>False</code>.
+<pre class="language-python"><code>
+boolean_literal = True</code></pre></li>
+</ul></li>
+<li><p><strong>None Literal:</strong></p>
+
+<ul>
+<li>Represents the absence of a value.
+<pre class="language-python"><code>
+none_literal = None</code></pre></li>
+</ul></li>
+<li><p><strong>List Literals:</strong></p>
+
+<ul>
+<li>Enclosed in square brackets (<code>[]</code>).
+<pre class="language-python"><code>
+list_literal = [1, 2, 3, 'apple']</code></pre></li>
+</ul></li>
+<li><p><strong>Tuple Literals:</strong></p>
+
+<ul>
+<li>Enclosed in parentheses (<code>()</code>).
+<pre class="language-python"><code>
+tuple_literal = (1, 2, 'banana')</code></pre></li>
+</ul></li>
+<li><p><strong>Set Literals:</strong></p>
+
+<ul>
+<li>Enclosed in curly braces (<code>{}</code>).
+<pre class="language-python"><code>
+set_literal = {1, 2, 3, 4}</code></pre></li>
+</ul></li>
+<li><p><strong>Dictionary Literals:</strong></p>
+
+<ul>
+<li>Enclosed in curly braces (<code>{}</code>), consisting of key-value pairs.
+<pre class="language-python"><code>
+dict_literal = {'name': 'John', 'age': 30}</code></pre></li>
+</ul></li>
+<li><p><strong>Bytes and Bytearray Literals:</strong></p>
+
+<ul>
+<li>Represent sequences of bytes.
+<pre class="language-python"><code>
+bytes_literal = b'hello'
+bytearray_literal = bytearray(b'world')</code></pre></li>
+</ul></li>
+</ol>
+
+<p>These literals are used to represent fixed values in your code. Understanding and using literals correctly is essential for writing Python programs.</p>
 </article>
 </div>
 <footer>

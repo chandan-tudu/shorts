@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>PHP Array Find With array_search()</title>
+<meta name="description" content="In PHP, you can use the array_search() function to find the key associated with a particular value in an array.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-find-with-array-search.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,59 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PHP</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>PHP Array Find With array_search()</h1><p>In PHP, you can <strong>use the <code>array_search()</code> function to find the key associated with a particular value in an array</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>If you want to find the value itself, you can simply access it using the key obtained from <code>array_search()</code>.</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<p>Here's an example:</p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+<pre class="language-php"><code>&lt;?php
+$fruits = array("apple", "banana", "orange", "grape");
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+// Find the key of "orange" in the array
+$key = array_search("orange", $fruits);
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
+if ($key !== false) {
+    echo "Key of 'orange': $key&lt;br&gt;";
 
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
+    // Access the value using the key
+    $value = $fruits[$key];
+    echo "Value at key $key: $value";
+} else {
+    echo "'orange' not found in the array";
 }
+?&gt;
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example, <code>array_search("orange", $fruits)</code> returns the key associated with the value "orange" in the <code>$fruits</code> array. If the value is found, it returns the corresponding key; otherwise, it returns <code>false</code>.</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<p>Keep in mind that <code>array_search()</code> performs a loose comparison, so if you need to perform a strict comparison, you may want to use a loop or other methods, depending on your specific requirements.</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<p>If you're working with PHP 7 or later and want to find a value and its associated key using a callback function, you can use the <code>array_filter()</code> function with a custom callback:</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre class="language-php"><code>&lt;?php
+$fruits = array("apple", "banana", "orange", "grape");
+
+// Find the value and key using a callback
+$result = array_filter($fruits, function ($value) {
+    return $value === "orange";
+});
+
+if (!empty($result)) {
+    $key = key($result);
+    echo "Key of 'orange': $key&lt;br&gt;";
+    echo "Value at key $key: $result[$key]";
+} else {
+    echo "'orange' not found in the array";
+}
+?&gt;
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>This example uses <code>array_filter()</code> with a callback to find the value "orange" in the <code>$fruits</code> array and obtain both the key and the value.</p>
 </article>
 </div>
 <footer>

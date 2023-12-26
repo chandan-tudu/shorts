@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Strings With Examples</title>
+<meta name="description" content="In Python, a string is a sequence of characters, and it is one of the fundamental data types. Here are some examples:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-strings-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,96 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Strings With Examples</h1><p>In Python, <strong>a string is a sequence of characters, and it is one of the fundamental data types</strong>. Strings can be <strong>created using single quotes (<code>'</code>), double quotes (<code>"</code>), or triple quotes (<code>'''</code> or <code>"""</code>)</strong>. Here are some examples:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
-
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+<pre class="language-python"><code>single_quoted_string = 'Hello, World!'
+double_quoted_string = "Python Programming"
+triple_quoted_string = '''This is a
+multi-line string.'''
 </code></pre>
 
-<p>In the above examples:</p>
+<p>Key characteristics of strings in Python:</p>
+
+<ol>
+<li><p><strong>Immutable:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Strings in Python are immutable, meaning that once a string is created, its contents cannot be changed. However, you can create a new string with modifications.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>my_string = "Hello"
+# This will raise an error: my_string[0] = "J"
+</code></pre></li>
+<li><p><strong>Indexing and Slicing:</strong></p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
+<ul>
+<li>You can access individual characters in a string using indexing, and you can extract sub-strings using slicing.</li>
+</ul>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<pre class="language-python"><code>my_string = "Python"
+
+print(my_string[0])      # Output: "P"
+print(my_string[2:5])    # Output: "tho"
+</code></pre></li>
+<li><p><strong>Concatenation:</strong></p>
+
+<ul>
+<li>Strings can be concatenated using the <code>+</code> operator.</li>
+</ul>
+
+<pre class="language-python"><code>string1 = "Hello"
+string2 = "World"
+result = string1 + " " + string2
+print(result)  # Output: "Hello World"
+</code></pre></li>
+<li><p><strong>String Methods:</strong></p>
+
+<ul>
+<li>Python provides a variety of built-in string methods for common string operations, such as <code>len()</code>, <code>upper()</code>, <code>lower()</code>, <code>strip()</code>, <code>replace()</code>, <code>find()</code>, <code>count()</code>, and many more.</li>
+</ul>
+
+<pre class="language-python"><code>my_string = "   Python Programming   "
+
+print(len(my_string))         # Output: 24
+print(my_string.strip())      # Output: "Python Programming"
+print(my_string.lower())      # Output: "   python programming   "
+</code></pre></li>
+<li><p><strong>String Formatting:</strong></p>
+
+<ul>
+<li>You can format strings using the <code>%</code> operator or using the <code>format()</code> method. In Python 3.6 and later, f-strings provide a concise and convenient way to format strings.</li>
+</ul>
+
+<pre class="language-python"><code>name = "Alice"
+age = 25
+
+formatted_string = "My name is %s and I am %d years old." % (name, age)
+print(formatted_string)
+
+# Using format() method
+formatted_string = "My name is {} and I am {} years old.".format(name, age)
+print(formatted_string)
+
+# Using f-string (Python 3.6 and later)
+formatted_string = f"My name is {name} and I am {age} years old."
+print(formatted_string)
+</code></pre></li>
+<li><p><strong>Escape Characters:</strong></p>
+
+<ul>
+<li>Escape characters, such as <code>\n</code> for a newline and <code>\t</code> for a tab, can be used to represent special characters within a string.</li>
+</ul>
+
+<pre class="language-python"><code>multiline_string = "This is a line.\nThis is a new line."
+print(multiline_string)
+</code></pre></li>
+</ol>
+
+<p>Strings play a crucial role in Python programming, and understanding their properties and methods is essential for working with text and characters.</p>
 </article>
 </div>
 <footer>

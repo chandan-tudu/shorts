@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Generators With Examples</title>
+<meta name="description" content="Generators in Python are a concise and memory-efficient way to create iterators. They are defined using a special kind of function called a generator function.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-generators-with-examples.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python Generators With Examples</h1><p><strong>Generators</strong> in Python are <strong>a concise and memory-efficient way to create iterators</strong>. They are <strong>defined</strong> using a special kind of function called a <strong>generator function</strong>.</p>
+
+<p>The <strong>key feature of generators</strong> is that they <strong>produce a sequence of values on-the-fly</strong>, <strong>one at a time</strong>, and <strong>do not store the entire sequence in memory</strong>.</p>
+
+<p>Here's an example of a simple generator function:</p>
+
+<pre class="language-python"><code>def my_generator(data):
+    for item in data:
+        yield item
+
+# Example usage
+my_list = [1, 2, 3, 4, 5]
+generator = my_generator(my_list)
+
+for item in generator:
+    print(item)
+</code></pre>
+
+<p>In this example:</p>
+
+<ul>
+<li><p>The <code>my_generator</code> function is a generator function that uses the <code>yield</code> keyword to produce a sequence of values from the input data.</p></li>
+<li><p>The generator is created by calling <code>my_generator(my_list)</code>, and it can be used in a <code>for</code> loop to iterate over its values.</p></li>
+<li><p>The key advantage of using a generator is that it produces values on-the-fly as needed, rather than creating the entire sequence upfront. This is especially useful when working with large datasets.</p></li>
+</ul>
+
+<h3 id="generator-expressions-">Generator Expressions:</h3>
+
+<p>Generator expressions provide a concise way to create generators. They have a syntax similar to list comprehensions but use parentheses <code>()</code> instead of square brackets <code>[]</code>.</p>
+
+<pre class="language-python"><code>my_list = [1, 2, 3, 4, 5]
+generator = (item for item in my_list)
+
+for item in generator:
+    print(item)
+</code></pre>
+
+<p>This generator expression is equivalent to the previous generator function example. It produces the same result but with a more compact syntax.</p>
+
+<h3 id="infinite-generators-">Infinite Generators:</h3>
+
+<p>Generators can be used to create sequences that are potentially infinite. Since values are generated on-the-fly, the generator will keep producing values until the loop is interrupted or a condition is met.</p>
+
+<pre class="language-python"><code>def infinite_counter():
+    count = 0
+    while True:
+        yield count
+        count += 1
+
+# Example usage
+counter = infinite_counter()
+
+for _ in range(5):
+    print(next(counter))
+</code></pre>
+
+<p>In this example, the <code>infinite_counter</code> generator function produces an infinite sequence of counting numbers. The <code>for</code> loop consumes the first five values from the generator.</p>
+
+<h3 id="advantages-of-generators-">Advantages of Generators:</h3>
+
+<ol>
+<li><p><strong>Memory Efficiency:</strong> Generators produce values one at a time, which can be beneficial when dealing with large datasets or potentially infinite sequences.</p></li>
+<li><p><strong>Lazy Evaluation:</strong> Values are generated on-demand, leading to lazy evaluation. This can improve performance by avoiding unnecessary computations.</p></li>
+<li><p><strong>Readability:</strong> Generator expressions provide a concise and readable way to create iterators.</p></li>
+<li><p><strong>Stateful Iteration:</strong> Generators can maintain state between iterations, allowing them to produce sequences that depend on previous values.</p></li>
+</ol>
+
+<p>Generators are a powerful tool in Python for creating iterators with a minimal memory footprint. They are commonly used in scenarios where efficiency and laziness are important considerations.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

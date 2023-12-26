@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python time Module With Examples</title>
+<meta name="description" content="The time module in Python provides various functions for working with time-related tasks, including measuring time intervals, formatting time, and working with the system clock.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-time-module-with-examples.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python "time" Module With Examples</h1><p><strong>The <code>time</code> module in Python provides various functions for working with time-related tasks</strong>, including measuring time intervals, formatting time, and working with the system clock.</p>
+
+<p>Here are some common functions provided by the <code>time</code> module:</p>
+
+<h3 id="1-time-get-current-time">1. <code>time()</code>: Get Current Time</h3>
+
+<p>The <code>time()</code> function returns the current time in seconds since the epoch (January 1, 1970, 00:00:00 UTC).</p>
+
+<pre class="language-python"><code>import time
+
+current_time = time.time()
+print("Current time:", current_time)
+</code></pre>
+
+<h3 id="2-sleep-pause-execution">2. <code>sleep()</code>: Pause Execution</h3>
+
+<p>The <code>sleep()</code> function suspends the execution of the program for a specified number of seconds.</p>
+
+<pre class="language-python"><code>import time
+
+print("Start sleeping")
+time.sleep(3)
+print("End sleeping")
+</code></pre>
+
+<h3 id="3-localtime-convert-time-to-local-time">3. <code>localtime()</code>: Convert Time to Local Time</h3>
+
+<p>The <code>localtime()</code> function converts a time in seconds since the epoch to a struct_time in local time.</p>
+
+<pre class="language-python"><code>import time
+
+current_time = time.time()
+local_time = time.localtime(current_time)
+print("Local time:", local_time)
+</code></pre>
+
+<h3 id="4-asctime-format-time-as-string">4. <code>asctime()</code>: Format Time as String</h3>
+
+<p>The <code>asctime()</code> function formats a struct_time as a string in the format "Day Month DayOfMonth Hour:Minute:Second Year".</p>
+
+<pre class="language-python"><code>import time
+
+current_time = time.time()
+local_time = time.localtime(current_time)
+formatted_time = time.asctime(local_time)
+print("Formatted time:", formatted_time)
+</code></pre>
+
+<h3 id="5-strftime-format-time-with-custom-format">5. <code>strftime()</code>: Format Time with Custom Format</h3>
+
+<p>The <code>strftime()</code> function formats a struct_time using a specified format.</p>
+
+<pre class="language-python"><code>import time
+
+current_time = time.time()
+local_time = time.localtime(current_time)
+formatted_time = time.strftime("%Y-%m-%d %H:%M:%S", local_time)
+print("Formatted time:", formatted_time)
+</code></pre>
+
+<h3 id="6-gmtime-convert-time-to-utc-time">6. <code>gmtime()</code>: Convert Time to UTC Time</h3>
+
+<p>The <code>gmtime()</code> function converts a time in seconds since the epoch to a struct_time in UTC.</p>
+
+<pre class="language-python"><code>import time
+
+current_time = time.time()
+utc_time = time.gmtime(current_time)
+print("UTC time:", utc_time)
+</code></pre>
+
+<h3 id="7-clock-cpu-time">7. <code>clock()</code>: CPU Time</h3>
+
+<p>The <code>clock()</code> function returns the current CPU time (in seconds) as a floating-point number.</p>
+
+<pre class="language-python"><code>import time
+
+cpu_time = time.clock()
+print("CPU time:", cpu_time)
+</code></pre>
+
+<p>Note: The <code>clock()</code> function has been deprecated in Python 3.3 and removed in Python 3.8. It is recommended to use <code>time.process_time()</code> instead for measuring CPU time.</p>
+
+<p>These are just a few examples of the functionalities provided by the <code>time</code> module. For more detailed information, refer to the official documentation: <a href="https://docs.python.org/3/library/time.html">Python <code>time</code> module documentation</a>.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

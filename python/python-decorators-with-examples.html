@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Decorators With Examples</title>
+<meta name="description" content="In Python, decorators are a powerful and flexible way to modify or extend the behavior of functions or methods without changing their code.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-decorators-with-examples.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python Decorators With Examples</h1><p>In Python, <strong>decorators are a powerful and flexible way to modify or extend the behavior of functions or methods without changing their code</strong>.</p>
+
+<p>Decorators are functions themselves, and <strong>they are applied to other</strong> functions or methods <strong>using the <code>@decorator</code> syntax</strong>.</p>
+
+<p>Here's a basic example to illustrate how decorators work:</p>
+
+<pre class="language-python"><code>def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+# Example usage
+say_hello()
+</code></pre>
+
+<p>In this example:</p>
+
+<ul>
+<li><p>The <code>my_decorator</code> function is a decorator that takes another function (<code>func</code>) as its parameter.</p></li>
+<li><p>Inside <code>my_decorator</code>, a new function <code>wrapper</code> is defined. This function calls the original function (<code>func</code>) and adds some additional behavior before and after the call.</p></li>
+<li><p>The <code>@my_decorator</code> syntax is a shorthand for <code>say_hello = my_decorator(say_hello)</code>. It applies the decorator to the <code>say_hello</code> function.</p></li>
+<li><p>When <code>say_hello()</code> is called, it actually invokes the <code>wrapper</code> function created by the decorator.</p></li>
+<li><p>The output demonstrates that the additional behavior from the decorator is executed before and after the original <code>say_hello</code> function.</p></li>
+</ul>
+
+<h3 id="decorators-with-arguments-">Decorators with Arguments:</h3>
+
+<p>Decorators can also take arguments, allowing for more flexibility. Here's an example:</p>
+
+<pre class="language-python"><code>def repeat(n):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(n):
+                func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@repeat(3)
+def greet(name):
+    print(f"Hello, {name}!")
+
+# Example usage
+greet("Alice")
+</code></pre>
+
+<p>In this example:</p>
+
+<ul>
+<li><p>The <code>repeat</code> decorator takes an argument <code>n</code> and returns a decorator function.</p></li>
+<li><p>The returned decorator function (<code>decorator</code>) takes a function (<code>func</code>) and defines a <code>wrapper</code> function that calls the original function multiple times.</p></li>
+<li><p>The <code>@repeat(3)</code> syntax applies the decorator to the <code>greet</code> function, indicating that it should be repeated three times.</p></li>
+<li><p>When <code>greet("Alice")</code> is called, the output shows that the greeting is repeated three times.</p></li>
+</ul>
+
+<h3 id="built-in-decorators-">Built-in Decorators:</h3>
+
+<p>Python also includes several built-in decorators, such as <code>@property</code>, <code>@staticmethod</code>, and <code>@classmethod</code>. These decorators are used to define properties, static methods, and class methods, respectively.</p>
+
+<pre class="language-python"><code>class MyClass:
+    def __init__(self, value):
+        self._value = value
+
+    @property
+    def value(self):
+        return self._value
+
+    @value.setter
+    def value(self, new_value):
+        self._value = new_value
+
+    @staticmethod
+    def static_method():
+        print("This is a static method.")
+
+    @classmethod
+    def class_method(cls):
+        print("This is a class method.")
+
+# Example usage
+obj = MyClass(42)
+print(obj.value)        # Access the property
+obj.value = 99          # Modify the property using the setter
+print(obj.value)        # Output: 99
+MyClass.static_method()  # Call the static method
+MyClass.class_method()   # Call the class method
+</code></pre>
+
+<p>These built-in decorators provide additional functionality and improve code organization.</p>
+
+<p>Decorators are a powerful feature in Python that enables the creation of reusable and modular code. They are widely used in frameworks and libraries to extend and customize behavior.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

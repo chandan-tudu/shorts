@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Implicit Type Conversion</title>
+<meta name="description" content="In Python, implicit conversion, also known as automatic type conversion or coercion, occurs when the interpreter automatically converts one data type to another without the programmer explicitly requesting the conversion.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-implicit-type-conversion.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,60 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Implicit Type Conversion</h1><p>In Python, implicit conversion, also known as automatic type conversion or coercion, occurs <strong>when the interpreter automatically converts one data type to another without the programmer explicitly requesting the conversion</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p><strong>Python performs implicit conversion</strong> in certain situations to <strong>ensure that operations involving different data types are executed without raising errors</strong>. Here are some examples of implicit conversion in Python:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<ol>
+<li><p><strong>Integer to Float Conversion:</strong></p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+<pre class="language-python"><code>integer_number = 42
+float_number = 3.14 + integer_number
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this case, the integer <code>42</code> is implicitly converted to a float before performing the addition operation.</p></li>
+<li><p><strong>Boolean to Integer Conversion:</strong></p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
-
-<p>You can apply these styles to HTML elements like this:</p>
-
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre class="language-python"><code>bool_value = True
+int_value = bool_value + 5
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>The <code>True</code> boolean value is implicitly converted to the integer <code>1</code> before the addition operation.</p></li>
+<li><p><strong>Integer to String Conversion:</strong></p>
+
+<pre class="language-python"><code>integer_number = 42
+string_result = "The answer is " + str(integer_number)
+</code></pre>
+
+<p>Here, the integer <code>42</code> is implicitly converted to a string before concatenating it with the string.</p></li>
+<li><p><strong>List to Set Conversion:</strong></p>
+
+<pre class="language-python"><code>list_of_numbers = [1, 2, 3, 3]
+set_of_numbers = set(list_of_numbers)
+</code></pre>
+
+<p>The list is implicitly converted to a set, removing duplicate elements.</p></li>
+<li><p><strong>Float to Integer Conversion:</strong></p>
+
+<pre class="language-python"><code>float_number = 3.99
+int_result = 10 * float_number
+</code></pre>
+
+<p>The float <code>3.99</code> is implicitly converted to an integer before the multiplication operation.</p></li>
+<li><p><strong>String to Float Conversion:</strong></p>
+
+<pre class="language-python"><code>numeric_string = "3.14"
+result = 2 * float(numeric_string)
+</code></pre>
+
+<p>The numeric string <code>"3.14"</code> is explicitly converted to a float before the multiplication operation.</p></li>
+</ol>
+
+<p>While implicit conversion can be convenient, it's important for programmers to be aware of it, especially in cases where precision or specific data types are critical. In some scenarios, explicit conversion may be preferred to ensure clarity and avoid unexpected behavior.</p>
 </article>
 </div>
 <footer>

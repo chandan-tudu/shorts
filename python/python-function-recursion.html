@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Function Recursion</title>
+<meta name="description" content="In Python, functions can be recursive, meaning they call themselves during their execution.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-function-recursion.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,49 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Function Recursion</h1><p><strong>Recursion is a programming concept where a function calls itself</strong> in order to solve a problem.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>In Python, <strong>functions can be recursive, meaning they call themselves during their execution</strong>. Recursive functions consist of a base case and a recursive case.</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<p>Here's an example of a simple recursive function to calculate the factorial of a number:</p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+<pre class="language-python"><code>def factorial(n):
+    # Base case: factorial of 0 or 1 is 1
+    if n == 0 or n == 1:
+        return 1
+    # Recursive case: n! = n * (n-1)!
+    else:
+        return n * factorial(n - 1)
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+result = factorial(5)
+print(result)  # Output: 120
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example, the <code>factorial</code> function calls itself with a smaller argument (<code>n - 1</code>) until it reaches the base case (<code>n == 0</code> or <code>n == 1</code>). The base case is crucial to prevent infinite recursion.</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<p>Recursion is a powerful technique, but it's important to design recursive functions carefully to ensure they terminate and produce correct results. Each recursive call should reduce the problem towards the base case.</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<p>Here's another example using recursion to calculate the nth term in the Fibonacci sequence:</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre class="language-python"><code>def fibonacci(n):
+    # Base case: fibonacci(0) = 0, fibonacci(1) = 1
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    # Recursive case: fibonacci(n) = fibonacci(n-1) + fibonacci(n-2)
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+result = fibonacci(6)
+print(result)  # Output: 8
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>Again, the <code>fibonacci</code> function calls itself with smaller arguments until it reaches the base cases (<code>n == 0</code> or <code>n == 1</code>).</p>
 </article>
 </div>
 <footer>

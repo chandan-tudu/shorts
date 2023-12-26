@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Custom Exceptions</title>
+<meta name="description" content="In Python, you can create custom exceptions by defining a new class that inherits from the built-in Exception class or one of its subclasses.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-custom-exceptions.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,44 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Custom Exceptions</h1><p>In Python, you can <strong>create custom exceptions by defining a new class that inherits from the built-in <code>Exception</code> class or one of its subclasses</strong>. This allows you to raise and catch exceptions that are specific to your application. Here's an example of how to create and use custom exceptions:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<pre class="language-python"><code>class CustomError(Exception):
+    """Custom exception class."""
+    def __init__(self, message="A custom error occurred."):
+        self.message = message
+        super().__init__(self.message)
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+# Example of raising a custom exception
+def example_function(value):
+    if value &lt; 0:
+        raise CustomError("Negative values are not allowed.")
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+try:
+    user_input = int(input("Enter a positive number: "))
+    example_function(user_input)
+except CustomError as ce:
+    print(f"Custom Error: {ce}")
+except ValueError as ve:
+    print(f"Value Error: {ve}")
+else:
+    print("No exceptions were raised.")
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example:</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<ol>
+<li><p><code>CustomError</code> is a custom exception class that inherits from the built-in <code>Exception</code> class. It has an optional constructor that allows you to provide a custom error message.</p></li>
+<li><p>The <code>example_function</code> function raises a <code>CustomError</code> if the provided value is negative.</p></li>
+<li><p>In the <code>try</code> block, the user is prompted to enter a positive number. If the entered value is negative, a <code>CustomError</code> is raised. If the entered value is not a valid integer (resulting in a <code>ValueError</code>), that exception is caught as well.</p></li>
+<li><p>The <code>except</code> blocks handle the custom exception (<code>CustomError</code>) and the built-in exception (<code>ValueError</code>). If neither exception occurs, the <code>else</code> block is executed.</p></li>
+</ol>
 
-<p>You can apply these styles to HTML elements like this:</p>
-
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
-
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>Custom exceptions are useful when you want to raise errors that are specific to your application's logic or when you want to create a hierarchy of exceptions to handle different error scenarios more precisely.</p>
 </article>
 </div>
 <footer>

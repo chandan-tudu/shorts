@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Math Module</title>
+<meta name="description" content="In Python, the math module provides a set of mathematical functions for operations involving numbers.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-math-module.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,94 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python "math" Module</h1><p>In Python, <strong>the <code>math</code> module provides a set of mathematical functions for operations involving numbers</strong>. To use the <code>math</code> module, you need to import it first. Here are some common functions and constants provided by the <code>math</code> module:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<ol>
+<li><p><strong>Importing the <code>math</code> module:</strong></p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<pre class="language-python"><code>import math
+</code></pre></li>
+<li><p><strong>Mathematical Constants:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<li><p><code>math.pi</code>: Returns the mathematical constant π (pi).</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>print(math.pi)  # Output: 3.141592653589793
+</code></pre></li>
+<li><p><code>math.e</code>: Returns the mathematical constant e.</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
+<pre class="language-python"><code>print(math.e)   # Output: 2.718281828459045
+</code></pre></li>
+</ul></li>
+<li><p><strong>Basic Mathematical Functions:</strong></p>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<ul>
+<li><p><code>math.sqrt(x)</code>: Returns the square root of x.</p>
+
+<pre class="language-python"><code>result = math.sqrt(25)
+print(result)  # Output: 5.0
+</code></pre></li>
+<li><p><code>math.pow(x, y)</code>: Returns x raised to the power y.</p>
+
+<pre class="language-python"><code>result = math.pow(2, 3)
+print(result)  # Output: 8.0
+</code></pre></li>
+<li><p><code>math.exp(x)</code>: Returns e raised to the power x.</p>
+
+<pre class="language-python"><code>result = math.exp(2)
+print(result)  # Output: 7.3890560989306495
+</code></pre></li>
+<li><p><code>math.log(x)</code>: Returns the natural logarithm of x (base e).</p>
+
+<pre class="language-python"><code>result = math.log(10)
+print(result)  # Output: 2.302585092994046
+</code></pre></li>
+<li><p><code>math.log10(x)</code>: Returns the base-10 logarithm of x.</p>
+
+<pre class="language-python"><code>result = math.log10(100)
+print(result)  # Output: 2.0
+</code></pre></li>
+</ul></li>
+<li><p><strong>Trigonometric Functions:</strong></p>
+
+<ul>
+<li><p><code>math.sin(x)</code>, <code>math.cos(x)</code>, <code>math.tan(x)</code>: Return the sine, cosine, and tangent of x (in radians).</p>
+
+<pre class="language-python"><code>angle = math.pi / 4
+print(math.sin(angle))  # Output: 0.7071067811865475 (approximately)
+</code></pre></li>
+<li><p><code>math.degrees(x)</code>, <code>math.radians(x)</code>: Convert between degrees and radians.</p>
+
+<pre class="language-python"><code>radians_value = math.radians(90)
+print(math.degrees(radians_value))  # Output: 90.0
+</code></pre></li>
+</ul></li>
+<li><p><strong>Other Functions:</strong></p>
+
+<ul>
+<li><p><code>math.floor(x)</code>, <code>math.ceil(x)</code>: Return the floor and ceiling of x as a float.</p>
+
+<pre class="language-python"><code>print(math.floor(4.8))  # Output: 4.0
+print(math.ceil(4.1))   # Output: 5.0
+</code></pre></li>
+<li><p><code>math.factorial(x)</code>: Return x factorial (x!).</p>
+
+<pre class="language-python"><code>result = math.factorial(5)
+print(result)  # Output: 120
+</code></pre></li>
+<li><p><code>math.fabs(x)</code>: Return the absolute value of x as a float.</p>
+
+<pre class="language-python"><code>result = math.fabs(-7.5)
+print(result)  # Output: 7.5
+</code></pre></li>
+</ul></li>
+</ol>
+
+<p>These are just a few examples of the functions provided by the <code>math</code> module. For more details, you can refer to the <a href="https://docs.python.org/3/library/math.html">official documentation</a>.</p>
 </article>
 </div>
 <footer>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Variables</title>
+<meta name="description" content="In Python, variables are used to store and manage data. A variable is essentially a named storage location that holds a value.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-variables.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,82 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Variables</h1><p>In Python, <strong>variables are used to store and manage data</strong>. A variable is essentially <strong>a named storage location that holds a value</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>Unlike some other programming languages, <strong>Python variables are dynamically typed</strong>, meaning that you <strong>don't need to declare their "type" explicitly</strong>.</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<p>Here's a basic overview of working with variables in Python:</p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+<h3 id="variable-assignment">Variable Assignment:</h3>
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+<p>You <a href="./how-to-declare-a-variable-in-python.html">assign a value to a variable</a> using the assignment operator <code>=</code>.</p>
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+<pre class="language-python"><code># Variable assignment
+my_variable = 42
 </code></pre>
 
-<p>In the above examples:</p>
+<h3 id="variable-naming-rules">Variable Naming Rules:</h3>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Variable names must start with a letter (a-z, A-Z) or an underscore (<code>_</code>).</li>
+<li>After the first character, variable names can contain letters, digits (0-9), or underscores.</li>
+<li>Variable names are case-sensitive (<code>my_variable</code> is different from <code>My_Variable</code>).</li>
+<li>Avoid using Python keywords as variable names (e.g., <code>class</code>, <code>if</code>, <code>else</code>, <code>for</code>, etc.).</li>
+<li>Use meaningful and descriptive names for variables.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<h3 id="variable-types">Variable Types:</h3>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<p>Python is dynamically typed, so you don't need to specify the type of a variable explicitly. The type of a variable is determined at runtime.</p>
+
+<pre class="language-python"><code># Dynamically typed variable
+my_variable = 42
+print(type(my_variable))  # &lt;class 'int'&gt;
+
+my_variable = "Hello, Python!"
+print(type(my_variable))  # &lt;class 'str'&gt;
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<h3 id="multiple-assignment">Multiple Assignment:</h3>
+
+<p>You can assign values to multiple variables in a single line.</p>
+
+<pre class="language-python"><code># Multiple assignment
+x, y, z = 10, 20, 30
+</code></pre>
+
+<h3 id="reassigning-variables">Reassigning Variables:</h3>
+
+<p>You can change the value of a variable by reassigning it.</p>
+
+<pre class="language-python"><code># Reassigning variables
+count = 5
+count = count + 1  # Increment the value
+</code></pre>
+
+<h3 id="deleting-variables">Deleting Variables:</h3>
+
+<p>You can delete a variable using the <code>del</code> statement.</p>
+
+<pre class="language-python"><code># Deleting a variable
+variable_to_delete = 42
+del variable_to_delete
+</code></pre>
+
+<h3 id="constants">Constants:</h3>
+
+<p>While <strong>Python doesn't have constants</strong> in the strict sense, it's a convention to use uppercase letters for variable names that are meant to be treated as constants.</p>
+
+<pre class="language-python"><code># Constants
+MAX_SIZE = 100
+PI = 3.14159
+</code></pre>
+
+<p>Working with variables is fundamental to programming in Python, and understanding how to use them effectively is essential for writing clear and concise code.</p>
 </article>
 </div>
 <footer>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>PHP Class Constructor</title>
+<meta name="description" content="In PHP, a class constructor is a special method that is automatically called when an object of the class is created.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-class-constructor.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,54 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PHP</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>PHP Class Constructor</h1><p>In PHP, <strong>a class constructor is a special method</strong> that is <strong>automatically called when an object of the class is created</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
+<p>It is typically used to initialize the object's properties or perform any setup that is necessary before using the object.</p>
+
+<p>The <strong>constructor method</strong> has the same name as the class and is <strong>defined using the <code>__construct</code> keyword</strong>.</p>
+
+<p>Here's an example of a simple class with a constructor:</p>
+
+<pre class="language-php"><code>class MyClass {
+    // Properties
+    public $name;
+    public $age;
+
+    // Constructor
+    public function __construct($name, $age) {
+        $this-&gt;name = $name;
+        $this-&gt;age = $age;
+        echo "Object created with name: $name and age: $age&lt;br&gt;";
+    }
+
+    // Other methods
+    public function displayInfo() {
+        echo "Name: $this-&gt;name, Age: $this-&gt;age&lt;br&gt;";
+    }
 }
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+// Creating an object of MyClass
+$myObject = new MyClass("John", 25);
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+// Calling a method of the object
+$myObject-&gt;displayInfo();
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example:</p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>The <code>MyClass</code> class has two properties: <code>$name</code> and <code>$age</code>.</li>
+<li>The constructor method <code>__construct</code> is called automatically when an object of the class is created. It takes two parameters, <code>$name</code> and <code>$age</code>, and initializes the object's properties.</li>
+<li>The <code>displayInfo</code> method is a simple method that displays the values of the object's properties.</li>
+<li>An object of <code>MyClass</code> is created with the <code>new</code> keyword, and the constructor is automatically called with the provided values for <code>$name</code> and <code>$age</code>.</li>
+<li>The <code>displayInfo</code> method is called to display the information about the object.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
-
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
-
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>When you create an instance of the class using <code>$myObject = new MyClass("John", 25);</code>, the constructor is automatically invoked, and you see the output from the <code>echo</code> statement inside the constructor.</p>
 </article>
 </div>
 <footer>

@@ -112,11 +112,8 @@ if (pageTheme === 'dark') {
 function handleDarkModeChange(e) {
     if (pageTheme) return;
     if (e.matches) {
-        rootEl.toggleAttribute('dark-theme');
+        rootEl.setAttribute('dark-theme', true);
         themeBtn.classList.add('dark');
-    } else {
-        rootEl.toggleAttribute('dark-theme');
-        themeBtn.classList.remove('dark');
     }
 }
 

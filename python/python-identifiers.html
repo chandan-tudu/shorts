@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Identifiers</title>
+<meta name="description" content="In Python, an identifier is a name given to various programming elements such as variables, functions, classes, modules, etc.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-identifiers.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,80 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Identifiers</h1><p>In Python, <strong>an identifier is a name given to various programming elements</strong> such as variables, functions, classes, modules, etc.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p><strong>Identifiers are used to uniquely identify these elements within a program</strong>. Here are the rules for forming valid identifiers in Python:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong>Case Sensitivity:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<li>Python is case-sensitive. For example, <code>my_variable</code> and <code>My_Variable</code> are considered different identifiers.</li>
+</ul></li>
+<li><p><strong>Start with a Letter or Underscore:</strong></p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<ul>
+<li>An identifier must start with a letter (a-z, A-Z) or an underscore (<code>_</code>).</li>
+<li>Valid: <code>my_variable</code>, <code>_internal_variable</code></li>
+<li>Invalid: <code>2nd_attempt</code>, <code>%invalid_identifier</code></li>
+</ul></li>
+<li><p><strong>Followed by Letters, Digits, or Underscores:</strong></p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<ul>
+<li>After the first character, an identifier can include letters, digits (0-9), or underscores.</li>
+<li>Valid: <code>variable1</code>, <code>total_count</code>, <code>user_age</code></li>
+<li>Invalid: <code>variable-name</code>, <code>variable@name</code></li>
+</ul></li>
+<li><p><strong>Cannot be a Reserved Word (Keyword):</strong></p>
+
+<ul>
+<li>Identifiers cannot be a Python keyword. Keywords have special meanings in the language.</li>
+<li>Invalid: <code>if</code>, <code>class</code>, <code>def</code>, <code>for</code>, etc.</li>
+</ul></li>
+<li><p><strong>No Spaces or Special Characters (except Underscore):</strong></p>
+
+<ul>
+<li>Spaces and special characters (except underscores) are not allowed in identifiers.</li>
+<li>Invalid: <code>variable name</code>, <code>total-count</code>, <code>my-variable</code></li>
+</ul></li>
+<li><p><strong>Avoid Using Single Leading Underscore:</strong></p>
+
+<ul>
+<li>A single leading underscore is a convention indicating that the identifier is intended for internal use.</li>
+<li>Valid: <code>_internal_variable</code></li>
+<li>Sometimes used to avoid name clashes with submodules.</li>
+</ul></li>
+<li><p><strong>Avoid Using Double Leading Underscore:</strong></p>
+
+<ul>
+<li>A double leading underscore indicates name mangling, which is often used in classes for attribute name transformation to avoid name clashes with subclasses.</li>
+</ul></li>
+<li><p><strong>Avoid Using Double Underscores at the Beginning and End:</strong></p>
+
+<ul>
+<li>Double underscores at the beginning and end of an identifier have special meanings in Python (e.g., <code>__init__</code> for special methods).</li>
+</ul></li>
+</ol>
+
+<h3 id="examples-">Examples:</h3>
+
+<pre class="language-python"><code># Valid identifiers
+my_variable = 42
+_total_count = 100
+UserAge = 25
+__special_method__ = "special"
+
+# Invalid identifiers
+2nd_attempt = "Invalid"  # Starts with a digit
+class = "Invalid"        # Keyword as an identifier
+variable-name = "Invalid"  # Contains a hyphen
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>Choosing meaningful and descriptive identifiers is important for writing clean, readable, and maintainable code. It helps make your code more understandable to others (and to yourself) and promotes good coding practices.</p>
 </article>
 </div>
 <footer>

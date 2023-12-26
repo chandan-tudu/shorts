@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Merge Two Dictionaries</title>
+<meta name="description" content="In Python, you can merge two dictionaries using various methods. Here are a couple of common approaches:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-merge-two-dictionaries.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,53 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Merge Two Dictionaries</h1><p>In Python, you can <strong>merge two dictionaries using various methods</strong>. Here are a couple of common approaches:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<h3 id="1-using-the-update-method-">1. Using the <code>update()</code> method:</h3>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<p>The <strong><code>update()</code> method</strong> is used to <strong>add elements from one dictionary to another</strong>. If the dictionaries have overlapping keys, the values from the second dictionary overwrite the values from the first dictionary.</p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+<pre class="language-python"><code># Define two dictionaries
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+# Merge dict2 into dict1
+dict1.update(dict2)
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+# Print the result
+print("Merged dictionary:", dict1)
 </code></pre>
 
-<p>In the above examples:</p>
+<p>Output:</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
-
-<p>You can apply these styles to HTML elements like this:</p>
-
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre><code>Merged dictionary: {'a': 1, 'b': 3, 'c': 4}
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<h3 id="2-using-the-d1-d2-syntax-python-3-5-and-above-">2. Using the <code>{**d1, **d2}</code> syntax (Python 3.5 and above):</h3>
+
+<p>You can <strong>use the <code>{**d1, **d2}</code> syntax to merge dictionaries</strong>. This creates a new dictionary by unpacking the key-value pairs from both dictionaries.</p>
+
+<pre class="language-python"><code># Define two dictionaries
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+
+# Merge dictionaries using the syntax
+merged_dict = {**dict1, **dict2}
+
+# Print the result
+print("Merged dictionary:", merged_dict)
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>Merged dictionary: {'a': 1, 'b': 3, 'c': 4}
+</code></pre>
+
+<p>Both methods will give you a merged dictionary, but choose the one that fits your coding style and requirements. The <code>update()</code> method modifies the first dictionary in-place, while the <code>{**d1, **d2}</code> syntax creates a new dictionary without modifying the original ones.</p>
 </article>
 </div>
 <footer>

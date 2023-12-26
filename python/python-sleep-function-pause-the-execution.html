@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python sleep() Function: Pause The Execution</title>
+<meta name="description" content="The sleep() function is part of the time module in Python, and it is used to pause the execution of the program for a specified number of seconds.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-sleep-function-pause-the-execution.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,53 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python "sleep()" Function: Pause The Execution</h1><p><strong>The <code>sleep()</code> function is part of the <code>time</code> module</strong> in Python, and it is <strong>used to pause the execution of the program for a specified number of seconds</strong>. It's often used in situations where you want to introduce a delay or wait for a certain period.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>Here's the basic syntax of the <code>sleep()</code> function:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<pre class="language-python"><code>import time
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+time.sleep(seconds)
 </code></pre>
-
-<p>In the above examples:</p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li><code>seconds</code>: The number of seconds to pause the execution. It can be a floating-point number for fractions of a second.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<p>Here's a simple example:</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre class="language-python"><code>import time
+
+print("Start sleeping")
+time.sleep(3)  # Pause the program for 3 seconds
+print("End sleeping")
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>In this example, the program will print "Start sleeping," then pause for 3 seconds using <code>time.sleep(3)</code>, and finally print "End sleeping." During the sleep duration, the program is inactive.</p>
+
+<p>Keep in mind that the actual sleep duration might not be precise, especially for very short intervals, due to system-specific factors.</p>
+
+<h3 id="handling-interruptions-">Handling Interruptions:</h3>
+
+<p>The <code>sleep()</code> function can be interrupted by signals, such as KeyboardInterrupt. If the program receives a signal while sleeping, it will wake up immediately. For example:</p>
+
+<pre class="language-python"><code>import time
+
+try:
+    print("Start sleeping")
+    time.sleep(5)  # Pause the program for 5 seconds
+    print("End sleeping")
+except KeyboardInterrupt:
+    print("Sleep interrupted by user")
+</code></pre>
+
+<p>If you run this program and press Ctrl+C while it's sleeping, it will catch the <code>KeyboardInterrupt</code> exception and print "Sleep interrupted by user."</p>
+
+<p>The <code>sleep()</code> function is useful in various scenarios, such as adding delays in scripts, controlling the rate of a loop, or coordinating actions in concurrent programming.</p>
 </article>
 </div>
 <footer>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Error Vs Exception</title>
+<meta name="description" content="In Python, error and exception are related concepts, but they have distinct meanings.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-error-vs-exception.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,80 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Error Vs Exception</h1><p>In Python, "error" and "exception" are related concepts, but they have distinct meanings.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<h3 id="error-">Error:</h3>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<p>An error in Python generally refers to a mistake or a problem that prevents the execution of a program. Errors are of two main types:</p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong>Syntax Error:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>A syntax error occurs when the code violates the grammatical rules of Python. It is detected by the Python interpreter during the parsing phase before the program is executed.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code># Syntax Error
+print("Hello, World"  # Missing closing parenthesis
+</code></pre></li>
+<li><p><strong>Runtime Error:</strong></p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
+<ul>
+<li>A runtime error occurs during the execution of a program. It is also known as an exception. Common runtime errors include division by zero, accessing an index out of bounds, or trying to use a variable that has not been defined.</li>
+</ul>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<pre class="language-python"><code># Runtime Error (ZeroDivisionError)
+result = 10 / 0
+</code></pre></li>
+</ol>
+
+<h3 id="exception-">Exception:</h3>
+
+<p>An exception is an event that occurs during the execution of a program, leading to the disruption of the normal flow of instructions. Exceptions are raised when an error is encountered during runtime. Unlike syntax errors, exceptions can be handled by the programmer.</p>
+
+<ol>
+<li><p><strong>Handling Exceptions:</strong></p>
+
+<ul>
+<li>Exceptions can be handled using a <code>try</code>, <code>except</code> block. This allows the programmer to catch and handle specific exceptions, preventing the program from crashing.</li>
+</ul>
+
+<pre class="language-python"><code>try:
+   result = 10 / 0
+except ZeroDivisionError as e:
+   print(f"Error: {e}")
+</code></pre></li>
+<li><p><strong>Common Exceptions:</strong></p>
+
+<ul>
+<li>Common exceptions in Python include <code>ZeroDivisionError</code>, <code>TypeError</code>, <code>IndexError</code>, <code>FileNotFoundError</code>, and more.</li>
+</ul>
+
+<pre class="language-python"><code>try:
+   value = int("abc")  # Raises a ValueError
+except ValueError as e:
+   print(f"Error: {e}")
+</code></pre></li>
+<li><p><strong>Using <code>finally</code> Block:</strong></p>
+
+<ul>
+<li>The <code>finally</code> block can be used to specify a block of code that will be executed regardless of whether an exception occurs or not.</li>
+</ul>
+
+<pre class="language-python"><code>try:
+   result = 10 / 0
+except ZeroDivisionError as e:
+   print(f"Error: {e}")
+finally:
+   print("This block will always be executed.")
+</code></pre></li>
+</ol>
+
+<p>In summary, errors are broader and include both syntax errors and runtime errors. Runtime errors, when raised during program execution, are referred to as exceptions. Exceptions can be handled to prevent the program from crashing and to provide a more controlled response to unexpected situations.</p>
 </article>
 </div>
 <footer>

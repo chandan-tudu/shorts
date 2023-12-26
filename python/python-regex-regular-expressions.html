@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python RegEx (Regular Expressions)</title>
+<meta name="description" content="Regular expressions used for string manipulation and searching. In Python, the re module provides support for regular expressions.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-regex-regular-expressions.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,106 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python RegEx (Regular Expressions)</h1><p><strong>Regular expressions</strong>, commonly referred to as regex or regexp, <strong>are sequences of characters that define a search pattern</strong>. They are <strong>used for string manipulation and searching</strong>. In Python, <strong>the <code>re</code> module provides support for regular expressions</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>Here's a brief overview of some common regular expression operations in Python:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<h3 id="1-matching-">1. Matching:</h3>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li><code>re.match(pattern, string)</code>: Checks if the pattern matches at the beginning of the string.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>import re
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+pattern = r"Hello"
+string = "Hello, World!"
+
+match_result = re.match(pattern, string)
+
+if match_result:
+    print("Match found!")
+else:
+    print("No match.")
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<h3 id="2-searching-">2. Searching:</h3>
+
+<ul>
+<li><code>re.search(pattern, string)</code>: Searches for the pattern anywhere in the string.</li>
+</ul>
+
+<pre class="language-python"><code>import re
+
+pattern = r"World"
+string = "Hello, World!"
+
+search_result = re.search(pattern, string)
+
+if search_result:
+    print("Pattern found!")
+else:
+    print("Pattern not found.")
+</code></pre>
+
+<h3 id="3-substitution-">3. Substitution:</h3>
+
+<ul>
+<li><code>re.sub(pattern, replacement, string)</code>: Replaces occurrences of the pattern with the specified replacement in the string.</li>
+</ul>
+
+<pre class="language-python"><code>import re
+
+pattern = r"\d+"  # Matches one or more digits
+string = "The price is $20 and $30."
+
+replacement = "XX"
+result = re.sub(pattern, replacement, string)
+
+print(result)  # Output: "The price is $XX and $XX."
+</code></pre>
+
+<h3 id="4-groups-">4. Groups:</h3>
+
+<p>You can use groups to capture specific parts of the matched pattern.</p>
+
+<pre class="language-python"><code>import re
+
+pattern = r"(\d+)\s+(\w+)"
+string = "Price: 25 USD"
+
+match_result = re.match(pattern, string)
+
+if match_result:
+    number = match_result.group(1)
+    currency = match_result.group(2)
+    print(f"Number: {number}, Currency: {currency}")
+else:
+    print("No match.")
+</code></pre>
+
+<h3 id="5-flags-">5. Flags:</h3>
+
+<p>Flags can be used to modify the behavior of regular expression patterns. For example, the <code>re.IGNORECASE</code> flag makes the pattern case-insensitive.</p>
+
+<pre class="language-python"><code>import re
+
+pattern = r"hello"
+string = "Hello, World!"
+
+match_result = re.search(pattern, string, re.IGNORECASE)
+
+if match_result:
+    print("Pattern found!")
+else:
+    print("Pattern not found.")
+</code></pre>
+
+<p>These are just basic examples, and regular expressions can become quite complex depending on the requirements. The official Python documentation for the <code>re</code> module provides detailed information and examples: <a href="https://docs.python.org/3/library/re.html">Python <code>re</code> module documentation</a>.</p>
 </article>
 </div>
 <footer>

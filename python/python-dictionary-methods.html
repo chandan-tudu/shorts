@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Dictionary Methods</title>
+<meta name="description" content="In Python, a dictionary is a mutable, unordered collection of key-value pairs, where each key must be unique. Here are some common dictionary methods:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-dictionary-methods.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,87 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Dictionary Methods</h1><p><strong>Dictionaries in Python come with a variety of built-in methods</strong> that <strong>allow you to perform various operations</strong>. Here are some common dictionary methods:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<h3 id="dictionary-methods-for-accessing-elements">Dictionary Methods for Accessing Elements:</h3>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<ol>
+<li><p><strong><code>get(key, default)</code></strong>: Returns the value for the specified key. If the key is not found, it returns the default value (or <code>None</code> if not specified).</p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+<pre class="language-python"><code>my_dict = {'name': 'John', 'age': 30}
+value = my_dict.get('name', 'Default Name')
+print(value)
+</code></pre></li>
+<li><p><strong><code>keys()</code></strong>: Returns a view of all keys in the dictionary.</p>
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+<pre class="language-python"><code>my_dict = {'name': 'John', 'age': 30}
+all_keys = my_dict.keys()
+print(all_keys)
+</code></pre></li>
+<li><p><strong><code>values()</code></strong>: Returns a view of all values in the dictionary.</p>
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
+<pre class="language-python"><code>my_dict = {'name': 'John', 'age': 30}
+all_values = my_dict.values()
+print(all_values)
+</code></pre></li>
+<li><p><strong><code>items()</code></strong>: Returns a view of all key-value pairs in the dictionary as tuples.</p>
 
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
+<pre class="language-python"><code>my_dict = {'name': 'John', 'age': 30}
+all_items = my_dict.items()
+print(all_items)
+</code></pre></li>
+</ol>
 
-<p>In the above examples:</p>
+<h3 id="dictionary-methods-for-modifying-dictionaries">Dictionary Methods for Modifying Dictionaries:</h3>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<ol start="5">
+<li><p><strong><code>update(dict)</code></strong>: Updates the dictionary with elements from another dictionary or from an iterable of key-value pairs.</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>my_dict = {'name': 'John', 'age': 30}
+my_dict.update({'city': 'New York'})
+print(my_dict)
+</code></pre></li>
+<li><p><strong><code>pop(key, default)</code></strong>: Removes the item with the specified key and returns its value. If the key is not found, it returns the default value (or raises a <code>KeyError</code> if not specified).</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
+<pre class="language-python"><code>my_dict = {'name': 'John', 'age': 30}
+popped_value = my_dict.pop('age', None)
+print(popped_value)
+</code></pre></li>
+<li><p><strong><code>popitem()</code></strong>: Removes and returns the last inserted key-value pair as a tuple.</p>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<pre class="language-python"><code>my_dict = {'name': 'John', 'age': 30}
+popped_item = my_dict.popitem()
+print(popped_item)
+</code></pre></li>
+</ol>
+
+<h3 id="dictionary-methods-for-creating-a-copy">Dictionary Methods for Creating a Copy:</h3>
+
+<ol start="8">
+<li><p><strong><code>copy()</code></strong>: Returns a shallow copy of the dictionary.</p>
+
+<pre class="language-python"><code>my_dict = {'name': 'John', 'age': 30}
+copy_dict = my_dict.copy()
+print(copy_dict)
+</code></pre></li>
+</ol>
+
+<h3 id="dictionary-methods-for-clearing">Dictionary Methods for Clearing:</h3>
+
+<ol start="9">
+<li><p><strong><code>clear()</code></strong>: Removes all items from the dictionary.</p>
+
+<pre class="language-python"><code>my_dict = {'name': 'John', 'age': 30}
+my_dict.clear()
+print(my_dict)
+</code></pre></li>
+</ol>
+
+<p>These are just a few examples of the methods available for dictionaries in Python. Depending on your specific use case, you may find other methods in the official Python documentation that suit your needs.</p>
 </article>
 </div>
 <footer>

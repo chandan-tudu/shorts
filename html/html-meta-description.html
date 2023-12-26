@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>HTML Meta Description</title>
+<!-- <meta name="description" content=""> -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/html/html-meta-description.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,47 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">HTML</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>HTML Meta Description</h1><p>In HTML, the meta description is a <strong>meta tag that provides a concise and brief summary of the content of a web page</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>It is <strong>not displayed on the page itself</strong> but is often <strong>used by search engines</strong> to provide a preview snippet in search results.</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<p>The meta description is <strong>placed within the <code>&lt;head&gt;</code> section</strong> of an HTML document. Here's an example of how to add a meta description to an HTML document:</p>
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+<pre class="language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8" /&gt;
+        &lt;meta
+            name="description"
+            content="This is a brief description of your web page content. It should be concise and informative."
+        /&gt;
+        &lt;meta name="keywords" content="keywords, related, to, your, content" /&gt;
+        &lt;meta name="author" content="Your Name" /&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+        &lt;title&gt;Your Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Your page content goes here --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In the example above:</p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li><p><code>&lt;meta name="description" content="..."&gt;</code>: This is the meta tag for the description. Replace the content attribute with a concise and relevant description of your web page.</p></li>
+<li><p><code>&lt;meta name="keywords" content="..."&gt;</code>: This meta tag used to be more important for search engines, but it is less influential today. However, you can still include relevant keywords separated by commas.</p></li>
+<li><p><code>&lt;meta name="author" content="..."&gt;</code>: This meta tag allows you to specify the author of the web page.</p></li>
+<li><p><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: This meta tag is often included for responsive web design, ensuring that the page scales properly on different devices.</p></li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<p>Remember that search engines may use or ignore the meta description, and the length that is displayed in search results may be limited.</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
-
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>Aim for a clear and informative description within the specified length guidelines of the search engines you are targeting.</p>
 </article>
 </div>
 <footer>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Tuple Methods</title>
+<meta name="description" content="Python tuples do provide a few built-in methods for common operations. Here are some of the commonly used methods for tuples:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-tuple-methods.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,57 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Tuple Methods</h1><p>Tuples in Python are immutable, meaning once they are created, their elements cannot be changed or modified. However, <strong>tuples do provide a few built-in methods for common operations</strong>. Here are some of the commonly used methods for tuples:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
-
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong><code>count(value)</code> method:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Returns the number of occurrences of a specified value in the tuple.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>my_tuple = (1, 2, 3, 1, 4, 1)
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+count_of_1 = my_tuple.count(1)
+print(count_of_1)  # Output: 3
+</code></pre></li>
+<li><p><strong><code>index(value, start, end)</code> method:</strong></p>
+
+<ul>
+<li>Returns the index of the first occurrence of the specified value in the tuple. You can also specify optional start and end parameters to search within a specific range.</li>
+</ul>
+
+<pre class="language-python"><code>my_tuple = (10, 20, 30, 40, 20, 50)
+
+index_of_20 = my_tuple.index(20)
+print(index_of_20)  # Output: 1
+
+index_of_20_after_index_2 = my_tuple.index(20, 2)
+print(index_of_20_after_index_2)  # Output: 4
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>If the value is not found, the method raises a <code>ValueError</code>.</p></li>
+<li><p><strong><code>sorted(iterable, key=key, reverse=reverse)</code> function:</strong></p>
+
+<ul>
+<li>Returns a new sorted list from the elements of any iterable, such as a tuple.</li>
+<li>The <code>key</code> and <code>reverse</code> parameters are optional and allow customization of the sorting behavior.</li>
+</ul>
+
+<pre class="language-python"><code>my_tuple = (5, 3, 8, 1, 7)
+
+sorted_tuple = tuple(sorted(my_tuple))
+print(sorted_tuple)  # Output: (1, 3, 5, 7, 8)
+</code></pre>
+
+<p>Note: The <code>sorted</code> function returns a sorted list. If you need a sorted tuple, you can convert the sorted list back to a tuple using the <code>tuple()</code> constructor.</p></li>
+</ol>
+
+<p>These methods and functions provide some basic functionality for working with tuples in Python. Keep in mind that the immutability of tuples means that there are fewer methods available compared to mutable data types like lists.</p>
 </article>
 </div>
 <footer>

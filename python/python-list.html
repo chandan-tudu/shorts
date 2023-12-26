@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python List</title>
+<meta name="description" content="A Python list is a mutable, ordered collection of elements. Lists are defined using square brackets [] and can contain elements of different data types. Here's a basic example:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-list.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,88 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python List</h1><p>In Python, <strong>a list is a mutable, ordered collection of elements</strong>. Lists are <strong>defined using square brackets <code>[]</code> and can contain elements of different data types</strong>. Here's a basic example:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<pre class="language-python"><code># Creating a list
+my_list = [1, 2, 3, 'apple', 'banana', True]
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+# Accessing elements by index
+print("Element at index 0:", my_list[0])
+print("Element at index 3:", my_list[3])
 </code></pre>
 
-<p>In the above examples:</p>
+<p>Lists in Python are zero-indexed, meaning the first element is at index 0.</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<p>You can perform various operations on lists:</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<h3 id="list-slicing">List Slicing:</h3>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre class="language-python"><code># Slicing a list
+sublist = my_list[1:4]  # Elements from index 1 to 3 (excluding 4)
+print("Sliced list:", sublist)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<h3 id="modifying-lists">Modifying Lists:</h3>
+
+<pre class="language-python"><code># Modifying elements
+my_list[2] = 'orange'
+print("Modified list:", my_list)
+
+# Appending an element
+my_list.append(4)
+print("List after appending 4:", my_list)
+
+# Extending the list with another list
+my_list.extend([5, 6, 7])
+print("Extended list:", my_list)
+
+# Inserting an element at a specific index
+my_list.insert(2, 'grape')
+print("List after inserting 'grape' at index 2:", my_list)
+
+# Removing an element by value
+my_list.remove('banana')
+print("List after removing 'banana':", my_list)
+
+# Removing an element by index
+popped_value = my_list.pop(3)
+print("Popped value at index 3:", popped_value)
+print("List after popping index 3:", my_list)
+</code></pre>
+
+<h3 id="list-methods"><a href="./python-list-methods.html">List Methods:</a></h3>
+
+<pre class="language-python"><code># Finding the index of an element
+index_of_apple = my_list.index('apple')
+print("Index of 'apple':", index_of_apple)
+
+# Counting occurrences of an element
+count_of_3 = my_list.count(3)
+print("Count of 3:", count_of_3)
+
+# Reversing the list
+my_list.reverse()
+print("Reversed list:", my_list)
+
+# Sorting the list
+my_list.sort()
+print("Sorted list:", my_list)
+</code></pre>
+
+<h3 id="list-comprehensions"><a href="./python-list-comprehensions.html">List Comprehensions:</a></h3>
+
+<p>List comprehensions provide a concise way to create lists:</p>
+
+<pre class="language-python"><code># Using list comprehension to create a new list
+squared_numbers = [x**2 for x in range(5)]
+print("Squared numbers:", squared_numbers)
+</code></pre>
+
+<p>Lists are versatile and widely used in Python for storing and manipulating collections of items. They are an essential part of the language and can be used in various scenarios.</p>
 </article>
 </div>
 <footer>

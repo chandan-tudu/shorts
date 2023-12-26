@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>PHP Push Elements Into A Multidimensional Array</title>
+<meta name="description" content="In PHP, you can use the [] syntax to push elements into a multidimensional array.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-push-elements-into-a-multidimensional-array.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,67 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PHP</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>PHP Push Elements Into A Multidimensional Array</h1><p>In PHP, you can <strong>use the <code>[]</code> syntax to push elements into a multidimensional array</strong>. Here's an example:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<pre class="language-php"><code>&lt;?php
+// Original multidimensional array
+$students = array(
+    array("name" =&gt; "John", "age" =&gt; 20),
+    array("name" =&gt; "Jane", "age" =&gt; 22),
+    array("name" =&gt; "Bob", "age" =&gt; 21)
+);
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+// New student information
+$newStudent = array("name" =&gt; "Alice", "age" =&gt; 19);
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+// Add the new student to the multidimensional array
+$students[] = $newStudent;
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+// Display the updated array
+print_r($students);
+?&gt;
 </code></pre>
 
-<p>In the above examples:</p>
+<p>In this example, a new student information array <code>$newStudent</code> is created, and then it is pushed into the existing multidimensional array <code>$students</code> using <code>$students[] = $newStudent;</code>.</p>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<p>The <code>print_r($students)</code> statement is used to display the updated multidimensional array:</p>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<p>Output:</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre><code>Array
+(
+    [0] =&gt; Array
+        (
+            [name] =&gt; John
+            [age] =&gt; 20
+        )
+
+    [1] =&gt; Array
+        (
+            [name] =&gt; Jane
+            [age] =&gt; 22
+        )
+
+    [2] =&gt; Array
+        (
+            [name] =&gt; Bob
+            [age] =&gt; 21
+        )
+
+    [3] =&gt; Array
+        (
+            [name] =&gt; Alice
+            [age] =&gt; 19
+        )
+
+)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>This way, you can dynamically add new elements to a multidimensional array in PHP.</p>
 </article>
 </div>
 <footer>

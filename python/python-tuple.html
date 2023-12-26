@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Tuple</title>
+<meta name="description" content="In Python, a tuple is a collection data type that is ordered and immutable.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-tuple.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,81 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Tuple</h1><p>In Python, <strong>a tuple is a collection data type that is ordered and immutable</strong>. Tuples are <strong>similar to lists</strong>, but the <strong>main difference is that tuples cannot be modified once they are created</strong>. Tuples are defined by enclosing a <strong>comma-separated sequence of values in parentheses <code>()</code></strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>Here's a simple example of creating and using a tuple:</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<pre class="language-python"><code># Creating a tuple
+my_tuple = (1, 2, 3, "apple", "banana")
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+# Accessing elements of a tuple
+print(my_tuple[0])      # Output: 1
+print(my_tuple[3])      # Output: "apple"
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+# Slicing a tuple
+print(my_tuple[1:4])    # Output: (2, 3, "apple")
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
+# Tuple length
+print(len(my_tuple))    # Output: 5
 
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+# Checking if an element is in the tuple
+print("banana" in my_tuple)  # Output: True
+print("orange" in my_tuple)  # Output: False
 </code></pre>
 
-<p>In the above examples:</p>
+<p>Key features of tuples:</p>
+
+<ol>
+<li><p><strong>Ordered:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>Tuples maintain the order of elements as they are inserted.</li>
+</ul></li>
+<li><p><strong>Immutable:</strong></p>
+
+<ul>
+<li>Once a tuple is created, its elements cannot be modified, added, or removed. However, the tuple itself can be reassigned.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>my_tuple = (1, 2, 3)
+# This will raise an error: my_tuple[0] = 10
+</code></pre></li>
+<li><p><strong>Heterogeneous Elements:</strong></p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
-</code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
+<ul>
+<li>A tuple can contain elements of different data types, including numbers, strings, and other tuples.</li>
+</ul>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<pre class="language-python"><code>mixed_tuple = (1, "apple", (2, 3), True)
+</code></pre></li>
+<li><p><strong>Use Cases:</strong></p>
+
+<ul>
+<li>Tuples are useful for representing fixed collections of items, such as coordinates, RGB color values, or pairs of related values.</li>
+</ul>
+
+<pre class="language-python"><code>coordinates = (3, 4)
+rgb_color = (255, 0, 0)
+</code></pre></li>
+<li><p><strong>Packing and Unpacking:</strong></p>
+
+<ul>
+<li>Tuples can be used for packing and unpacking values.</li>
+</ul>
+
+<pre class="language-python"><code># Packing
+packed_tuple = 1, 2, 3  # Parentheses are optional
+
+# Unpacking
+a, b, c = packed_tuple
+</code></pre></li>
+</ol>
+
+<p>Tuples are a lightweight and efficient data structure, and their immutability makes them suitable for situations where you want to ensure that the data remains constant throughout the program.</p>
 </article>
 </div>
 <footer>

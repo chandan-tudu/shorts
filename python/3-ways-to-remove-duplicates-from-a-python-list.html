@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>3 Ways To Remove Duplicates From A Python List</title>
+<meta name="description" content="You can remove duplicates from a list in Python using various methods. Here are a few common approaches:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/3-ways-to-remove-duplicates-from-a-python-list.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,68 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>3 Ways To Remove Duplicates From A Python List</h1><p>You can <strong>remove duplicates from a list in Python using various methods</strong>. Here are a few common approaches:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<h3 id="1-using-set-to-eliminate-duplicates-">1. Using <code>set()</code> to eliminate duplicates:</h3>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
+<pre class="language-python"><code>original_list = [1, 2, 2, 3, 4, 4, 5]
 
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
+# Create a set to remove duplicates
+unique_set = set(original_list)
 
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
+# Convert the set back to a list if needed
+unique_list = list(unique_set)
 
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
+print("Original List:", original_list)
+print("List with Duplicates Removed:", unique_list)
 </code></pre>
 
-<p>In the above examples:</p>
+<h3 id="2-using-a-loop-to-create-a-new-list-without-duplicates-">2. Using a loop to create a new list without duplicates:</h3>
 
-<ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
-</ul>
+<pre class="language-python"><code>original_list = [1, 2, 2, 3, 4, 4, 5]
 
-<p>You can apply these styles to HTML elements like this:</p>
+# Create a new list without duplicates
+unique_list = []
+for item in original_list:
+    if item not in unique_list:
+        unique_list.append(item)
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+print("Original List:", original_list)
+print("List with Duplicates Removed:", unique_list)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<h3 id="3-using-list-dict-fromkeys-">3. Using <code>list(dict.fromkeys())</code>:</h3>
+
+<pre class="language-python"><code>original_list = [1, 2, 2, 3, 4, 4, 5]
+
+# Create a new list without duplicates
+unique_list = list(dict.fromkeys(original_list))
+
+print("Original List:", original_list)
+print("List with Duplicates Removed:", unique_list)
+</code></pre>
+
+<p>Note: The order of elements may not be preserved when using a set or the <code>dict.fromkeys()</code> method, as sets and dictionaries are unordered collections. If preserving the order is important, you can use the loop-based approach or, starting from Python 3.7, you can use a <code>dict</code> with insertion order preserved:</p>
+
+<pre class="language-python"><code>from collections import OrderedDict
+
+original_list = [1, 2, 2, 3, 4, 4, 5]
+
+# Create an ordered dictionary to preserve order
+unique_dict = OrderedDict.fromkeys(original_list)
+
+# Convert the ordered dictionary back to a list
+unique_list = list(unique_dict.keys())
+
+print("Original List:", original_list)
+print("List with Duplicates Removed:", unique_list)
+</code></pre>
+
+<p>Choose the method that best fits your requirements in terms of readability, performance, and order preservation.</p>
 </article>
 </div>
 <footer>

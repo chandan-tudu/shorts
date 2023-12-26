@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python Function Arguments</title>
+<meta name="description" content="In Python, function arguments are values that are passed to a function when it is called. Here are the main types of function arguments in Python:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-function-arguments.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,75 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python Function Arguments</h1><p>In Python, <strong>function arguments are values that are passed to a function when it is called</strong>. Functions can <strong>accept different types of arguments</strong>, and there are <strong>several ways to define and use them</strong>. Here are the main types of function arguments in Python:</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
-
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<ol>
+<li><p><strong>Positional Arguments:</strong></p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li>These are the most common type of arguments. The values are passed based on the position of the parameters in the function definition.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<pre class="language-python"><code>def add(x, y):
+   return x + y
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+result = add(3, 5)
+print(result)  # Output: 8
+</code></pre></li>
+<li><p><strong>Keyword Arguments:</strong></p>
+
+<ul>
+<li>Values are passed to a function using the parameter names. This allows you to specify which parameter each value corresponds to, regardless of their order.</li>
+</ul>
+
+<pre class="language-python"><code>def greet(name, message):
+   print(f"{message}, {name}!")
+
+greet(message="Hello", name="John")
+</code></pre></li>
+<li><p><strong>Default Arguments:</strong></p>
+
+<ul>
+<li>You can provide default values for some or all of the function parameters. If a value is not provided when the function is called, the default value is used.</li>
+</ul>
+
+<pre class="language-python"><code>def power(base, exponent=2):
+   return base ** exponent
+
+result = power(3)
+print(result)  # Output: 9
+</code></pre></li>
+<li><p><strong>Variable-Length Argument Lists:</strong></p>
+
+<ul>
+<li>Functions can accept a variable number of arguments. There are two types:
+
+<ul>
+<li><code>*args</code>: Allows a function to accept any number of positional arguments.</li>
+<li><code>**kwargs</code>: Allows a function to accept any number of keyword arguments.</li>
+</ul></li>
+</ul>
+
+<pre class="language-python"><code>def sum_all(*args):
+   return sum(args)
+
+total = sum_all(1, 2, 3, 4)
+print(total)  # Output: 10
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<pre class="language-python"><code>def print_info(**kwargs):
+   for key, value in kwargs.items():
+       print(f"{key}: {value}")
+
+print_info(name="John", age=30, city="New York")
+</code></pre></li>
+</ol>
+
+<p>These different types of arguments provide flexibility and allow you to create functions that are versatile and can handle a variety of input scenarios.</p>
 </article>
 </div>
 <footer>

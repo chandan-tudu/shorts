@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CSS Text Decoration</title>
-<meta name="description" content="In CSS (Cascading Style Sheets), the text-decoration property is used to control the decoration of text, such as underlining, overlining, or striking through.">
+<title>Python strftime() Method: Format Datetime Obj As String</title>
+<meta name="description" content="The strftime() method in Python's datetime module is used to format a datetime object as a string.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/css/css-text-decoration.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-strftime-method-format-datetime-obj-as-string.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,72 +49,56 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">CSS</a></li>
+<li><a href="./index.html">PYTHON</a></li>
 </ul>
 </nav>
 <article>
-<h1>CSS Text Decoration</h1><p>In CSS (Cascading Style Sheets), the <strong><code>text-decoration</code> property</strong> is used to <strong>control the decoration of text, such as underlining, overlining, or striking through</strong>. Here's how you can use it:</p>
+<h1>Python strftime() Method: Format Datetime Obj As String</h1><p>The <strong><code>strftime()</code> method</strong> in Python's <code>datetime</code> module is <strong>used to format a <code>datetime</code> object as a string</strong>. It <strong>stands for "string format time"</strong> and allows you to <strong>represent a <code>datetime</code> object in a human-readable string format</strong>.</p>
 
-<pre class="language-css"><code>/* Example 1: Underline */
-.text-underlined {
-    text-decoration: underline;
-}
+<p>This method <strong>takes a format string as an argument</strong>, where various format codes represent different components of the date and time.</p>
 
-/* Example 2: Overline */
-.text-overlined {
-    text-decoration: overline;
-}
-
-/* Example 3: Line-through (strikethrough) */
-.text-strikethrough {
-    text-decoration: line-through;
-}
-
-/* Example 4: Blink (not widely supported) */
-.text-blink {
-    text-decoration: blink;
-}
-
-/* Example 5: Multiple decorations */
-.text-multiple {
-    text-decoration: underline overline line-through;
-}
-
-/* Example 6: Removing decoration */
-.text-no-decoration {
-    text-decoration: none;
-}
-</code></pre>
-
-<p>In the above examples:</p>
+<p>Here are some common format codes used with the <code>strftime()</code> method:</p>
 
 <ul>
-<li><code>text-decoration: underline;</code> underlines the text.</li>
-<li><code>text-decoration: overline;</code> puts a line above the text.</li>
-<li><code>text-decoration: line-through;</code> creates a strikethrough effect.</li>
-<li><code>text-decoration: blink;</code> makes the text blink, but note that the <code>blink</code> value is not widely supported and may not work in all browsers.</li>
-<li><code>text-decoration: none;</code> removes any text decoration.</li>
+<li><code>%Y</code>: Year with century as a decimal number (e.g., 2022).</li>
+<li><code>%m</code>: Month as a zero-padded decimal number (01, 02, ..., 12).</li>
+<li><code>%d</code>: Day of the month as a zero-padded decimal number (01, 02, ..., 31).</li>
+<li><code>%H</code>: Hour (00, 01, ..., 23).</li>
+<li><code>%M</code>: Minute (00, 01, ..., 59).</li>
+<li><code>%S</code>: Second (00, 01, ..., 59).</li>
+<li><code>%a</code>: Abbreviated weekday name (Sun, Mon, ..., Sat).</li>
+<li><code>%A</code>: Full weekday name (Sunday, Monday, ..., Saturday).</li>
+<li><code>%b</code>: Abbreviated month name (Jan, Feb, ..., Dec).</li>
+<li><code>%B</code>: Full month name (January, February, ..., December).</li>
+<li><code>%c</code>: Locale’s appropriate date and time representation.</li>
+<li><code>%p</code>: AM or PM.</li>
+<li><code>%Z</code>: Time zone name.</li>
 </ul>
 
-<p>You can apply these styles to HTML elements like this:</p>
+<p>Here's an example of using <code>strftime()</code> to format a <code>datetime</code> object:</p>
 
-<pre class="language-html"><code>&lt;p class="text-underlined"&gt;This text is underlined.&lt;/p&gt;
-&lt;p class="text-overlined"&gt;This text has an overline.&lt;/p&gt;
-&lt;p class="text-strikethrough"&gt;This text has a strikethrough.&lt;/p&gt;
-&lt;p class="text-blink"&gt;This text blinks (if supported).&lt;/p&gt;
-&lt;p class="text-multiple"&gt;This text has multiple decorations.&lt;/p&gt;
-&lt;p class="text-no-decoration"&gt;This text has no decoration.&lt;/p&gt;
+<pre class="language-python"><code>from datetime import datetime
+
+# Creating a datetime object
+now = datetime.now()
+
+# Formatting the datetime object as a string
+formatted_date = now.strftime("%Y-%m-%d %H:%M:%S")
+print("Formatted date:", formatted_date)
 </code></pre>
-<div class="html-result">
-<p style="text-decoration: underline;">This text is underlined.</p>
-<p style="text-decoration: overline;">This text has an overline.</p>
-<p style="text-decoration:line-through;">This text has a strikethrough.</p>
-<p style="text-decoration: blink;">This text blinks (if supported).</p>
-<p style="text-decoration: underline overline line-through;">This text has multiple decorations.</p>
-<p style="text-decoration: none ;">This text has no decoration.</p>
-</div>
 
-<p>Feel free to adjust the class names and styles to fit your specific needs.</p>
+<p>This would output the current date and time in the specified format, like "2022-12-31 18:30:00".</p>
+
+<p>You can customize the format string to represent the <code>datetime</code> object in various ways based on your specific requirements. Experimenting with different format codes will allow you to achieve the desired output.</p>
+
+<pre class="language-python"><code># Example with additional format codes
+custom_format = now.strftime("Today is %A, %B %d, %Y. The time is %I:%M %p.")
+print(custom_format)
+</code></pre>
+
+<p>This might output something like "Today is Saturday, December 31, 2022. The time is 06:30 PM."</p>
+
+<p>Refer to the official Python documentation for a comprehensive list of format codes: <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes">Python <code>strftime()</code> format codes</a>.</p>
 </article>
 </div>
 <footer>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python @property Decorator With Example</title>
+<meta name="description" content="In Python, the @property decorator is used to create read-only properties for class instances. It allows you to define a method that can be accessed like an attribute, without the need for parentheses when calling it.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/python/python-property-decorator-with-example.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PYTHON</a></li>
+</ul>
+</nav>
+<article>
+<h1>Python @property Decorator With Example</h1><p>In Python, <strong>the <code>@property</code> decorator is used to create read-only properties for class instances</strong>. It allows you to <strong>define a method that can be accessed like an attribute, without the need for parentheses when calling it</strong>.</p>
+
+<p>The <code>@property</code> decorator is often used to encapsulate the access and modification of private instance variables in a class.</p>
+
+<p>Here's a simple example to illustrate the use of the <code>@property</code> decorator:</p>
+
+<pre class="language-python"><code>class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @property
+    def diameter(self):
+        return 2 * self._radius
+
+    @property
+    def area(self):
+        return 3.14 * self._radius ** 2
+
+# Example usage
+circle = Circle(5)
+
+print(circle.radius)    # Accessing property like an attribute
+print(circle.diameter)  # Accessing another property
+print(circle.area)      # Accessing another property
+</code></pre>
+
+<p>In this example:</p>
+
+<ul>
+<li><p>The <code>Circle</code> class has a private instance variable <code>_radius</code>, which is conventionally considered private by using a single leading underscore.</p></li>
+<li><p>The <code>@property</code> decorator is applied to three methods: <code>radius</code>, <code>diameter</code>, and <code>area</code>. These methods act as read-only properties and can be accessed like attributes.</p></li>
+<li><p>When accessing <code>circle.radius</code>, <code>circle.diameter</code>, or <code>circle.area</code>, the corresponding method is called, and the value is computed and returned.</p></li>
+<li><p>Since these properties are read-only, attempting to set them will raise an <code>AttributeError</code>.</p></li>
+</ul>
+
+<pre class="language-python"><code># Attempting to set a read-only property will raise an AttributeError
+circle.radius = 7  # Raises AttributeError
+</code></pre>
+
+<p>The <code>@property</code> decorator can also be combined with the <code>@property_name.setter</code> decorator to create read-write properties with associated setter methods. This allows for controlled access and modification of the underlying private attributes.</p>
+
+<pre class="language-python"><code>class Square:
+    def __init__(self, side_length):
+        self._side_length = side_length
+
+    @property
+    def side_length(self):
+        return self._side_length
+
+    @side_length.setter
+    def side_length(self, value):
+        if value &gt; 0:
+            self._side_length = value
+        else:
+            raise ValueError("Side length must be positive")
+
+    @property
+    def area(self):
+        return self._side_length ** 2
+
+# Example usage
+square = Square(4)
+
+print(square.side_length)  # Accessing property like an attribute
+print(square.area)         # Accessing another property
+
+square.side_length = 5     # Modifying the property using the setter
+print(square.side_length)  # Output: 5
+print(square.area)         # Output: 25
+</code></pre>
+
+<p>In this example, the <code>Square</code> class has a read-write property <code>side_length</code> with an associated setter method. The setter method checks that the assigned value is positive before allowing the modification.</p>
+
+<p>The <code>@property</code> decorator is a powerful tool for creating properties that provide controlled access to underlying attributes, making the code more readable and maintainable.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>
