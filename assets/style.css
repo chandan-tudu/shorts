@@ -130,6 +130,15 @@ article a:hover {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  overflow: hidden;
+}
+
+.container img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  shape-margin: 1rem;
+  border-radius: var(--border-radius);
 }
 
 .logo a {
