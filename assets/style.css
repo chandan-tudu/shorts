@@ -288,6 +288,7 @@ pre code {
 .cat-list li a {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
   border: 1px solid var(--border);
   background-color: var(--light-bg);
@@ -297,6 +298,14 @@ pre code {
   display: block;
   padding: 5px;
   font-weight: 700;
+}
+.cat-list .cat-examples a {
+  flex-direction: row;
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+}
+.cat-list .cat-examples img {
+  width: 50px;
 }
 
 .post-list ul {
