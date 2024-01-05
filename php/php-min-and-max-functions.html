@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP min() And max() Functions</title>
+<meta name="description" content="In PHP, the min() and max() functions are used to find the minimum and maximum values, respectively, from a list of provided values.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-min-and-max-functions.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,39 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP min() And max() Functions</h1><p>In PHP, <strong>the <code>min()</code> and <code>max()</code> functions are used to find the minimum and maximum values, respectively, from a list of provided values</strong>. These functions can take multiple arguments and determine the minimum or maximum value among them.</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<h3 id="1-min-function">1. "min()" Function:</h3>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<p>The <code>min()</code> function returns the smallest value among the given arguments.</p>
+
+<pre class="language-php"><code>$minValue = min(3, 8, 2, 6, 4);
+echo $minValue;  // Outputs: 2
 </code></pre>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<p>You can also use <code>min()</code> with an array to find the minimum value within an array:</p>
 
-<p>Here's a simple example:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
-
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
+<pre class="language-php"><code>$values = [5, 10, 3, 8];
+$minValue = min($values);
+echo $minValue;  // Outputs: 3
 </code></pre>
 
-<p>Output:</p>
+<h3 id="2-max-function">2. "max()" Function:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<p>The <code>max()</code> function returns the largest value among the given arguments.</p>
+
+<pre class="language-php"><code>$maxValue = max(3, 8, 2, 6, 4);
+echo $maxValue;  // Outputs: 8
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<p>Similarly, you can use <code>max()</code> with an array:</p>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
+<pre class="language-php"><code>$values = [5, 10, 3, 8];
+$maxValue = max($values);
+echo $maxValue;  // Outputs: 10
 </code></pre>
 
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>These functions are useful when you need to find the extreme values in a set of numbers, whether they are provided as individual arguments or within an array. The <code>min()</code> and <code>max()</code> functions can handle both numeric and string values, as well as a mix of different types.</p>
 </article>
 </div>
 <footer>

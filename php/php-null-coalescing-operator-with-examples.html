@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Null Coalescing Operator With Examples</title>
+<meta name="description" content="The null coalescing operator (??) is used in PHP to provide a concise way of handling the case where a variable may be null. It allows you to return the first defined and non-null value among a set of operands.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-null-coalescing-operator-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,33 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Null Coalescing Operator With Examples</h1><p><strong>The null coalescing operator (<code>??</code>) is used in PHP to provide a concise way of handling the case where a variable may be null</strong>. It allows you to return the first defined and non-null value among a set of operands.</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<h3 id="syntax-">Syntax:</h3>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<pre class="language-php"><code>$result = $value ?? $default;
 </code></pre>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<p>The expression <code>$value ?? $default</code> will return <code>$value</code> if it is defined and not null; otherwise, it will return <code>$default</code>.</p>
 
-<p>Here's a simple example:</p>
+<h3 id="example-">Example:</h3>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
+<pre class="language-php"><code>// Example 1
+$username = $_GET['user'] ?? 'Guest';
+echo $username;
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
+// Example 2
+$firstName = null;
+$lastName = 'Doe';
+$fullName = $firstName ?? $lastName;
+echo $fullName;
 </code></pre>
 
-<p>Output:</p>
+<p>In Example 1, if the <code>$_GET['user']</code> parameter is set and not null, it will be assigned to the <code>$username</code> variable; otherwise, the default value 'Guest' will be used.</p>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
-</code></pre>
+<p>In Example 2, the null coalescing operator is used to assign the value of <code>$firstName</code> to <code>$fullName</code> if it is not null. Otherwise, it falls back to the value of <code>$lastName</code>.</p>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
-
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>This operator is particularly useful for concise variable initialization, especially when dealing with user inputs or default values. It's available in PHP 7 and later versions.</p>
 </article>
 </div>
 <footer>

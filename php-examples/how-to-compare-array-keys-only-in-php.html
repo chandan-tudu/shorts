@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>How To Compare Array Keys Only In PHP</title>
+<meta name="description" content="To compare array keys only in PHP, you can use various functions such as array_keys(), array_diff(), or array_intersect(). Here are some examples:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php-examples/how-to-compare-array-keys-only-in-php.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,85 +49,53 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">PHP</a></li>
+<li><a href="./index.html">PHP EXAMPLES</a></li>
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>How To Compare Array Keys Only In PHP</h1><p><strong>To compare array keys only in PHP, you can use various functions such as <code>array_keys()</code>, <code>array_diff()</code>, or <code>array_intersect()</code></strong>. Here are some examples:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
-
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
-</code></pre>
-
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
-
-<p>Here's a simple example:</p>
+<h3 id="1-using-array-keys-and-array-diff-">1. Using "array_keys()" and "array_diff()":</h3>
 
 <pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
+$array1 = array('a' =&gt; 1, 'b' =&gt; 2, 'c' =&gt; 3);
+$array2 = array('a' =&gt; 1, 'b' =&gt; 2, 'c' =&gt; 3, 'd' =&gt; 4);
+
+$keys1 = array_keys($array1);
+$keys2 = array_keys($array2);
+
+$diff = array_diff($keys1, $keys2);
+
+if (empty($diff)) {
+    echo "Arrays have the same keys.";
+} else {
+    echo "Arrays have different keys.";
 }
-
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
 ?&gt;
 </code></pre>
 
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
-</code></pre>
-
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
-
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<h3 id="2-using-array-keys-and-array-intersect-">2. Using "array_keys()" and "array_intersect()":</h3>
 
 <pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+$array1 = array('a' =&gt; 1, 'b' =&gt; 2, 'c' =&gt; 3);
+$array2 = array('a' =&gt; 1, 'b' =&gt; 2, 'c' =&gt; 3, 'd' =&gt; 4);
 
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
+$keys1 = array_keys($array1);
+$keys2 = array_keys($array2);
 
-// Display the result
-print_r($doubledNumbers);
+$intersect = array_intersect($keys1, $keys2);
+
+if (count($intersect) == count($keys1) &amp;&amp; count($intersect) == count($keys2)) {
+    echo "Arrays have the same keys.";
+} else {
+    echo "Arrays have different keys.";
+}
 ?&gt;
 </code></pre>
 
-<p>Output:</p>
+<p>In both examples, <code>array_keys()</code> is used to extract the keys from each array, and then either <code>array_diff()</code> or <code>array_intersect()</code> is used to compare the keys. The conditions check if the resulting array after the comparison has the same number of elements as the original arrays.</p>
 
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>Choose the method that fits your specific use case and comparison criteria.</p>
 </article>
 </div>
 <footer>

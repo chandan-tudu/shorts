@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Numbers Data Type With Examples</title>
+<meta name="description" content="In PHP, numbers are used to represent numerical values, and they can be integers or floating-point numbers. Here's a brief overview of numeric data types in PHP:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-numbers-data-type-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,72 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Numbers Data Type With Examples</h1><p>In PHP, <strong>numbers are used to represent numerical values, and they can be integers or floating-point numbers</strong>. Here's a brief overview of numeric data types in PHP:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<h3 id="1-integer-numbers-">1. Integer Numbers:</h3>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<p>Integer numbers are <strong>whole numbers without any decimal points</strong>. <strong>They can be positive or negative</strong>.</p>
+
+<pre class="language-php"><code>$integerNumber = 42;
+$negativeInteger = -10;
 </code></pre>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<h3 id="2-floating-point-numbers-">2. Floating-Point Numbers:</h3>
 
-<p>Here's a simple example:</p>
+<p>Floating-point numbers, also known as <strong>floats or doubles</strong>, can <strong>represent decimal numbers or numbers with a fractional part</strong>.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
-
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
+<pre class="language-php"><code>$floatNumber = 3.14;
+$negativeFloat = -2.5;
 </code></pre>
 
-<p>Output:</p>
+<h3 id="3-mathematical-operations-">3. Mathematical Operations:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<p>You can <strong>perform various mathematical operations using PHP arithmetic operators</strong> such as addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), and modulus (<code>%</code>).</p>
+
+<pre class="language-php"><code>$sum = $integerNumber + $floatNumber;
+$difference = $integerNumber - $negativeFloat;
+$product = $integerNumber * $floatNumber;
+$quotient = $floatNumber / $negativeFloat;
+$remainder = $integerNumber % 5;  // Modulus operation
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<h3 id="4-type-casting-">4. Type Casting:</h3>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<p>You can <strong>convert a variable from one numeric type to another using type casting functions</strong> such as <strong><code>intval()</code> and <code>floatval()</code></strong>.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
+<pre class="language-php"><code>$floatNumber = 3.75;
+$intFromFloat = intval($floatNumber);  // Converts float to integer
+echo $intFromFloat; // Output: 3
 </code></pre>
 
-<p>Output:</p>
+<h3 id="5-constants-">5. Constants:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
+<p>You can define constants for numeric values using the <code>define()</code> function.</p>
+
+<pre class="language-php"><code>define("PI", 3.14159);
+$radius = 5;
+$circleArea = PI * $radius * $radius;
 </code></pre>
 
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<h3 id="6-increment-and-decrement-">6. Increment and Decrement:</h3>
+
+<p>PHP supports increment (<code>++</code>) and decrement (<code>--</code>) operators.</p>
+
+<pre class="language-php"><code>$counter = 0;
+$counter++;  // Increment by 1
+$counter--;  // Decrement by 1
+</code></pre>
+
+<h3 id="7-number-formatting-">7. Number Formatting:</h3>
+
+<p>You can format numbers for display using functions like <code>number_format()</code>.</p>
+
+<pre class="language-php"><code>$largeNumber = 1234567.89;
+$formattedNumber = number_format($largeNumber, 2, '.', ',');
+// Outputs: 1,234,567.89
+</code></pre>
+
+<p>Understanding how to work with different types of numbers and performing arithmetic operations is fundamental when working with PHP, especially in applications involving mathematical calculations or financial data.</p>
 </article>
 </div>
 <footer>

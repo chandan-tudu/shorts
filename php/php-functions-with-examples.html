@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Functions With Examples</title>
+<meta name="description" content="In PHP, a function is a block of reusable code that performs a specific task. Functions help organize code into manageable and modular pieces, making it easier to understand, maintain, and reuse.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-functions-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,80 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Functions With Examples</h1><p><strong>In PHP, a function is a block of reusable code that performs a specific task</strong>. <strong>Functions help organize code into manageable and modular pieces, making it easier to understand, maintain, and reuse</strong>. Here is the basic syntax for defining and using a function in PHP:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<h3 id="1-defining-a-function-">1. Defining a Function:</h3>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<pre class="language-php"><code>function functionName($parameter1, $parameter2, ...) {
+    // Code to be executed
+    return $result; // Optional return statement
+}
 </code></pre>
 
 <ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
+<li><code>functionName</code>: The name of the function.</li>
+<li><code>$parameter1, $parameter2, ...</code>: Parameters (input) that the function can accept.</li>
+<li><code>{}</code>: The code block to be executed.</li>
+<li><code>return</code>: Optional statement to return a value from the function.</li>
 </ul>
 
-<p>Here's a simple example:</p>
+<h3 id="example-">Example:</h3>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
+<pre class="language-php"><code>function greet($name) {
+    echo "Hello, $name!";
 }
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
+// Calling the function
+greet("John");
+// Outputs: Hello, John!
 </code></pre>
 
-<p>Output:</p>
+<h3 id="2-function-with-return-value-">2. Function with Return Value:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<pre class="language-php"><code>function add($a, $b) {
+    $sum = $a + $b;
+    return $sum;
+}
+
+$result = add(5, 3);
+echo $result;
+// Outputs: 8
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<h3 id="3-default-parameter-values-">3. Default Parameter Values:</h3>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<pre class="language-php"><code>function multiply($a, $b = 2) {
+    $product = $a * $b;
+    return $product;
+}
 
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+$result1 = multiply(5);
+echo $result1;
+// Outputs: 10
 
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
+$result2 = multiply(5, 3);
+echo $result2;
+// Outputs: 15
 </code></pre>
 
-<p>Output:</p>
+<h3 id="4-variable-scope-">4. Variable Scope:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
+<p>Variables inside a function have local scope, meaning they are only accessible within that function. You can also use global variables within a function, but you need to declare them as <code>global</code>.</p>
+
+<h3 id="5-anonymous-functions-closures-">5. Anonymous Functions (Closures):</h3>
+
+<p>Anonymous functions, also known as closures, allow you to create functions on the fly without specifying a name.</p>
+
+<pre class="language-php"><code>$add = function($a, $b) {
+    return $a + $b;
+};
+
+$result = $add(5, 3);
+echo $result;
+// Outputs: 8
 </code></pre>
 
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>These are the basics of PHP functions. They play a crucial role in writing modular and reusable code. Functions can be used for a wide range of tasks, from simple calculations to complex operations.</p>
 </article>
 </div>
 <footer>

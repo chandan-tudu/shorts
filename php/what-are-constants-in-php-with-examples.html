@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>What Are Constants In PHP With Examples</title>
+<meta name="description" content="In PHP, constants are like variables, but once they are defined, they cannot be changed or redefined during the execution of the script.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/what-are-constants-in-php-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,65 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>What Are Constants In PHP With Examples</h1><p>In PHP, <strong>constants are like variables, but once they are defined, they cannot be changed or redefined during the execution of the script</strong>.</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<p>Constants are <strong>useful for storing values that remain constant throughout the execution of a script</strong>, such as configuration settings or fixed values.</p>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<p>Here's how you can define and use constants in PHP:</p>
+
+<h3 id="1-defining-constants-">1. Defining Constants:</h3>
+
+<p>You can use the <code>define()</code> function to define a constant. Constants have a case-sensitive name and follow the same rules as variable names in PHP.</p>
+
+<pre class="language-php"><code>define("CONSTANT_NAME", "constant_value");
 </code></pre>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<p>Example:</p>
 
-<p>Here's a simple example:</p>
+<pre class="language-php"><code>define("PI", 3.14);
+define("GREETING", "Hello, World!");
+</code></pre>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
+<h3 id="2-using-constants-">2. Using Constants:</h3>
+
+<p>Once defined, you can use constants in your script as you would use variables.</p>
+
+<pre class="language-php"><code>echo PI;        // Outputs: 3.14
+echo GREETING;  // Outputs: Hello, World!
+</code></pre>
+
+<p>Constants can be used anywhere in your script, including inside functions, classes, and loops.</p>
+
+<h3 id="3-case-sensitivity-">3. Case-Sensitivity:</h3>
+
+<p>Constants in PHP are case-sensitive by default. For example:</p>
+
+<pre class="language-php"><code>define("MyConstant", "Some value");
+echo MyConstant;   // Outputs: Some value
+echo myconstant;   // This would result in an error, as constant names are case-sensitive
+</code></pre>
+
+<h3 id="4-checking-if-a-constant-is-defined-">4. Checking if a Constant is Defined:</h3>
+
+<p>You can use the <code>defined()</code> function to check if a constant is defined before using it:</p>
+
+<pre class="language-php"><code>if (defined("PI")) {
+    echo PI;  // Outputs: 3.14
+} else {
+    echo "PI is not defined";
 }
-
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
 </code></pre>
 
-<p>Output:</p>
+<h3 id="5-magic-constants-">5. Magic Constants:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<p>PHP also provides a set of special constants called "magic constants" that change based on their usage. Examples include <code>__LINE__</code> (current line number), <code>__FILE__</code> (full path and filename of the script), and <code>__FUNCTION__</code> (function name).</p>
+
+<pre class="language-php"><code>echo __LINE__;      // Outputs: Current line number
+echo __FILE__;      // Outputs: Full path and filename of the script
+echo __FUNCTION__;  // Outputs: Function name
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
-
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>Constants are a useful way to make your code more readable, maintainable, and less error-prone by ensuring that certain values remain constant throughout your script's execution.</p>
 </article>
 </div>
 <footer>

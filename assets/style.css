@@ -10,6 +10,7 @@
 
 :root {
   --font-family: "Open Sans", sans-serif, "Noto Emoji";
+  --only-font: "Open Sans", sans-serif;
   --heading-font: "Lexend Deca", sans-serif, "Noto Emoji";
   --code-font: monospace, "Cascadia Code";
   --border-radius: 2px;
@@ -26,7 +27,7 @@
   --light-bg: hsl(var(--primary-hue), var(--primary-saturation), 98%);
   --light-btn-bg: hsl(var(--primary-hue), var(--primary-saturation), 98%);
   --code-bg: hsl(var(--primary-hue), var(--primary-saturation), 13%);
-  --border: hsl(var(--primary-hue), var(--primary-saturation), 80%);
+  --border: hsl(var(--primary-hue), 13%, 80%);
   --font-color: hsl(var(--primary-hue), var(--primary-saturation), 13%);
   --strong-color: hsl(var(--primary-hue), var(--primary-saturation), 7%);
 }
@@ -357,12 +358,18 @@ pre code {
 }
 
 .html-result {
+  font-family: var(--only-font);
   position: relative;
   overflow: hidden;
   padding: 20px;
   padding-top: 60px;
   border: 5px solid var(--border);
   border-radius: var(--border-radius);
+}
+.html-result .h1-text {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--heading-font);
 }
 
 .html-result::before {

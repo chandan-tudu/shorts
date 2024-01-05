@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>How To Check If A Number Is Finite Or Infinite In PHP</title>
+<meta name="description" content="In PHP, you can check if a number is finite or infinite using the is_finite() and is_infinite() functions. Here's an example:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php-examples/how-to-check-if-a-number-is-finite-or-infinite-in-php.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,85 +49,46 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">PHP</a></li>
+<li><a href="./index.html">PHP EXAMPLES</a></li>
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
-
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
-
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
-</code></pre>
-
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
-
-<p>Here's a simple example:</p>
+<h1>How To Check If A Number Is Finite Or Infinite In PHP</h1><p>In PHP, <strong>you can check if a number is finite or infinite using the <code>is_finite()</code> and <code>is_infinite()</code> functions</strong>. Here's an example:</p>
 
 <pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
+$finiteNumber = 42.0;
+$infiniteNumber = INF;
+
+if (is_finite($finiteNumber)) {
+    echo "$finiteNumber is a finite number.";
+} else {
+    echo "$finiteNumber is not a finite number.";
 }
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+echo "\n";
 
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
+if (is_infinite($infiniteNumber)) {
+    echo "$infiniteNumber is an infinite number.";
+} else {
+    echo "$infiniteNumber is not an infinite number.";
+}
 ?&gt;
 </code></pre>
 
-<p>Output:</p>
+<p>In this example:</p>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<ul>
+<li><code>is_finite()</code> returns <code>true</code> if the provided number is finite and <code>false</code> otherwise.</li>
+<li><code>is_infinite()</code> returns <code>true</code> if the provided number is infinite and <code>false</code> otherwise.</li>
+</ul>
+
+<p>Here's the output for the above example:</p>
+
+<pre><code>42 is a finite number.
+INF is an infinite number.
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
-
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>You can use these functions to check the nature of a numeric value before performing specific operations that might not be valid for infinite values.</p>
 </article>
 </div>
 <footer>

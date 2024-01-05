@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Predefined Constants For Numbers</title>
+<meta name="description" content="PHP has several predefined constants related to numbers, mathematics, and general numeric values. Here are some commonly used ones:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-predefined-constants-for-numbers.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,60 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Predefined Constants For Numbers</h1><p><strong>PHP has several predefined <a href="./what-are-constants-in-php-with-examples.html">constants</a> related to numbers, mathematics, and general numeric values</strong>. Here are some commonly used ones:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
-
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
-</code></pre>
+<ol>
+<li><p><strong>Mathematical Constants:</strong></p>
 
 <ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
+<li><code>M_PI</code>: Represents the mathematical constant π (pi).</li>
+<li><code>M_E</code>: Represents the mathematical constant e.</li>
 </ul>
 
-<p>Here's a simple example:</p>
+<pre class="language-php"><code>echo M_PI;  // Outputs: 3.1415926535898
+echo M_E;   // Outputs: 2.718281828459
+</code></pre></li>
+<li><p><strong>Integer Constants:</strong></p>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
+<ul>
+<li><code>PHP_INT_MAX</code>: Represents the maximum value for integers on your system.</li>
+<li><code>PHP_INT_MIN</code>: Represents the minimum value for integers on your system.</li>
+</ul>
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+<pre class="language-php"><code>echo PHP_INT_MAX;  // Outputs the maximum integer value on your system
+echo PHP_INT_MIN;  // Outputs the minimum integer value on your system
+</code></pre></li>
+<li><p><strong>Float Constants:</strong></p>
 
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
+<ul>
+<li><code>PHP_FLOAT_MAX</code>: Represents the maximum representable finite float.</li>
+<li><code>PHP_FLOAT_MIN</code>: Represents the minimum representable positive float.</li>
+</ul>
 
-// Display the result
-print_r($squaredNumbers);
-?&gt;
-</code></pre>
+<pre class="language-php"><code>echo PHP_FLOAT_MAX;  // Outputs the maximum representable finite float
+echo PHP_FLOAT_MIN;  // Outputs the minimum representable positive float
+</code></pre></li>
+<li><p><strong>Infinity Constants:</strong></p>
 
-<p>Output:</p>
+<ul>
+<li><code>INF</code>: Represents positive infinity.</li>
+<li><code>-INF</code>: Represents negative infinity.</li>
+</ul>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
-</code></pre>
+<pre class="language-php"><code>echo INF;   // Outputs: INF
+echo -INF;  // Outputs: -INF
+</code></pre></li>
+<li><p><strong>NaN (Not a Number) Constant:</strong></p>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<ul>
+<li><code>NAN</code>: Represents "Not a Number," typically the result of an undefined or unrepresentable mathematical operation.</li>
+</ul>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<pre class="language-php"><code>echo NAN;  // Outputs: NAN
+</code></pre></li>
+</ol>
 
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>These constants are part of the PHP language and are often used in mathematical calculations, comparisons, or for representing special numeric values. Keep in mind that some of these constants may vary depending on your PHP version and the platform on which PHP is running.</p>
 </article>
 </div>
 <footer>

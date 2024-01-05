@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Associative Arrays With Examples</title>
+<meta name="description" content="In PHP, an associative array is an array that uses named keys instead of numeric indices to access its elements. Each key is associated with a specific value.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-associative-arrays-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,82 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Associative Arrays With Examples</h1><p>In PHP, <strong>an associative array is an array that uses named keys instead of numeric indices to access its elements</strong>. Each key is associated with a specific value. Here's how you can create, access, and manipulate associative arrays in PHP:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<h3 id="1-creating-an-associative-array-">1. Creating an Associative Array:</h3>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<pre class="language-php"><code>// Creating an associative array
+$person = array(
+    "name" =&gt; "John",
+    "age" =&gt; 30,
+    "city" =&gt; "New York"
+);
 </code></pre>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<p>Alternatively, you can use the shorthand syntax introduced in PHP 5.4:</p>
 
-<p>Here's a simple example:</p>
+<pre class="language-php"><code>// Shorthand syntax
+$person = [
+    "name" =&gt; "John",
+    "age" =&gt; 30,
+    "city" =&gt; "New York"
+];
+</code></pre>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
+<h3 id="2-accessing-elements-">2. Accessing Elements:</h3>
+
+<p>You access elements in an associative array using their keys:</p>
+
+<pre class="language-php"><code>echo $person["name"]; // Outputs: John
+echo $person["age"];  // Outputs: 30
+echo $person["city"]; // Outputs: New York
+</code></pre>
+
+<h3 id="3-modifying-elements-">3. Modifying Elements:</h3>
+
+<p>You can modify the value of an existing key:</p>
+
+<pre class="language-php"><code>$person["age"] = 31;
+echo $person["age"];  // Outputs: 31
+</code></pre>
+
+<h3 id="4-adding-elements-">4. Adding Elements:</h3>
+
+<p>You can add new elements to an associative array:</p>
+
+<pre class="language-php"><code>$person["gender"] = "Male";
+echo $person["gender"]; // Outputs: Male
+</code></pre>
+
+<h3 id="5-checking-if-a-key-exists-">5. Checking if a Key Exists:</h3>
+
+<p>You can use the <code>isset()</code> function to check if a specific key exists in an associative array:</p>
+
+<pre class="language-php"><code>if (isset($person["name"])) {
+    echo "Name is set!";
+} else {
+    echo "Name is not set!";
 }
-
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
 </code></pre>
 
-<p>Output:</p>
+<h3 id="6-removing-elements-">6. Removing Elements:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<p>You can use the <code>unset()</code> function to remove a specific key and its associated value:</p>
+
+<pre class="language-php"><code>unset($person["age"]);
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<h3 id="7-looping-through-associative-arrays-">7. Looping Through Associative Arrays:</h3>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<p>You can use a <code>foreach</code> loop to iterate through all elements of an associative array:</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
+<pre class="language-php"><code>foreach ($person as $key =&gt; $value) {
+    echo "$key: $value, ";
+}
+// Outputs: name: John, age: 30, city: New York, gender: Male,
 </code></pre>
 
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>Associative arrays are useful for representing data where each value is associated with a specific label or attribute. They are commonly used in scenarios like representing user profiles, configuration settings, and more.</p>
 </article>
 </div>
 <footer>

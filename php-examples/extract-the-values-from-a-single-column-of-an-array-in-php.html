@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>Extract The Values From A Single Column Of An Array In PHP</title>
+<meta name="description" content="To extract the values from a single column of an array in PHP, you can use the array_column() function.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php-examples/extract-the-values-from-a-single-column-of-an-array-in-php.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,39 +49,26 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">PHP</a></li>
+<li><a href="./index.html">PHP EXAMPLES</a></li>
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>Extract The Values From A Single Column Of An Array In PHP</h1><p><strong>To extract the values from a single column of an array in PHP, you can use the <code>array_column()</code> function</strong>.</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
-
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
-</code></pre>
-
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
-
-<p>Here's a simple example:</p>
+<p>This function <strong>returns the values from a single column of an array identified by the specified column key or index</strong>. Here's an example:</p>
 
 <pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
+// Original multidimensional array
+$data = array(
+    array('id' =&gt; 1, 'name' =&gt; 'John', 'age' =&gt; 25),
+    array('id' =&gt; 2, 'name' =&gt; 'Jane', 'age' =&gt; 30),
+    array('id' =&gt; 3, 'name' =&gt; 'Doe', 'age' =&gt; 22)
+);
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+// Extract values from the 'name' column
+$names = array_column($data, 'name');
 
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
+print_r($names);
 ?&gt;
 </code></pre>
 
@@ -89,45 +76,15 @@ print_r($squaredNumbers);
 
 <pre><code>Array
 (
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
+    [0] =&gt; John
+    [1] =&gt; Jane
+    [2] =&gt; Doe
 )
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<p>In this example, <code>array_column($data, 'name')</code> extracts the values from the 'name' column of the original array.</p>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>You can adjust the column key or index as needed based on your array structure. If the array is associative and you want to extract values based on numeric indices, you can use the numeric index instead of a column key.</p>
 </article>
 </div>
 <footer>

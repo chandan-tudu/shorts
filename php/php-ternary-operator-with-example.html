@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Ternary Operator With Example</title>
+<meta name="description" content="The ternary operator is a shorthand way of writing an if-else statement in PHP. It provides a concise syntax for evaluating a condition and returning different values based on whether the condition is true or false.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-ternary-operator-with-example.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,40 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Ternary Operator With Example</h1><p><strong>The ternary operator is a shorthand way of writing an <code>if-else</code> statement in PHP</strong>. It provides a concise syntax for evaluating a condition and returning different values based on whether the condition is true or false.</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<h3 id="syntax-">Syntax:</h3>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<pre class="language-php"><code>$variable = (condition) ? value_if_true : value_if_false;
 </code></pre>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<p>The expression <code>(condition) ? value_if_true : value_if_false</code> evaluates the condition. If the condition is true, it assigns <code>value_if_true</code> to the variable; otherwise, it assigns <code>value_if_false</code>.</p>
 
-<p>Here's a simple example:</p>
+<h3 id="example-">Example:</h3>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
+<pre class="language-php"><code>$age = 25;
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
+// Ternary operator to determine if the person is an adult
+$isAdult = ($age &gt;= 18) ? "Yes" : "No";
+echo $isAdult;  // Outputs: Yes
 </code></pre>
 
-<p>Output:</p>
+<p>In this example, if the condition <code>$age &gt;= 18</code> is true, the variable <code>$isAdult</code> will be assigned the value "Yes"; otherwise, it will be assigned the value "No".</p>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<h3 id="nested-ternary-operators-">Nested Ternary Operators:</h3>
+
+<p>You can also nest ternary operators, although it's important to maintain readability to avoid confusion.</p>
+
+<pre class="language-php"><code>$marks = 75;
+
+// Nested ternary operators to determine the grade
+$grade = ($marks &gt;= 90) ? "A" : (($marks &gt;= 80) ? "B" : (($marks &gt;= 70) ? "C" : "D"));
+echo $grade;  // Outputs: C
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<p>Here, the nested ternary operators are used to determine the grade based on the marks.</p>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>While ternary operators can make code more concise, it's essential to use them judiciously to maintain readability. In some cases, using a traditional <code>if-else</code> statement might be more appropriate, especially for complex conditions or multiple statements.</p>
 </article>
 </div>
 <footer>

@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Comparison Operators With Examples</title>
+<meta name="description" content="PHP comparison operators are used to compare two values and return a boolean result. Here are some common comparison operators along with examples and expected outputs:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-comparison-operators-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,99 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Comparison Operators With Examples</h1><p><strong>PHP comparison operators are used to compare two values and return a boolean result</strong>. Here are some common comparison operators along with examples and expected outputs:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<h3 id="1-equal-">1. Equal (<code>==</code>):</h3>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<p>Checks if two values are equal.</p>
+
+<pre class="language-php"><code>$a = 5;
+$b = "5";
+
+$result = ($a == $b); // true
 </code></pre>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<h3 id="2-not-equal-">2. Not Equal (<code>!=</code>):</h3>
 
-<p>Here's a simple example:</p>
+<p>Checks if two values are not equal.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
+<pre class="language-php"><code>$a = 5;
+$b = 10;
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
+$result = ($a != $b); // true
 </code></pre>
 
-<p>Output:</p>
+<h3 id="3-identical-">3. Identical (<code>===</code>):</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<p>Checks if two values are equal and of the same type.</p>
+
+<pre class="language-php"><code>$a = 5;
+$b = "5";
+
+$result = ($a === $b); // false
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<h3 id="4-not-identical-">4. Not Identical (<code>!==</code>):</h3>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<p>Checks if two values are not equal or not of the same type.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+<pre class="language-php"><code>$a = 5;
+$b = "5";
 
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
+$result = ($a !== $b); // true
 </code></pre>
 
-<p>Output:</p>
+<h3 id="5-greater-than-">5. Greater Than (<code>&gt;</code>):</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
+<p>Checks if the left value is greater than the right value.</p>
+
+<pre class="language-php"><code>$a = 10;
+$b = 5;
+
+$result = ($a &gt; $b); // true
 </code></pre>
 
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<h3 id="6-less-than-">6. Less Than (<code>&lt;</code>):</h3>
+
+<p>Checks if the left value is less than the right value.</p>
+
+<pre class="language-php"><code>$a = 10;
+$b = 15;
+
+$result = ($a &lt; $b); // true
+</code></pre>
+
+<h3 id="7-greater-than-or-equal-to-">7. Greater Than or Equal To (<code>&gt;=</code>):</h3>
+
+<p>Checks if the left value is greater than or equal to the right value.</p>
+
+<pre class="language-php"><code>$a = 10;
+$b = 10;
+
+$result = ($a &gt;= $b); // true
+</code></pre>
+
+<h3 id="8-less-than-or-equal-to-">8. Less Than or Equal To (<code>&lt;=</code>):</h3>
+
+<p>Checks if the left value is less than or equal to the right value.</p>
+
+<pre class="language-php"><code>$a = 5;
+$b = 5;
+
+$result = ($a &lt;= $b); // true
+</code></pre>
+
+<h3 id="9-spaceship-operator-">9. Spaceship Operator (<code>&lt;=&gt;</code>):</h3>
+
+<p>Compares two values and returns 0 if they are equal, 1 if the left is greater, and -1 if the right is greater.</p>
+
+<pre class="language-php"><code>$a = 5;
+$b = 10;
+
+$result = ($a &lt;=&gt; $b); // Outputs: -1
+</code></pre>
+
+<p>These examples demonstrate how comparison operators work in PHP. The result of each operation is a boolean value (<code>true</code> or <code>false</code>). Keep in mind that the <code>===</code> and <code>!==</code> operators also consider the data type, not just the values.</p>
 </article>
 </div>
 <footer>

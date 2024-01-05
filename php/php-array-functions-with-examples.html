@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHP Array Functions With Examples</title>
+<meta name="description" content="PHP provides a variety of built-in functions to manipulate and work with arrays efficiently. Here are some commonly used array functions in PHP:">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-functions-with-examples.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PHP</a></li>
+</ul>
+</nav>
+<article>
+<h1>PHP Array Functions With Examples</h1><p><strong>PHP provides a variety of built-in functions to manipulate and work with arrays efficiently</strong>. Here are some commonly used array functions in PHP:</p>
+
+<h3 id="1-array-creation">1. Array Creation:</h3>
+
+<ul>
+<li><p><strong><code>array()</code></strong>: Create an array.</p>
+
+<pre class="language-php"><code>$colors = array("Red", "Green", "Blue");
+</code></pre></li>
+<li><p><strong><code>[]</code> (Shorthand Syntax)</strong>: Shorthand for creating arrays (available since PHP 5.4).</p>
+
+<pre class="language-php"><code>$colors = ["Red", "Green", "Blue"];
+</code></pre></li>
+</ul>
+
+<h3 id="2-array-modification">2. Array Modification:</h3>
+
+<ul>
+<li><p><strong><code>array_push()</code></strong>: Add one or more elements to the end of an array.</p>
+
+<pre class="language-php"><code>$fruits = ["Apple", "Banana"];
+array_push($fruits, "Orange", "Grapes");
+</code></pre></li>
+<li><p><strong><code>array_pop()</code></strong>: Remove and return the last element of an array.</p>
+
+<pre class="language-php"><code>$lastFruit = array_pop($fruits);
+</code></pre></li>
+</ul>
+
+<h3 id="3-array-manipulation">3. Array Manipulation:</h3>
+
+<ul>
+<li><p><strong><code>array_merge()</code></strong>: Merge one or more arrays into a single array.</p>
+
+<pre class="language-php"><code>$arr1 = [1, 2, 3];
+$arr2 = [4, 5, 6];
+$result = array_merge($arr1, $arr2);
+</code></pre></li>
+<li><p><strong><code>array_slice()</code></strong>: Extract a slice of an array.</p>
+
+<pre class="language-php"><code>$subset = array_slice($result, 2, 2);
+</code></pre></li>
+</ul>
+
+<h3 id="4-array-search">4. Array Search:</h3>
+
+<ul>
+<li><p><strong><code>in_array()</code></strong>: Checks if a value exists in an array.</p>
+
+<pre class="language-php"><code>if (in_array("Green", $colors)) {
+    // Found
+}
+</code></pre></li>
+<li><p><strong><code>array_search()</code></strong>: Searches an array for a given value and returns the corresponding key if successful.</p>
+
+<pre class="language-php"><code>$key = array_search("Green", $colors);
+</code></pre></li>
+</ul>
+
+<h3 id="5-array-sorting">5. Array Sorting:</h3>
+
+<ul>
+<li><p><strong><code>sort()</code></strong>: Sort an array.</p>
+
+<pre class="language-php"><code>sort($fruits);
+</code></pre></li>
+<li><p><strong><code>rsort()</code></strong>: Sort an array in reverse order.</p>
+
+<pre class="language-php"><code>rsort($fruits);
+</code></pre></li>
+<li><p><strong><code>asort()</code></strong>: Sort an associative array by values.</p>
+
+<pre class="language-php"><code>asort($person);
+</code></pre></li>
+<li><p><strong><code>ksort()</code></strong>: Sort an associative array by keys.</p>
+
+<pre class="language-php"><code>ksort($person);
+</code></pre></li>
+</ul>
+
+<h3 id="6-array-iteration">6. Array Iteration:</h3>
+
+<ul>
+<li><p><strong><code>foreach()</code></strong>: Loop through each key/value pair in an array.</p>
+
+<pre class="language-php"><code>foreach ($fruits as $fruit) {
+    echo $fruit . " ";
+}
+</code></pre></li>
+</ul>
+
+<h3 id="7-array-functions-for-statistics">7. Array Functions for Statistics:</h3>
+
+<ul>
+<li><p><strong><code>count()</code></strong>: Count the number of elements in an array.</p>
+
+<pre class="language-php"><code>$count = count($fruits);
+</code></pre></li>
+<li><p><strong><code>array_sum()</code></strong>: Calculate the sum of values in an array.</p>
+
+<pre class="language-php"><code>$total = array_sum($numbers);
+</code></pre></li>
+</ul>
+
+<p>These are just a few examples of the many array functions available in PHP. You can explore the <a rel="noopener noreferrer nofollow" target="_blank" href="https://www.php.net/manual/en/ref.array.php">official PHP documentation</a> for a comprehensive list and detailed explanations of each function.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>

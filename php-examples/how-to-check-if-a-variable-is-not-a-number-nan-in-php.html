@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP Ternary Operator</title>
-<meta name="description" content="In PHP, the ternary operator provides a shorthand way to express a simple if-else statement in a single line.">
+<title>How To Check If A Variable Is Not A Number (NaN) In PHP</title>
+<meta name="description" content="In PHP, you can check if a variable is Not a Number (NaN) using the is_nan() function. Here's an example:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-ternary-operator.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php-examples/how-to-check-if-a-variable-is-not-a-number-nan-in-php.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,47 +49,31 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">PHP</a></li>
+<li><a href="./index.html">PHP EXAMPLES</a></li>
 </ul>
 </nav>
 <article>
-<h1>PHP Ternary Operator</h1><p>In PHP, the ternary operator provides a <strong>shorthand way to express a simple if-else statement in a single line</strong>. The syntax of the ternary operator is as follows:</p>
+<h1>How To Check If A Variable Is Not A Number (NaN) In PHP</h1><p>In PHP, you can <strong>check if a variable is Not a Number (NaN) using the <code>is_nan()</code> function</strong>. Here's an example:</p>
 
-<pre class="language-php"><code>$variable = (condition) ? true_value : false_value;
+<pre class="language-php"><code>&lt;?php
+$nanValue = acos(8); // acos function returns NaN for values outside [-1, 1]
+
+if (is_nan($nanValue)) {
+    echo "$nanValue is a NaN (Not a Number).";
+} else {
+    echo "$nanValue is not a NaN.";
+}
+?&gt;
 </code></pre>
 
-<p>In this syntax:</p>
+<p>In this example, the <code>acos()</code> function returns NaN because the argument is outside the valid range. <strong>The <code>is_nan()</code> function checks whether the provided value is NaN or not</strong>.</p>
 
-<ul>
-<li><code>condition</code> is the expression to be evaluated, which should return either <code>true</code> or <code>false</code>.</li>
-<li><code>true_value</code> is the value assigned to <code>$variable</code> if the condition is <code>true</code>.</li>
-<li><code>false_value</code> is the value assigned to <code>$variable</code> if the condition is <code>false</code>.</li>
-</ul>
+<p>Here's the output for the above example:</p>
 
-<p>Here's an example:</p>
-
-<pre class="language-php"><code>// Example 1
-$age = 20;
-$isAdult = ($age &gt;= 18) ? true : false;
-
-// Example 2
-$score = 75;
-$result = ($score &gt;= 60) ? "Pass" : "Fail";
+<pre><code>NAN is a NaN (Not a Number).
 </code></pre>
 
-<p>In the first example, the variable <code>$isAdult</code> is assigned <code>true</code> if the <code>$age</code> is greater than or equal to 18; otherwise, it's assigned <code>false</code>.</p>
-
-<p>In the second example, the variable <code>$result</code> is assigned the string "Pass" if the <code>$score</code> is greater than or equal to 60; otherwise, it's assigned the string "Fail".</p>
-
-<p>You can also use the ternary operator for variable assignment without explicitly stating <code>true</code> or <code>false</code>:</p>
-
-<pre class="language-php"><code>// Example 3
-$isAdmin = ($userRole == 'admin') ? true : false;
-</code></pre>
-
-<p>In this example, <code>$isAdmin</code> is assigned <code>true</code> if <code>$userRole</code> is equal to 'admin'; otherwise, it's assigned <code>false</code>.</p>
-
-<p>Ternary operators are useful for writing concise code when you have simple conditions. However, for more complex conditions or when the code becomes less readable, it's often better to use a regular if-else statement.</p>
+<p>You can use <code>is_nan()</code> to handle scenarios where you want to check if a variable contains a NaN value before performing further calculations or operations.</p>
 </article>
 </div>
 <footer>

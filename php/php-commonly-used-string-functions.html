@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP - Commonly Used String Functions</title>
+<meta name="description" content="PHP provides a variety of string functions to manipulate and operate on strings. Here are some commonly used string functions along with examples:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-commonly-used-string-functions.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,105 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP - Commonly Used String Functions</h1><p><strong>PHP provides a variety of <a href="https://www.php.net/manual/en/ref.strings.php" target="_blank" rel="nofollow">string functions</a></strong> to manipulate and operate on strings. <strong>Here are some commonly used string functions along with examples</strong>:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
-
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
-</code></pre>
+<ol>
+<li><p><strong>strlen():</strong></p>
 
 <ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
+<li>Returns the length of a string.</li>
 </ul>
 
-<p>Here's a simple example:</p>
+<pre class="language-php"><code>$text = "Hello, World!";
+$length = strlen($text);
+// $length will be 13
+</code></pre></li>
+<li><p><strong>str_replace():</strong></p>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
+<ul>
+<li>Replaces all occurrences of a search string with a replacement string.</li>
+</ul>
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+<pre class="language-php"><code>$text = "Hello, World!";
+$newText = str_replace("World", "PHP", $text);
+// $newText will be "Hello, PHP!"
+</code></pre></li>
+<li><p><strong>strpos():</strong></p>
 
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
+<ul>
+<li>Finds the position of the first occurrence of a substring in a string.</li>
+</ul>
 
-// Display the result
-print_r($squaredNumbers);
-?&gt;
-</code></pre>
+<pre class="language-php"><code>$text = "Hello, World!";
+$position = strpos($text, "World");
+// $position will be 7
+</code></pre></li>
+<li><p><strong>substr():</strong></p>
 
-<p>Output:</p>
+<ul>
+<li>Returns a portion of a string.</li>
+</ul>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
-</code></pre>
+<pre class="language-php"><code>$text = "Hello, World!";
+$substring = substr($text, 0, 5);
+// $substring will be "Hello"
+</code></pre></li>
+<li><p><strong>strtolower() / strtoupper():</strong></p>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<ul>
+<li>Converts a string to lowercase / uppercase.</li>
+</ul>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<pre class="language-php"><code>$text = "Hello, World!";
+$lowercaseText = strtolower($text);
+// $lowercaseText will be "hello, world!"
 
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+$uppercaseText = strtoupper($text);
+// $uppercaseText will be "HELLO, WORLD!"
+</code></pre></li>
+<li><p><strong>trim():</strong></p>
 
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
+<ul>
+<li>Removes whitespace or other predefined characters from both ends of a string.</li>
+</ul>
 
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
+<pre class="language-php"><code>$text = "   Hello, World!   ";
+$trimmedText = trim($text);
+// $trimmedText will be "Hello, World!"
+</code></pre></li>
+<li><p><strong>explode():</strong></p>
 
-<p>Output:</p>
+<ul>
+<li>Splits a string into an array based on a specified delimiter.</li>
+</ul>
 
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
+<pre class="language-php"><code>$colors = "red,green,blue";
+$colorArray = explode(",", $colors);
+// $colorArray will be ["red", "green", "blue"]
+</code></pre></li>
+<li><p><strong>implode() / join():</strong></p>
 
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<ul>
+<li>Joins array elements with a string.</li>
+</ul>
+
+<pre class="language-php"><code>$colorArray = ["red", "green", "blue"];
+$colors = implode(", ", $colorArray);
+// $colors will be "red, green, blue"
+</code></pre></li>
+<li><p><strong>strrev():</strong></p>
+
+<ul>
+<li>Reverses a string.</li>
+</ul>
+
+<pre class="language-php"><code>$text = "Hello, World!";
+$reversedText = strrev($text);
+// $reversedText will be "!dlroW ,olleH"
+</code></pre></li>
+</ol>
+
+<p>These are just a few examples of the many string functions available in PHP. Understanding and using these functions can greatly simplify string manipulation tasks in your PHP code.</p>
 </article>
 </div>
 <footer>

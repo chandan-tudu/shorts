@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP Constant (Define & Get Value)</title>
-<meta name="description" content="In PHP, a constant is a name or an identifier for a simple value. Once a constant is set, it cannot be changed or undefined during the script execution">
+<title>PHP - Repeats A String A Specified Number Of Times</title>
+<meta name="description" content="In PHP, you can repeat a string a specified number of times using the str_repeat() function. Here's an example:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-constant.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php-examples/php-repeats-a-string-a-specified-number-of-times.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,43 +49,33 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">PHP</a></li>
+<li><a href="./index.html">PHP EXAMPLES</a></li>
 </ul>
 </nav>
 <article>
-<h1>PHP Constant (Define & Get Value)</h1><p>In PHP, <strong>a constant is a name or an identifier for a simple value</strong>. Once a constant is set, it <strong>cannot be changed or undefined during the script execution</strong>. Constants are <strong>defined using the <code>define()</code> function</strong>.</p>
-
-<p>Here is the basic syntax for defining a constant:</p>
-
-<pre class="language-php"><code>define("CONSTANT_NAME", "value");
-</code></pre>
-
-<p>Here, <code>"CONSTANT_NAME"</code> is the name of the constant, and <code>"value"</code> is its value. By convention, constant names are usually written in uppercase.</p>
-
-<p>Here is an example of using constants:</p>
+<h1>PHP - Repeats A String A Specified Number Of Times</h1><p>In PHP, you can <strong>repeat a string a specified number of times using the <code>str_repeat()</code> function</strong>. Here's an example:</p>
 
 <pre class="language-php"><code>&lt;?php
-// Define a constant
-define("PI", 3.14);
+$string = "Hello, ";
+$repeatedString = str_repeat($string, 3);
 
-// Use the constant in calculations
-$radius = 5;
-$area = PI * pow($radius, 2);
-
-echo "The area of the circle is: " . $area;
+echo $repeatedString;
 ?&gt;
 </code></pre>
 
-<p>In this example, <code>PI</code> is a constant that represents the value of π. It is then used in the calculation of the area of a circle.</p>
+<p>In this example, the <code>str_repeat()</code> function is used to repeat the string stored in the <code>$string</code> variable three times. The output will be:</p>
 
-<p>Constants can also be defined with the optional third parameter, <code>case-insensitive</code>, which, when set to <code>true</code>, makes the constant case-insensitive. By default, constants are case-sensitive.</p>
-
-<pre class="language-php"><code>define("GREETING", "Hello, World!", true);
-
-echo greeting; // Outputs: Hello, World!
+<pre><code>Hello, Hello, Hello,
 </code></pre>
 
-<p>It's important to note that constants are global and can be accessed anywhere in the script. They are often used for values that remain constant throughout the execution of a script, such as configuration settings or mathematical constants.</p>
+<p>The <code>str_repeat()</code> function takes two parameters:</p>
+
+<ol>
+<li>The string you want to repeat (<code>$string</code> in this case).</li>
+<li>The number of times to repeat the string (3 in this case).</li>
+</ol>
+
+<p>It returns a new string containing the original string repeated the specified number of times.</p>
 </article>
 </div>
 <footer>

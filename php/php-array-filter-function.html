@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP array_filter() Function</title>
+<meta name="description" content="The array_filter() function in PHP is used to filter the elements of an array based on a provided callback function or using a predefined rule.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-filter-function.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,35 +53,37 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP array_filter() Function</h1><p><strong>The <code>array_filter()</code> function in PHP is used to filter the elements of an array based on a provided callback function or using a predefined rule</strong>.</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<p>It <strong>iterates over each element in the array</strong>, passing it to the callback function, and includes the elements in the resulting array for which the callback function returns <code>true</code>. Here's the basic syntax:</p>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<pre class="language-php"><code>array_filter(array $array [, callable $callback [, int $flag = 0 ]]) : array
 </code></pre>
 
 <ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
+<li><code>$array</code>: The input array to be filtered.</li>
+<li><code>$callback</code>: (Optional) The callback function that determines the filtering criteria. If not provided, all elements that are considered "truthy" (i.e., not equal to <code>false</code>, <code>null</code>, <code>0</code>, or an empty string) will be included.</li>
+<li><code>$flag</code>: (Optional) A flag to modify the behavior of the function. It can take the following values:
+
+<ul>
+<li><code>ARRAY_FILTER_USE_KEY</code>: Pass key as the only argument to the callback instead of the value.</li>
+<li><code>ARRAY_FILTER_USE_BOTH</code>: Pass both value and key as arguments to the callback.</li>
+</ul></li>
 </ul>
 
-<p>Here's a simple example:</p>
+<p>Here are examples of using <code>array_filter()</code>:</p>
+
+<h3 id="1-basic-usage-">1. Basic Usage:</h3>
 
 <pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
+$array = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+// Filter even numbers
+$filteredArray = array_filter($array, function($value) {
+    return $value % 2 == 0;
+});
 
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
+print_r($filteredArray);
 ?&gt;
 </code></pre>
 
@@ -89,29 +91,25 @@ print_r($squaredNumbers);
 
 <pre><code>Array
 (
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
+    [1] =&gt; 2
+    [3] =&gt; 4
+    [5] =&gt; 6
+    [7] =&gt; 8
+    [9] =&gt; 10
 )
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
-
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<h3 id="2-using-array-filter-use-key-">2. Using ARRAY_FILTER_USE_KEY:</h3>
 
 <pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+$array = array('a' =&gt; 1, 'b' =&gt; 2, 'c' =&gt; 3, 'd' =&gt; 4);
 
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
+// Filter keys starting with 'a'
+$filteredArray = array_filter($array, function($key) {
+    return $key[0] == 'a';
+}, ARRAY_FILTER_USE_KEY);
 
-// Display the result
-print_r($doubledNumbers);
+print_r($filteredArray);
 ?&gt;
 </code></pre>
 
@@ -119,15 +117,35 @@ print_r($doubledNumbers);
 
 <pre><code>Array
 (
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
+    [a] =&gt; 1
 )
 </code></pre>
 
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<h3 id="3-using-array-filter-use-both-">3. Using ARRAY_FILTER_USE_BOTH:</h3>
+
+<pre class="language-php"><code>&lt;?php
+$array = array('a' =&gt; 1, 'b' =&gt; 2, 'c' =&gt; 3, 'd' =&gt; 4);
+
+// Filter elements where the value is greater than 2 and key starts with 'b'
+$filteredArray = array_filter($array, function($value, $key) {
+    return $value &gt; 2 &amp;&amp; $key[0] == 'b';
+}, ARRAY_FILTER_USE_BOTH);
+
+print_r($filteredArray);
+?&gt;
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>Array
+(
+    [b] =&gt; 2
+    [c] =&gt; 3
+    [d] =&gt; 4
+)
+</code></pre>
+
+<p>In these examples, the callback functions determine the filtering criteria. Adjust the callback function based on your specific needs.</p>
 </article>
 </div>
 <footer>

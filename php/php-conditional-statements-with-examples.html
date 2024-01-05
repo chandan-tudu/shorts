@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Conditional Statements With Examples</title>
+<meta name="description" content="In PHP, conditional statements are used to make decisions in the code based on specified conditions. The most common conditional statements in PHP are if, else, elseif, and switch.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-conditional-statements-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,72 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Conditional Statements With Examples</h1><p>In PHP, <strong>conditional statements are used to make decisions in the code based on specified conditions</strong>.</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<p>These statements <strong>allow you to control the flow of your program by executing different blocks of code depending on whether a given condition is true or false</strong>.</p>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
-</code></pre>
+<p>The most common conditional statements in PHP are <code>if</code>, <code>else</code>, <code>elseif</code>, and <code>switch</code>.</p>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<h3 id="1-if-statement-">1. "if" Statement:</h3>
 
-<p>Here's a simple example:</p>
+<p>The <code>if</code> statement is used to execute a block of code only if a specified condition is true.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
+<pre class="language-php"><code>$age = 20;
+
+if ($age &gt;= 18) {
+    echo "You are an adult.";
 }
-
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
 </code></pre>
 
-<p>Output:</p>
+<h3 id="2-if-else-statement-">2. "if-else" Statement:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<p>The <code>if-else</code> statement allows you to execute one block of code if the condition is true and another block if the condition is false.</p>
+
+<pre class="language-php"><code>$age = 15;
+
+if ($age &gt;= 18) {
+    echo "You are an adult.";
+} else {
+    echo "You are not yet an adult.";
+}
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<h3 id="3-if-elseif-else-statement-">3. "if-elseif-else" Statement:</h3>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<p>The <code>if-elseif-else</code> statement is used to specify multiple conditions and execute different code blocks accordingly.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+<pre class="language-php"><code>$score = 75;
 
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
+if ($score &gt;= 90) {
+    echo "Excellent!";
+} elseif ($score &gt;= 80) {
+    echo "Good!";
+} elseif ($score &gt;= 70) {
+    echo "Average.";
+} else {
+    echo "Below average.";
+}
 </code></pre>
 
-<p>Output:</p>
+<h3 id="4-switch-statement-">4. "switch" Statement:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
+<p>The <code>switch</code> statement is used to select one of many blocks of code to be executed.</p>
+
+<pre class="language-php"><code>$day = "Monday";
+
+switch ($day) {
+    case "Monday":
+        echo "It's the start of the week.";
+        break;
+    case "Friday":
+        echo "It's the end of the week.";
+        break;
+    default:
+        echo "It's a regular day.";
+}
 </code></pre>
 
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>These conditional statements allow you to control the flow of your program based on various conditions. Choose the appropriate type of conditional statement based on the complexity of your logic. Keep in mind that you can nest conditional statements to handle more complex scenarios.</p>
 </article>
 </div>
 <footer>

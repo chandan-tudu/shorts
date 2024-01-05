@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Switch Statement With Examples</title>
+<meta name="description" content="The switch statement in PHP is used for making decisions based on the value of an expression. It provides an alternative way to handle multiple conditions compared to the if-elseif-else statements.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-switch-statement-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,52 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Switch Statement With Examples</h1><p><strong>The <code>switch</code> statement in PHP is used for making decisions based on the value of an expression</strong>. It provides an <strong>alternative way to handle multiple conditions compared to the <code>if-elseif-else</code> statements</strong>. Here's the basic syntax of the <code>switch</code> statement:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
-
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<pre class="language-php"><code>switch (expression) {
+    case value1:
+        // Code to be executed if expression matches value1
+        break;
+    case value2:
+        // Code to be executed if expression matches value2
+        break;
+    // Additional cases as needed
+    default:
+        // Code to be executed if none of the cases match
+}
 </code></pre>
+
+<p>Each <code>case</code> represents a possible value of the expression, and the code within the matching case is executed. If none of the cases match, the code within the <code>default</code> block is executed (if provided).</p>
+
+<h3 id="example-">Example:</h3>
+
+<pre class="language-php"><code>$day = "Monday";
+
+switch ($day) {
+    case "Monday":
+        echo "It's the start of the week.";
+        break;
+    case "Friday":
+        echo "It's the end of the week.";
+        break;
+    default:
+        echo "It's a regular day.";
+}
+</code></pre>
+
+<p>In this example:</p>
 
 <ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
+<li>If the value of <code>$day</code> is "Monday", it prints "It's the start of the week."</li>
+<li>If the value of <code>$day</code> is "Friday", it prints "It's the end of the week."</li>
+<li>If the value of <code>$day</code> doesn't match any of the cases, it prints "It's a regular day."</li>
 </ul>
 
-<p>Here's a simple example:</p>
+<p>Note that each <code>case</code> block ends with a <code>break</code> statement. This is important because it prevents the execution of subsequent <code>case</code> blocks. Without the <code>break</code> statement, code execution would "fall through" to the next case.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
+<p>Also, the <code>default</code> case is optional. If it's not provided and none of the cases match, no code will be executed.</p>
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
-</code></pre>
-
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
-
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>The <code>switch</code> statement is particularly useful when you have a single expression to compare against multiple possible values.</p>
 </article>
 </div>
 <footer>

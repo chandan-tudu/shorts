@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Array With Examples</title>
+<meta name="description" content="In PHP, an array is a versatile data structure that allows you to store multiple values in a single variable. Each value in an array is associated with a unique key or index. Here are some examples of using arrays in PHP:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,97 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Array With Examples</h1><p>In PHP, <strong>an array is a versatile data structure that allows you to store multiple values in a single variable</strong>. Each value in an array is associated with a unique key or index. Here are some examples of using arrays in PHP:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<h3 id="1-numeric-arrays-">1. Numeric Arrays:</h3>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<p>Numeric arrays use integers as keys. The index starts from 0.</p>
+
+<pre class="language-php"><code>// Creating a numeric array
+$colors = array("Red", "Green", "Blue");
+
+// Accessing elements
+echo $colors[0]; // Outputs: Red
+echo $colors[1]; // Outputs: Green
+echo $colors[2]; // Outputs: Blue
+
+// Modifying elements
+$colors[1] = "Yellow";
+echo $colors[1]; // Outputs: Yellow
+
+// Adding elements
+$colors[] = "Purple";
+echo $colors[3]; // Outputs: Purple
+
+// Counting elements
+$count = count($colors);
+echo $count; // Outputs: 4
 </code></pre>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<h3 id="2-associative-arrays-">2. Associative Arrays:</h3>
 
-<p>Here's a simple example:</p>
+<p>Associative arrays use named keys.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
+<pre class="language-php"><code>// Creating an associative array
+$person = array(
+    "name" =&gt; "John",
+    "age" =&gt; 30,
+    "city" =&gt; "New York"
+);
+
+// Accessing elements
+echo $person["name"]; // Outputs: John
+echo $person["age"];  // Outputs: 30
+echo $person["city"]; // Outputs: New York
+
+// Modifying elements
+$person["age"] = 31;
+echo $person["age"];  // Outputs: 31
+
+// Adding elements
+$person["gender"] = "Male";
+echo $person["gender"]; // Outputs: Male
+
+// Counting elements
+$count = count($person);
+echo $count; // Outputs: 4
+</code></pre>
+
+<h3 id="3-multidimensional-arrays-">3. Multidimensional Arrays:</h3>
+
+<p>Multidimensional arrays are arrays within arrays.</p>
+
+<pre class="language-php"><code>// Creating a multidimensional array
+$students = array(
+    array("John", 25, "Male"),
+    array("Alice", 22, "Female"),
+    array("Bob", 28, "Male")
+);
+
+// Accessing elements
+echo $students[0][0]; // Outputs: John
+echo $students[1][1]; // Outputs: 22
+echo $students[2][2]; // Outputs: Male
+</code></pre>
+
+<h3 id="4-looping-through-arrays-">4. Looping Through Arrays:</h3>
+
+<pre class="language-php"><code>// Using foreach to loop through a numeric array
+$fruits = array("Apple", "Banana", "Orange");
+foreach ($fruits as $fruit) {
+    echo $fruit . " ";
 }
+// Outputs: Apple Banana Orange
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
+// Using foreach to loop through an associative array
+$person = array("name" =&gt; "John", "age" =&gt; 30, "city" =&gt; "New York");
+foreach ($person as $key =&gt; $value) {
+    echo "$key: $value, ";
+}
+// Outputs: name: John, age: 30, city: New York,
 </code></pre>
 
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
-</code></pre>
-
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
-
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>Arrays in PHP are dynamic, flexible, and widely used in various programming scenarios. They are a fundamental part of PHP programming, and understanding how to work with them is essential.</p>
 </article>
 </div>
 <footer>

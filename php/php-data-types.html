@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Data Types</title>
+<meta name="description" content="PHP supports several data types that are used to represent different kinds of values. Here is a list of common PHP data types:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-data-types.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,87 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Data Types</h1><p><strong>PHP supports several data types that are used to represent different kinds of values</strong>. Here is a list of common PHP data types:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
-
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
-</code></pre>
+<ol>
+<li><p><strong>Integers:</strong></p>
 
 <ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
+<li>Represent whole numbers without decimal points.</li>
+<li>Example: <code>$number = 42;</code></li>
+</ul></li>
+<li><p><strong>Floating-Point Numbers (Floats):</strong></p>
+
+<ul>
+<li>Represent numbers with decimal points.</li>
+<li>Example: <code>$floatNumber = 3.14;</code></li>
+</ul></li>
+<li><p><strong><a href="./php-strings.html">Strings:</a></strong></p>
+
+<ul>
+<li>Represent sequences of characters.</li>
+<li>Example: <code>$string = "Hello, World!";</code></li>
+</ul></li>
+<li><p><strong>Booleans:</strong></p>
+
+<ul>
+<li>Represent true or false values.</li>
+<li>Example: <code>$isTrue = true;</code></li>
+</ul></li>
+<li><p><strong>Arrays:</strong></p>
+
+<ul>
+<li>Represent ordered maps that can contain other data types.</li>
+<li>Example: <code>$colors = array("red", "green", "blue");</code></li>
+</ul></li>
+<li><p><strong>Objects:</strong></p>
+
+<ul>
+<li>Instances of user-defined classes, allowing the creation of custom data types.</li>
+<li>Example:</li>
 </ul>
 
-<p>Here's a simple example:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
+<pre class="language-php"><code>class Car {
+    public $color = "red";
+    public $brand = "Toyota";
 }
+$car = new Car();
+</code></pre></li>
+<li><p><strong>NULL:</strong></p>
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+<ul>
+<li>Represents a variable with no value or a non-existent value.</li>
+<li>Example: <code>$variable = null;</code></li>
+</ul></li>
+<li><p><strong>Resource:</strong></p>
 
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
+<ul>
+<li>Represents external resources (like database connections) that are not represented by a data type listed above.</li>
+<li>Example: <code>$file = fopen("example.txt", "r");</code></li>
+</ul></li>
+<li><p><strong>Callable:</strong></p>
 
-// Display the result
-print_r($squaredNumbers);
-?&gt;
-</code></pre>
+<ul>
+<li>Represents a callable function or method.</li>
+<li>Example:</li>
+</ul>
 
-<p>Output:</p>
+<pre class="language-php"><code>function myFunction() {
+    echo "Hello, World!";
+}
+$functionName = 'myFunction';
+$functionName();
+</code></pre></li>
+<li><p><strong>Iterable:</strong></p>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
-</code></pre>
+<ul>
+<li>Represents an array or an object that can be iterated over using a <code>foreach</code> loop.</li>
+<li>Introduced in PHP 7.1.</li>
+<li>Example: <code>$iterableArray = [1, 2, 3];</code></li>
+</ul></li>
+</ol>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
-
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>These examples illustrate the basic usage of each data type in PHP. Remember that PHP is a loosely typed language, so you don't need to explicitly declare the data type of a variable. The interpreter determines the data type based on the assigned value.</p>
 </article>
 </div>
 <footer>

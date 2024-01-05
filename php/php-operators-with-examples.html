@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>PHP Operators With Examples</title>
+<meta name="description" content="PHP supports a variety of operators that are used to perform operations on variables and values. Here are some of the common types of operators in PHP along with examples:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-operators-with-examples.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -53,81 +53,100 @@
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>PHP Operators With Examples</h1><p><strong>PHP supports a variety of operators that are used to perform operations on variables and values</strong>. Here are some of the common types of operators in PHP along with examples:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
+<h3 id="1-arithmetic-operators-">1. Arithmetic Operators:</h3>
 
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
+<p>Perform basic arithmetic operations.</p>
+
+<pre class="language-php"><code>$a = 10;
+$b = 5;
+
+$sum = $a + $b;      // Addition
+$diff = $a - $b;     // Subtraction
+$prod = $a * $b;     // Multiplication
+$quotient = $a / $b;  // Division
+$remainder = $a % $b; // Modulus (remainder after division)
 </code></pre>
 
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
+<h3 id="2-assignment-operators-">2. Assignment Operators:</h3>
 
-<p>Here's a simple example:</p>
+<p>Assign values to variables.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
-}
+<pre class="language-php"><code>$x = 5;
+$y = 10;
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
-
-// Display the result
-print_r($squaredNumbers);
-?&gt;
+$x += $y;  // Equivalent to $x = $x + $y;
+$x -= $y;  // Equivalent to $x = $x - $y;
+$x *= $y;  // Equivalent to $x = $x * $y;
+$x /= $y;  // Equivalent to $x = $x / $y;
+$x %= $y;  // Equivalent to $x = $x % $y;
 </code></pre>
 
-<p>Output:</p>
+<h3 id="3-comparison-operators-">3. Comparison Operators:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
-)
+<p>Compare values and return a boolean result.</p>
+
+<pre class="language-php"><code>$p = 10;
+$q = 5;
+
+$isEqual = ($p == $q);     // Equal
+$isNotEqual = ($p != $q);  // Not Equal
+$isIdentical = ($p === $q); // Identical (value and type)
+$isNotIdentical = ($p !== $q); // Not Identical
+$isGreaterThan = ($p &gt; $q); // Greater Than
+$isLessThan = ($p &lt; $q);    // Less Than
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<h3 id="4-logical-operators-">4. Logical Operators:</h3>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
+<p>Perform logical operations and return a boolean result.</p>
 
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+<pre class="language-php"><code>$condition1 = true;
+$condition2 = false;
 
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
+$andResult = $condition1 &amp;&amp; $condition2; // AND
+$orResult = $condition1 || $condition2;  // OR
+$notResult = !$condition1;                // NOT
 </code></pre>
 
-<p>Output:</p>
+<h3 id="5-increment-and-decrement-operators-">5. Increment and Decrement Operators:</h3>
 
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
+<p>Increment or decrement a variable's value.</p>
+
+<pre class="language-php"><code>$counter = 5;
+
+$counter++; // Increment by 1
+$counter--; // Decrement by 1
 </code></pre>
 
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<h3 id="6-string-operators-">6. String Operators:</h3>
+
+<p>Concatenate strings.</p>
+
+<pre class="language-php"><code>$firstName = "John";
+$lastName = "Doe";
+
+$fullName = $firstName . " " . $lastName; // Concatenation
+</code></pre>
+
+<h3 id="7-ternary-operator-">7. Ternary Operator:</h3>
+
+<p>Shortens the if-else statement.</p>
+
+<pre class="language-php"><code>$age = 18;
+
+$isAdult = ($age &gt;= 18) ? "Yes" : "No";
+</code></pre>
+
+<h3 id="8-null-coalescing-operator-">8. Null Coalescing Operator:</h3>
+
+<p>Returns the first defined and non-null value.</p>
+
+<pre class="language-php"><code>$username = $_GET['user'] ?? 'Guest';
+</code></pre>
+
+<p>These are just a few examples of the many operators available in PHP. Operators play a crucial role in performing various operations and comparisons within your PHP code.</p>
 </article>
 </div>
 <footer>

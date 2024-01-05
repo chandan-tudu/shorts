@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PHP array_map() Function</title>
-<meta name="description" content="The array_map function in PHP is used to apply a given callback function to all elements of one or more arrays.">
+<title>How To Filter An Array In PHP</title>
+<meta name="description" content="In PHP, you can filter an array based on certain criteria using functions like array_filter(). This function allows you to iterate over each element in an array and include only the elements that satisfy a specified callback function or condition. Here are some examples:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-array-map-function.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/php-examples/how-to-filter-an-array-in-php.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,39 +49,54 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">PHP</a></li>
+<li><a href="./index.html">PHP EXAMPLES</a></li>
 </ul>
 </nav>
 <article>
-<h1>PHP array_map() Function</h1><p>The <strong><code>array_map</code> function</strong> in PHP is used to <strong>apply a given callback function to all elements of one or more arrays</strong>.</p>
+<h1>How To Filter An Array In PHP</h1><p>In PHP, you can <strong>filter an array based on certain criteria using functions like <code>array_filter()</code></strong>. This function <strong>allows you to iterate over each element in an array</strong> and include only the elements that satisfy a specified callback function or condition. Here are some examples:</p>
 
-<p>It <strong>returns an array containing the results of applying the callback</strong> to the corresponding elements of the input arrays. Here's the basic syntax:</p>
-
-<pre class="language-php"><code>array array_map ( callable $callback , array $array1 [, array $... ] )
-</code></pre>
-
-<ul>
-<li><p><code>$callback</code>: The callback function to apply to each element of the input arrays. It can be any valid PHP callable, like a function or a method.</p></li>
-<li><p><code>$array1</code>: The array to which the callback will be applied.</p></li>
-<li><p><code>$...</code> (optional): Additional arrays. If provided, the callback function must accept as many arguments as there are arrays.</p></li>
-</ul>
-
-<p>Here's a simple example:</p>
+<h3 id="1-filtering-with-a-callback-function-">1. Filtering with a Callback Function:</h3>
 
 <pre class="language-php"><code>&lt;?php
-// Example callback function
-function square($n) {
-    return $n * $n;
+$array = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+// Define a callback function to filter even numbers
+function filterEven($value) {
+    return $value % 2 == 0;
 }
 
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
+// Use array_filter with the callback function
+$filteredArray = array_filter($array, 'filterEven');
 
-// Apply the callback function to each element of the array
-$squaredNumbers = array_map("square", $numbers);
+print_r($filteredArray);
+?&gt;
+</code></pre>
 
-// Display the result
-print_r($squaredNumbers);
+<p>Output:</p>
+
+<pre><code>Array
+(
+    [1] =&gt; 2
+    [3] =&gt; 4
+    [5] =&gt; 6
+    [7] =&gt; 8
+    [9] =&gt; 10
+)
+</code></pre>
+
+<p>In this example, the <code>filterEven</code> callback function filters out the even numbers from the original array.</p>
+
+<h3 id="2-filtering-with-an-anonymous-function-php-5-3-and-later-">2. Filtering with an Anonymous Function (PHP 5.3 and later):</h3>
+
+<pre class="language-php"><code>&lt;?php
+$array = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+// Use an anonymous function to filter odd numbers
+$filteredArray = array_filter($array, function($value) {
+    return $value % 2 != 0;
+});
+
+print_r($filteredArray);
 ?&gt;
 </code></pre>
 
@@ -90,44 +105,16 @@ print_r($squaredNumbers);
 <pre><code>Array
 (
     [0] =&gt; 1
-    [1] =&gt; 4
-    [2] =&gt; 9
-    [3] =&gt; 16
-    [4] =&gt; 25
+    [2] =&gt; 3
+    [4] =&gt; 5
+    [6] =&gt; 7
+    [8] =&gt; 9
 )
 </code></pre>
 
-<p>In this example, the <code>square</code> function is applied to each element of the <code>$numbers</code> array using <code>array_map</code>. The resulting array <code>$squaredNumbers</code> contains the squared values of each element.</p>
+<p>In this example, an anonymous function is used to filter out the odd numbers from the original array.</p>
 
-<p>You can also use anonymous functions (closures) with <code>array_map</code>:</p>
-
-<pre class="language-php"><code>&lt;?php
-// Example array
-$numbers = array(1, 2, 3, 4, 5);
-
-// Use an anonymous function to double each element
-$doubledNumbers = array_map(function($n) {
-    return $n * 2;
-}, $numbers);
-
-// Display the result
-print_r($doubledNumbers);
-?&gt;
-</code></pre>
-
-<p>Output:</p>
-
-<pre><code>Array
-(
-    [0] =&gt; 2
-    [1] =&gt; 4
-    [2] =&gt; 6
-    [3] =&gt; 8
-    [4] =&gt; 10
-)
-</code></pre>
-
-<p>In this case, the anonymous function is used to double each element of the <code>$numbers</code> array.</p>
+<p>You can adjust the callback function or anonymous function based on your specific filtering criteria. The elements for which the callback function returns <code>true</code> will be included in the filtered array.</p>
 </article>
 </div>
 <footer>
