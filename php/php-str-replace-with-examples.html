@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHP str_replace() With Examples</title>
+<meta name="description" content="In PHP, the str_replace() function is used to replace occurrences of a specified substring with another substring in a given string.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<link rel="canonical" href="https://www.devbabu.com/shorts/php/php-str-replace-with-examples.html">
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/style.min.css" />
+</head>
+<body>
+<header class="header">
+    <div class="wrap d-flex">
+        <div class="logo">
+            <a href="https://www.devbabu.com">DevBabu.Com</a>
+        </div>
+        <div class="right-action d-flex">
+            <div class="search">
+                <form action="/" method="GET" class="d-flex">
+                    <input class="s-input" type="text" name="s" placeholder="Search..." autocomplete="off" required />
+                    <button class="s-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="theme">
+                <button class="theme-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-moon">
+                        <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 0 1 .26.77 7 7 0 0 0 9.958 7.967.75.75 0 0 1 1.067.853A8.5 8.5 0 1 1 6.647 1.921a.75.75 0 0 1 .808.083Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="theme-sun">
+                        <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+<nav class="navigation">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/shorts/index.html">Shorts</a></li>
+<li><a href="./index.html">PHP</a></li>
+</ul>
+</nav>
+<article>
+<h1>PHP str_replace() With Examples</h1><p>In PHP, <strong>the <code>str_replace()</code> function is used to replace occurrences of a specified substring with another substring in a given string</strong>. The basic syntax of <code>str_replace()</code> is as follows:</p>
+
+<pre class="language-php"><code>str_replace(search, replace, subject, count);
+</code></pre>
+
+<ul>
+<li><code>search</code>: The substring you want to replace.</li>
+<li><code>replace</code>: The substring to replace the search string with.</li>
+<li><code>subject</code>: The original string or an array of strings where replacements will be performed.</li>
+<li><code>count</code> (optional): A variable to store the number of replacements performed.</li>
+</ul>
+
+<p>Here's an example:</p>
+
+<pre class="language-php"><code>&lt;?php
+// Original string
+$originalString = "Hello, world! Hello, universe!";
+
+// Replace "Hello" with "Hi"
+$newString = str_replace("Hello", "Hi", $originalString);
+
+// Display the new string
+echo $newString;
+?&gt;
+</code></pre>
+
+<p>In this example, the <code>str_replace()</code> function is used to replace every occurrence of "Hello" with "Hi" in the <code>$originalString</code>. The output will be:</p>
+
+<pre><code>Hi, world! Hi, universe!
+</code></pre>
+
+<p>If you want to replace multiple substrings at once, you can pass arrays as the <code>search</code> and <code>replace</code> parameters. For example:</p>
+
+<pre class="language-php"><code>&lt;?php
+// Original string
+$originalString = "apple orange banana";
+
+// Replace multiple fruits
+$search = array("apple", "orange", "banana");
+$replace = array("fruit1", "fruit2", "fruit3");
+
+$newString = str_replace($search, $replace, $originalString);
+
+// Display the new string
+echo $newString;
+?&gt;
+</code></pre>
+
+<p>The output will be:</p>
+
+<pre><code>fruit1 fruit2 fruit3
+</code></pre>
+
+<p>Note that <code>str_replace()</code> is case-sensitive. If you need a case-insensitive replacement, you can use <code>str_ireplace()</code>.</p>
+</article>
+</div>
+<footer>
+    <ul class="footer-nav d-flex">
+        <li><a href="/about-us/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
+        <li><a href="/contact-us/">Contact</a></li>
+    </ul>
+    <div class="extra" id="extraEl"></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/script.min.js"></script>
+</body>
+</html>
