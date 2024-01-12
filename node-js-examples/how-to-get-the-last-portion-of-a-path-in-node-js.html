@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>HTML Meta Description</title>
-<meta name="description" content="In HTML, the meta description is a meta tag that provides a concise and brief summary of the content of a web page.">
+<title>How To Get The Last Portion Of A Path In Node.js</title>
+<meta name="description" content="To get the last portion of a path in Node.js, you can use the path.basename() method from the path module. Here's an example:">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/html/html-meta-description.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/node-js-examples/how-to-get-the-last-portion-of-a-path-in-node-js.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,47 +49,41 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">HTML</a></li>
+<li><a href="./index.html">NODE JS EXAMPLES</a></li>
 </ul>
 </nav>
 <article>
-<h1>HTML Meta Description</h1><p>In HTML, the meta description is a <strong>meta tag that provides a concise and brief summary of the content of a web page</strong>.</p>
+<h1>How To Get The Last Portion Of A Path In Node.js</h1><p><strong>To get the last portion of a path in Node.js, you can use the <code>path.basename()</code> method</strong> from the <code>path</code> module. Here's an example:</p>
 
-<p>It is <strong>not displayed on the page itself</strong> but is often <strong>used by search engines</strong> to provide a preview snippet in search results.</p>
+<pre class="language-javascript"><code>const path = require('path');
 
-<p>The meta description is <strong>placed within the <code>&lt;head&gt;</code> section</strong> of an HTML document. Here's an example of how to add a meta description to an HTML document:</p>
+// Example file path
+const filePath = '/path/to/your/file.txt';
 
-<pre class="language-html"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8" /&gt;
-        &lt;meta
-            name="description"
-            content="This is a brief description of your web page content. It should be concise and informative."
-        /&gt;
-        &lt;meta name="keywords" content="keywords, related, to, your, content" /&gt;
-        &lt;meta name="author" content="Your Name" /&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-        &lt;title&gt;Your Page Title&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;!-- Your page content goes here --&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
+// Use the path module to get the last portion of the path
+const lastPortion = path.basename(filePath);
+
+// Print the last portion
+console.log('Last Portion:', lastPortion); // Output: file.txt
 </code></pre>
 
-<p>In the example above:</p>
+<p>In this example, <code>path.basename(filePath)</code> extracts the last portion of the file path, which is the file or directory name. This method is useful for getting the base name of a file or directory path.</p>
 
-<ul>
-<li><p><code>&lt;meta name="description" content="..."&gt;</code>: This is the meta tag for the description. Replace the content attribute with a concise and relevant description of your web page.</p></li>
-<li><p><code>&lt;meta name="keywords" content="..."&gt;</code>: This meta tag used to be more important for search engines, but it is less influential today. However, you can still include relevant keywords separated by commas.</p></li>
-<li><p><code>&lt;meta name="author" content="..."&gt;</code>: This meta tag allows you to specify the author of the web page.</p></li>
-<li><p><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: This meta tag is often included for responsive web design, ensuring that the page scales properly on different devices.</p></li>
-</ul>
+<p>If you have a directory path with a trailing slash and you want to include that slash in the last portion, you can set the second parameter of <code>path.basename()</code> to the character you want to treat as the path separator:</p>
 
-<p>Remember that search engines may use or ignore the meta description, and the length that is displayed in search results may be limited.</p>
+<pre class="language-javascript"><code>const path = require('path');
 
-<p>Aim for a clear and informative description within the specified length guidelines of the search engines you are targeting.</p>
+// Example directory path with a trailing slash
+const directoryPath = '/path/to/your/directory/';
+
+// Use the path module to get the last portion of the path with the trailing slash
+const lastPortionWithSlash = path.basename(directoryPath, '/');
+
+// Print the last portion with the trailing slash
+console.log('Last Portion with Slash:', lastPortionWithSlash); // Output: directory
+</code></pre>
+
+<p>In this case, <code>path.basename(directoryPath, '/')</code> ensures that the trailing slash is included in the last portion of the path.</p>
 </article>
 </div>
 <footer>

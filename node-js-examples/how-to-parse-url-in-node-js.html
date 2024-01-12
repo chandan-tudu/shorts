@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="CAJSXz1q9IoKgvnzjtqfn7KaJhAJMC9sCywfxWYum7s" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>HTML Meta Description</title>
-<meta name="description" content="In HTML, the meta description is a meta tag that provides a concise and brief summary of the content of a web page.">
+<title>How To Parse URL In Node.js</title>
+<meta name="description" content="In Node.js, you can use the built-in url module to parse URLs. The url.parse method is deprecated in recent versions of Node.js, and it's recommended to use the new URL() constructor instead">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<link rel="canonical" href="https://www.devbabu.com/shorts/html/html-meta-description.html">
+<link rel="canonical" href="https://www.devbabu.com/shorts/node-js-examples/how-to-parse-url-in-node-js.html">
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="32x32" />
 <link rel="icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/chandan-tudu/shorts@latest/assets/favicon.png" />
@@ -49,47 +49,75 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/shorts/index.html">Shorts</a></li>
-<li><a href="./index.html">HTML</a></li>
+<li><a href="./index.html">NODE JS EXAMPLES</a></li>
 </ul>
 </nav>
 <article>
-<h1>HTML Meta Description</h1><p>In HTML, the meta description is a <strong>meta tag that provides a concise and brief summary of the content of a web page</strong>.</p>
+<h1>How To Parse URL In Node.js</h1><p>In Node.js, you can <strong>use the built-in <code>url</code> module to parse URLs</strong>. Here's an example of how you can parse a URL in Node.js:</p>
 
-<p>It is <strong>not displayed on the page itself</strong> but is often <strong>used by search engines</strong> to provide a preview snippet in search results.</p>
+<pre class="language-javascript"><code>const url = require('url');
 
-<p>The meta description is <strong>placed within the <code>&lt;head&gt;</code> section</strong> of an HTML document. Here's an example of how to add a meta description to an HTML document:</p>
+// Example URL
+const urlString = 'https://www.example.com/path?query=123#fragment';
 
-<pre class="language-html"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8" /&gt;
-        &lt;meta
-            name="description"
-            content="This is a brief description of your web page content. It should be concise and informative."
-        /&gt;
-        &lt;meta name="keywords" content="keywords, related, to, your, content" /&gt;
-        &lt;meta name="author" content="Your Name" /&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-        &lt;title&gt;Your Page Title&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;!-- Your page content goes here --&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
+// Parse the URL
+const parsedUrl = url.parse(urlString, true);
+
+// Access parsed components
+console.log('Parsed URL:', parsedUrl);
+console.log('Protocol:', parsedUrl.protocol);
+console.log('Host:', parsedUrl.host);
+console.log('Path:', parsedUrl.path);
+console.log('Query:', parsedUrl.query);
+console.log('Fragment:', parsedUrl.hash);
 </code></pre>
 
-<p>In the example above:</p>
+<p>Output:</p>
 
-<ul>
-<li><p><code>&lt;meta name="description" content="..."&gt;</code>: This is the meta tag for the description. Replace the content attribute with a concise and relevant description of your web page.</p></li>
-<li><p><code>&lt;meta name="keywords" content="..."&gt;</code>: This meta tag used to be more important for search engines, but it is less influential today. However, you can still include relevant keywords separated by commas.</p></li>
-<li><p><code>&lt;meta name="author" content="..."&gt;</code>: This meta tag allows you to specify the author of the web page.</p></li>
-<li><p><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: This meta tag is often included for responsive web design, ensuring that the page scales properly on different devices.</p></li>
-</ul>
+<pre><code>Parsed URL: Url {
+  protocol: 'https:',
+  slashes: true,
+  auth: null,
+  host: 'www.example.com',
+  port: null,
+  hostname: 'www.example.com',
+  hash: '#fragment',
+  search: '?query=123',
+  query: { query: '123' },
+  pathname: '/path',
+  path: '/path?query=123',
+  href: 'https://www.example.com/path?query=123#fragment'
+}
+Protocol: https:
+Host: www.example.com
+Path: /path?query=123
+Query: { query: '123' }
+Fragment: #fragment
+</code></pre>
 
-<p>Remember that search engines may use or ignore the meta description, and the length that is displayed in search results may be limited.</p>
+<p>In this example, <strong>the <code>url.parse</code> method is used to parse the URL</strong>. The s<strong>econd parameter, <code>true</code>, specifies that the <code>query</code> property</strong> should be an object with key-value pairs representing the query parameters.</p>
 
-<p>Aim for a clear and informative description within the specified length guidelines of the search engines you are targeting.</p>
+<h3>The new URL() Constructor</h3>
+<p>Please note that <strong>the <code>url.parse</code> method is deprecated in recent versions of Node.js</strong>, and it's <strong>recommended to use the <code>new URL()</code> constructor instead</strong>:</p>
+
+<pre class="language-javascript"><code>const { URL } = require('url');
+
+// Example URL
+const urlString = 'https://www.example.com/path?query=123#fragment';
+
+// Parse the URL using the URL constructor
+const parsedUrl = new URL(urlString);
+
+// Access parsed components
+console.log('Parsed URL:', parsedUrl);
+console.log('Protocol:', parsedUrl.protocol);
+console.log('Host:', parsedUrl.host);
+console.log('Path:', parsedUrl.pathname);
+console.log('Query:', parsedUrl.searchParams);
+console.log('Fragment:', parsedUrl.hash);
+</code></pre>
+
+<p>This approach is more modern and aligns with the latest web standards. The <code>URL</code> class provides more straightforward and convenient access to different components of the URL.</p>
 </article>
 </div>
 <footer>
