@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&family=Open+Sans:wght@300;400;700&family=Lobster&family=Noto+Emoji:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@300;400;700&family=Lobster&family=Noto+Emoji:wght@400;700&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/chandan-tudu/cascadia-code@master/style.min.css");
 *,
 *::before,
@@ -11,7 +11,7 @@
 :root {
   --font-family: "Open Sans", sans-serif, "Noto Emoji";
   --only-font: "Open Sans", sans-serif;
-  --heading-font: "Lexend Deca", sans-serif, "Noto Emoji";
+  --heading-font: "Noto Serif", sans-serif, "Noto Emoji";
   --code-font: monospace, "Cascadia Code";
   --border-radius: 2px;
   --primary-hue: 224.2105263158deg;
@@ -162,9 +162,21 @@ h6 {
   font-weight: 700;
 }
 
-h1,
+h1 {
+  font-size: 1.667rem;
+  font-weight: 400;
+}
+
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.444rem;
+}
+
+h2 {
+  font-weight: 400;
 }
 
 h1,
