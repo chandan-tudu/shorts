@@ -23,7 +23,7 @@
       var(--primary-lightness)
   );
   --light-font-color: hsl(var(--primary-hue), var(--primary-saturation), 90%);
-  --body-bg: hsl(var(--primary-hue), var(--primary-saturation), 99%);
+  --body-bg: hsl(var(--primary-hue), var(--primary-saturation), 98%);
   --light-bg: hsl(var(--primary-hue), var(--primary-saturation), 98%);
   --light-btn-bg: hsl(var(--primary-hue), var(--primary-saturation), 98%);
   --code-bg: hsl(var(--primary-hue), var(--primary-saturation), 13%);
@@ -63,11 +63,11 @@ body {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-image: url("./shape.png");
+  /* background-image: url("./shape.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: right;
-  background-size: cover;
+  background-size: cover; */
   font-size: 1rem;
 }
 
@@ -128,7 +128,7 @@ article a:hover {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 20px;
   overflow: hidden;
@@ -195,7 +195,7 @@ strong {
 }
 
 .header .wrap {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 20px;
   justify-content: space-between;
